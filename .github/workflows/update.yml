@@ -10,10 +10,15 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - name: Run unit tests
+        run: |
+          python tests/test_engine.py
+          python tests/test_ledger.py
+          python tests/test_update.py
       - name: Fetch, predict, settle and backtest
         run: python app/update.py
       - name: Commit generated data
