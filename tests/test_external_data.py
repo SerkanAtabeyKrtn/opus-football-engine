@@ -96,4 +96,24 @@ class ExternalDataTests(unittest.TestCase):
         ext.register_context(rows,'E0',f,{'value':3},ext.kickoff(f))
         self.assertEqual(rows,before)
 
+    def test_limited_requests_check_all_leagues_then_lineups_then_nearest_squads(self):
+        fixtures=[dict(Div='B1',Date='04/09/2026',Time='16:00',HomeTeam='C',AwayTeam='D'),
+                  dict(Div='E0',Date='04/09/2026',Time='14:00',HomeTeam='Tottenham',AwayTeam='Arsenal')]
+        events={}
+        for f in fixtures:
+            code=f['Div'];events[code]=[{'id':code,'date':ext.iso(ext.kickoff(f)),'status':'pre',
+              'home':{'id':code+'h','name':f['HomeTeam']},'away':{'id':code+'a','name':f['AwayTeam']}}]
+        other=copy.deepcopy(events['E0'][0]);other.update(id='unmatched',date='2026-09-06T13:00:00Z')
+        other['home']['id']='wrong';events['E0'].append(other)
+        calls=[]
+        class FakeClient:
+            now=NOW
+            def get(self,key,url,ttl,normalize,**kwargs):
+                calls.append(key)
+                return {'status':'fresh','fetchedAt':ext.iso(NOW),'data':events.get(key.removeprefix('events_'),{})}
+        ext.collect_context(FakeClient(),fixtures)
+        self.assertEqual(calls[:4],['fpl','events_B1','events_E0','lineup_E0'])
+        self.assertEqual(calls[4:],['roster_E0_E0h','roster_E0_E0a','roster_B1_B1h','roster_B1_B1a'])
+        self.assertEqual(ext.canonical('Spurs'),ext.canonical('Tottenham Hotspur'))
+
 if __name__=='__main__':unittest.main()

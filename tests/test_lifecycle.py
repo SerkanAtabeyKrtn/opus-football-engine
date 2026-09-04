@@ -130,6 +130,10 @@ class LifecycleTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp, patch.object(update,'DATA',Path(tmp)), \
              patch.object(update,'LEAGUES',{'E1':'Championship'}), \
              patch.object(update,'SEASONS',['2627']), \
+             patch.object(update,'RAW',Path(tmp)/'raw'), \
+             patch.object(update.external_data,'fetch_xg',return_value={}), \
+             patch.object(update.external_data,'collect_context',return_value={}), \
+             patch.dict('os.environ',{'GITHUB_STEP_SUMMARY':''}), \
              patch.object(update,'fetch_cached',return_value=([dict(past,FTHG='1',FTAG='0')],False)), \
              patch.object(update,'fetch_fixtures',return_value=([past],False,'test',[])), \
              patch.object(update,'ensure_model',return_value={'report':{}}), \
