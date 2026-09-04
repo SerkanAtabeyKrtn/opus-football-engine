@@ -150,7 +150,7 @@ def attach_xg(histories,xg):
             key=(d.date().isoformat() if d else '',canonical(m['home']),canonical(m['away']))
             found=index.get(key)
             if found and key not in duplicates and m['hg']==found['hg'] and m['ag']==found['ag']:
-                row['HxG']=found['xgHome'];row['AxG']=found['xgAway'];n+=1
+                row['UnderstatHxG']=found['xgHome'];row['UnderstatAxG']=found['xgAway'];n+=1
         matched[league]=n
     return matched
 
@@ -238,11 +238,12 @@ def context_for_fixture(league,fixture,fpl,events,rosters,lineups,now):
 
 def collect_context(client,fixtures):
     fpl=client.get('fpl','https://fantasy.premierleague.com/api/bootstrap-static/',1800,normalize_fpl,group='fpl')
-    events={};rosters={};lineups={};today=client.now.strftime('%Y%m%d');end=(client.now+timedelta(days=7)).strftime('%Y%m%d')
+    events={};rosters={};lineups={};today=client.now.strftime('%Y%m%d')
     upcoming=[f for f in fixtures if kickoff(f) and client.now<kickoff(f)<=client.now+timedelta(days=7)]
+    end=max((kickoff(f) for f in upcoming),default=client.now).strftime('%Y%m%d')
     for code in sorted({f.get('Div') or f.get('league') for f in upcoming} & set(ESPN_LEAGUES)):
         league=ESPN_LEAGUES[code]
-        r=client.get(f'events_{code}',f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/scoreboard?dates={today}-{end}&limit=100',1800,normalize_scoreboard,group='espn_events')
+        r=client.get(f'events_{code}',f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/scoreboard?dates={today}-{end}&limit=100',1800,normalize_scoreboard,group='espn_events_'+code)
         # Old scoreboard schedules cannot confirm a match's current lineup.
         events[code]=(r.get('data') or []) if usable(r) else []
         names={canonical(engine.normalize_match(f)[s]) for f in upcoming if (f.get('Div') or f.get('league'))==code for s in ('home','away')}
@@ -250,7 +251,7 @@ def collect_context(client,fixtures):
             for side in ('home','away'):
                 t=event[side];key=code+'|'+t['id']
                 if canonical(t['name']) not in names or key in rosters:continue
-                rosters[key]=client.get('roster_'+code+'_'+t['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/teams/{t["id"]}/roster',86400,normalize_roster,group='espn_rosters')
+                rosters[key]=client.get('roster_'+code+'_'+t['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/teams/{t["id"]}/roster',86400,normalize_roster,group='espn_rosters_'+code)
             start=date(event['date'])
             if start and client.now<start<=client.now+timedelta(minutes=90):
                 lineups[event['id']]=client.get('lineup_'+event['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={event["id"]}',900,normalize_lineups,group='espn_lineups')

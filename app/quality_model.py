@@ -16,7 +16,7 @@ import calibration
 import engine
 
 VERSION = '1.6'
-SPEC = 'quality-xg-2026-09-04-a'
+SPEC = 'quality-xg-2026-09-04-b'
 LEAGUE_CODES = ['E0','E1','D1','D2','I1','I2','SP1','SP2','F1','F2','N1','B1','P1','T1','SC0','SC1']
 FAMILIES = {'result': ['HOME','DRAW','AWAY'], 'goals': ['O25','U25'], 'btts': ['BTTS_YES','BTTS_NO']}
 PLAN = {'fitBefore': '2026-01-01', 'selectBefore': '2026-04-01', 'testBefore': '2026-07-01'}
@@ -60,7 +60,7 @@ def context(history, fixture):
         xg=[]
         for r in prior[:8]:
             home=(r.get('HomeTeam') or r.get('home'))==team
-            xf,xa=engine.safe_num(r.get('HxG' if home else 'AxG')),engine.safe_num(r.get('AxG' if home else 'HxG'))
+            xf,xa=engine.safe_num(r.get('UnderstatHxG' if home else 'UnderstatAxG')),engine.safe_num(r.get('UnderstatAxG' if home else 'UnderstatHxG'))
             if xf is not None and xa is not None and all(math.isfinite(v) and v>=0 for v in (xf,xa)):
                 xg.append((xf,xa))
         output[side]['xg']={'matches':len(xg),'for':sum(x[0] for x in xg)/len(xg) if xg else None,
