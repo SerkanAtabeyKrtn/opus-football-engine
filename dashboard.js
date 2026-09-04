@@ -36,7 +36,7 @@ function render(){
   $('stamp').classList.toggle('bad',age>(D.refreshIntervalMinutes||120)*2);
   const health=D.health||{};
   $('freshness').textContent='Kaynak fikstür aralığı: '+date(health.fixtureFirstDate)+' — '+date(health.fixtureLastDate)+
-    '. Otomatik kontrol yaklaşık 2 saatte bir yapılır. Kaynağın yeni sonuç veya fikstür yayımlaması ayrıca beklenir.'+
+    '. Fikstür ve ek veri kontrolü yaklaşık 30 dakikada bir, sonuç geçmişi yaklaşık 2 saatte bir yapılır. Kaynağın yeni sonuç veya fikstür yayımlaması ayrıca beklenir.'+
     (D.staleSources?' '+D.staleSources+' kaynak son indirilen önbellekten okunuyor.':'')+
     (health.futureFixtureCount===0?' Kaynakta henüz başlamamış desteklenen maç yok.':'');
   $('pred').innerHTML=ps.length?ps.map((p,i)=>`<tr data-i="${i}" style="cursor:pointer"><td>${esc(p.leagueName)}</td><td>${date(p.kickoffAt)}</td><td>${esc(p.home)} – ${esc(p.away)}</td><td>${p.lambdaH.toFixed(2)} / ${p.lambdaA.toFixed(2)}</td><td>${esc(p.topScores[0]?.score||'—')}</td><td>${tag(p.decision.tier)} ${esc(labels[p.decision.market]||'')}</td><td>${pct(p.decision.p)}</td><td>${edge(p.decision.edge)}</td></tr>`).join(''):
@@ -66,7 +66,7 @@ function detail(p){
   $('detail').innerHTML=`<b>${esc(p.home)} – ${esc(p.away)}</b><br>${date(p.kickoffAt)} (Türkiye)
     <p><b>Güncel karar: ${esc(p.decision.tier)} ${esc(labels[p.decision.market]||'')}</b><br>${esc(p.decision.reason||'')}<br>Model ${pct(p.decision.p)} · Piyasa ${pct(p.decision.marketP)} · Fark ${edge(p.decision.edge)}</p>
     <p>Geçmiş maç ağırlığı: ev ${p.sampleHome?.toFixed(1)??'—'} / deplasman ${p.sampleAway?.toFixed(1)??'—'}. Bu değer başarı yüzdesi değildir.<br>Lig maçları arasında dinlenme: ${h.restDays??'—'} / ${a.restDays??'—'} gün.<br>Son 14 gündeki lig maçı: ${h.matchesLast14Days??'—'} / ${a.matchesLast14Days??'—'}.<br>İsabetli şut ortalaması: ${h.shotsOnTargetFor??'—'} / ${a.shotsOnTargetFor??'—'} (${h.shotsMatches||0} / ${a.shotsMatches||0} geçmiş maç).<br>${esc(info.scope)}</p>
-    <p>Sakatlık, ceza, kadro ve gerçek xG verisi bağlı değil. Gösterilen gol ortalamaları gol geçmişinden hesaplanır; xG değildir. Skor senaryosu ham gol modelinden gelir.</p>
+    <p>Üstteki gol ortalamaları ve skor senaryosu ham gol modelinden gelir; gerçek geçmiş xG ayrı gösterilir.</p>${externalDetail(p)}
     ${locked?`<p>İlk kayıtlı karar (V${esc(locked.modelVersion||'1.3')}): <b>${esc(locked.tier)} ${esc(labels[locked.market])}</b> · ${pct(locked.p)}<br>Kayıt: ${date(locked.createdAt)}${locked.forwardTestEligible?'':' · TEST DIŞI'}</p>`:''}
     ${p.firstAnalysisAt?`<p>Yedi olasılığın ilk test kaydı: ${date(p.firstAnalysisAt)}. Sonradan değişen analiz ilk kaydı değiştirmez.</p>`:''}
     <div style="overflow:auto"><table><thead><tr><th>Pazar</th><th>Ham model</th><th>Düzeltilmiş</th><th>Piyasa</th></tr></thead><tbody>${Object.keys(labels).map(k=>{
