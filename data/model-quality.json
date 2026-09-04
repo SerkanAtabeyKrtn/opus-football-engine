@@ -1,5 +1,5 @@
 {
-  "version": "1.5",
+  "version": "1.6",
   "plan": {
     "fitBefore": "2026-01-01",
     "selectBefore": "2026-04-01",
@@ -13,9 +13,61 @@
   "families": {
     "result": {
       "name": "Maç sonucu",
-      "method": "Model + piyasa + maç bağlamı",
+      "method": "Model + piyasa + maç bağlamı + geçmiş xG",
+      "usesXg": true,
+      "xgTestMatches": 368,
+      "selectionCandidates": [
+        {
+          "useMarket": false,
+          "useXg": false,
+          "penalty": 30.0,
+          "selectionLogLoss": 1.02167792104187
+        },
+        {
+          "useMarket": false,
+          "useXg": false,
+          "penalty": 100.0,
+          "selectionLogLoss": 1.021393605054125
+        },
+        {
+          "useMarket": false,
+          "useXg": true,
+          "penalty": 30.0,
+          "selectionLogLoss": 1.0208214838219452
+        },
+        {
+          "useMarket": false,
+          "useXg": true,
+          "penalty": 100.0,
+          "selectionLogLoss": 1.0205379693385044
+        },
+        {
+          "useMarket": true,
+          "useXg": false,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.9981003898952889
+        },
+        {
+          "useMarket": true,
+          "useXg": false,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.9995009946684342
+        },
+        {
+          "useMarket": true,
+          "useXg": true,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.9979803203823697
+        },
+        {
+          "useMarket": true,
+          "useXg": true,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.9993295781755833
+        }
+      ],
       "selectedPenalty": 30.0,
-      "selectionLogLoss": 0.9981003898952889,
+      "selectionLogLoss": 0.9979803203823697,
       "old": {
         "n": 1062,
         "brier": 0.20473589533052355,
@@ -24,9 +76,9 @@
       },
       "new": {
         "n": 1062,
-        "brier": 0.20016294732585022,
-        "logLoss": 1.0028626819437998,
-        "accuracy": 0.5094161958568738
+        "brier": 0.20057814751125255,
+        "logLoss": 1.0046816821075633,
+        "accuracy": 0.5141242937853108
       },
       "reference": {
         "n": 1062,
@@ -39,36 +91,88 @@
         {
           "from": 0.2,
           "to": 0.4,
-          "n": 145,
-          "predicted": 0.37768313819863236,
-          "observed": 0.32413793103448274
+          "n": 147,
+          "predicted": 0.3786989761063402,
+          "observed": 0.40816326530612246
         },
         {
           "from": 0.4,
           "to": 0.6,
-          "n": 663,
-          "predicted": 0.48753647478947626,
-          "observed": 0.4841628959276018
+          "n": 659,
+          "predicted": 0.4869737939190573,
+          "observed": 0.4779969650986343
         },
         {
           "from": 0.6,
           "to": 0.8,
-          "n": 232,
-          "predicted": 0.6777427251583458,
-          "observed": 0.6724137931034483
+          "n": 233,
+          "predicted": 0.6757678494437651,
+          "observed": 0.6609442060085837
         },
         {
           "from": 0.8,
           "to": 1,
-          "n": 22,
-          "predicted": 0.8274126372163072,
-          "observed": 0.7727272727272727
+          "n": 23,
+          "predicted": 0.8300612575511505,
+          "observed": 0.7391304347826086
         }
       ]
     },
     "goals": {
       "name": "2,5 gol",
       "method": "Model + piyasa + maç bağlamı",
+      "usesXg": false,
+      "xgTestMatches": 368,
+      "selectionCandidates": [
+        {
+          "useMarket": false,
+          "useXg": false,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.6870853757951529
+        },
+        {
+          "useMarket": false,
+          "useXg": false,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.6869244282043921
+        },
+        {
+          "useMarket": false,
+          "useXg": true,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.6869369328228511
+        },
+        {
+          "useMarket": false,
+          "useXg": true,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.686802022425076
+        },
+        {
+          "useMarket": true,
+          "useXg": false,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.680463383959033
+        },
+        {
+          "useMarket": true,
+          "useXg": false,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.6804028248214196
+        },
+        {
+          "useMarket": true,
+          "useXg": true,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.6807342040510354
+        },
+        {
+          "useMarket": true,
+          "useXg": true,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.6805452920565755
+        }
+      ],
       "selectedPenalty": 100.0,
       "selectionLogLoss": 0.6804028248214196,
       "old": {
@@ -116,9 +220,37 @@
     },
     "btts": {
       "name": "Karşılıklı gol",
-      "method": "Kalibre model + maç bağlamı",
+      "method": "Kalibre model + maç bağlamı + geçmiş xG",
+      "usesXg": true,
+      "xgTestMatches": 368,
+      "selectionCandidates": [
+        {
+          "useMarket": false,
+          "useXg": false,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.6852733997114123
+        },
+        {
+          "useMarket": false,
+          "useXg": false,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.6851839619397604
+        },
+        {
+          "useMarket": false,
+          "useXg": true,
+          "penalty": 30.0,
+          "selectionLogLoss": 0.6851890972711935
+        },
+        {
+          "useMarket": false,
+          "useXg": true,
+          "penalty": 100.0,
+          "selectionLogLoss": 0.6851164973546707
+        }
+      ],
       "selectedPenalty": 100.0,
-      "selectionLogLoss": 0.6851839619397604,
+      "selectionLogLoss": 0.6851164973546707,
       "old": {
         "n": 1062,
         "brier": 0.24818314920978723,
@@ -127,8 +259,8 @@
       },
       "new": {
         "n": 1062,
-        "brier": 0.24350648227000893,
-        "logLoss": 0.6800157796781582,
+        "brier": 0.24369433446154193,
+        "logLoss": 0.6803953038246601,
         "accuracy": 0.5612052730696798
       },
       "reference": {
@@ -142,16 +274,16 @@
         {
           "from": 0.4,
           "to": 0.6,
-          "n": 943,
-          "predicted": 0.546020021934149,
-          "observed": 0.5503711558854719
+          "n": 934,
+          "predicted": 0.5460291030746047,
+          "observed": 0.5460385438972163
         },
         {
           "from": 0.6,
           "to": 0.8,
-          "n": 119,
-          "predicted": 0.6180794927508004,
-          "observed": 0.6470588235294118
+          "n": 128,
+          "predicted": 0.6180098412868105,
+          "observed": 0.671875
         }
       ]
     }
@@ -159,7 +291,8 @@
   "limitations": [
     "Bağımsız test geçmiş maç simülasyonudur; canlı performans değildir.",
     "Geçmiş CSV oranlarının kayıt saati bilinmiyor; getiriler gerçekleşmiş kazanç olarak yorumlanamaz.",
-    "Sakatlık, ceza, kadro ve xG kaynağı bağlı değil.",
+    "Understat xG kapsamı beş büyük ligle sınırlıdır; diğer liglere xG uydurulmaz.",
+    "Oyuncu durumu ve kadro ek bilgi olarak kaydedilir; geçmiş maç öncesi arşivi olmadığından sayısal etkileri eğitilmedi.",
     "Dinlenme ve maç yoğunluğu yalnız kapsanan lig maçlarından hesaplanır."
   ],
   "gates": {
@@ -167,43 +300,43 @@
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.20746721026351692,
+      "brier": 0.20625779386480386,
       "referenceBrier": 0.20710067427282386,
       "calibrationGap": null,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
     },
     "E0|DRAW": {
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.1983039866423003,
+      "brier": 0.19700614137800485,
       "referenceBrier": 0.19759960120351377,
       "calibrationGap": null,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
     },
     "E0|AWAY": {
       "eligible": false,
       "n": 71,
-      "candidateN": 12,
-      "brier": 0.20264510113536888,
+      "candidateN": 10,
+      "brier": 0.2066227814222669,
       "referenceBrier": 0.18935666629822331,
-      "calibrationGap": 0.20794932078114706,
+      "calibrationGap": 0.2419329075869737,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "E1|HOME": {
       "eligible": false,
       "n": 85,
       "candidateN": 0,
-      "brier": 0.20473602351247705,
+      "brier": 0.20417094495220287,
       "referenceBrier": 0.20469947683021822,
       "calibrationGap": null,
-      "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
+      "reason": "Benzer aday kararlarda en az 30 sonuç yok"
     },
     "E1|DRAW": {
       "eligible": false,
       "n": 85,
       "candidateN": 0,
-      "brier": 0.22877046645980778,
+      "brier": 0.22868832429255578,
       "referenceBrier": 0.22427463969635958,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -211,17 +344,17 @@
     "E1|AWAY": {
       "eligible": false,
       "n": 85,
-      "candidateN": 1,
-      "brier": 0.20237044279035585,
+      "candidateN": 2,
+      "brier": 0.2023126367027969,
       "referenceBrier": 0.2004753777491208,
-      "calibrationGap": 0.4498607098024212,
-      "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
+      "calibrationGap": 0.05859469319262789,
+      "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
     },
     "D1|HOME": {
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.21703782815614517,
+      "brier": 0.21907008447913154,
       "referenceBrier": 0.21942055939026098,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -230,7 +363,7 @@
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.1839384019669027,
+      "brier": 0.18289115382270243,
       "referenceBrier": 0.1864526011319139,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -238,26 +371,26 @@
     "D1|AWAY": {
       "eligible": false,
       "n": 63,
-      "candidateN": 5,
-      "brier": 0.20495328831009557,
+      "candidateN": 6,
+      "brier": 0.20998432580548493,
       "referenceBrier": 0.20603661373808835,
-      "calibrationGap": 0.03751019302927496,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
+      "calibrationGap": 0.09783022192684211,
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "D2|HOME": {
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.2442664238510114,
+      "brier": 0.24555072254133237,
       "referenceBrier": 0.24465693827919,
       "calibrationGap": null,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
     },
     "D2|DRAW": {
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.18544517264219604,
+      "brier": 0.18580786433853763,
       "referenceBrier": 0.18378106556632084,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -266,16 +399,16 @@
       "eligible": false,
       "n": 63,
       "candidateN": 1,
-      "brier": 0.17854826787780007,
+      "brier": 0.1785330537672505,
       "referenceBrier": 0.1779404745146476,
-      "calibrationGap": 0.42466140344352843,
+      "calibrationGap": 0.4316235568016119,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "I1|HOME": {
       "eligible": false,
       "n": 80,
       "candidateN": 0,
-      "brier": 0.19744282503702287,
+      "brier": 0.1989412740081117,
       "referenceBrier": 0.1994736011854195,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -284,7 +417,7 @@
       "eligible": false,
       "n": 80,
       "candidateN": 0,
-      "brier": 0.18801494377815345,
+      "brier": 0.18808269719087942,
       "referenceBrier": 0.1879248393921465,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -292,17 +425,17 @@
     "I1|AWAY": {
       "eligible": false,
       "n": 80,
-      "candidateN": 16,
-      "brier": 0.2074975574241668,
+      "candidateN": 17,
+      "brier": 0.20750834627375583,
       "referenceBrier": 0.2104568304700969,
-      "calibrationGap": 0.0444317897552844,
-      "reason": "Benzer aday kararlarda en az 30 sonuç yok"
+      "calibrationGap": 0.09106929080095802,
+      "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "I2|HOME": {
       "eligible": false,
       "n": 61,
       "candidateN": 0,
-      "brier": 0.23065136803971575,
+      "brier": 0.22953938230911078,
       "referenceBrier": 0.22526623374540292,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -311,7 +444,7 @@
       "eligible": false,
       "n": 61,
       "candidateN": 0,
-      "brier": 0.20510468953669483,
+      "brier": 0.20530851322727905,
       "referenceBrier": 0.2070663185047178,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -320,7 +453,7 @@
       "eligible": false,
       "n": 61,
       "candidateN": 0,
-      "brier": 0.15843592394254366,
+      "brier": 0.15824716056127575,
       "referenceBrier": 0.15744239168118868,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -328,17 +461,17 @@
     "SP1|HOME": {
       "eligible": false,
       "n": 90,
-      "candidateN": 0,
-      "brier": 0.23899141098064142,
+      "candidateN": 1,
+      "brier": 0.24204799287543885,
       "referenceBrier": 0.23903747106272877,
-      "calibrationGap": null,
-      "reason": "Benzer aday kararlarda en az 30 sonuç yok"
+      "calibrationGap": 0.6192980093869873,
+      "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "SP1|DRAW": {
       "eligible": false,
       "n": 90,
       "candidateN": 0,
-      "brier": 0.17338565444016768,
+      "brier": 0.17338846154889534,
       "referenceBrier": 0.17366639172383827,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -346,17 +479,17 @@
     "SP1|AWAY": {
       "eligible": false,
       "n": 90,
-      "candidateN": 1,
-      "brier": 0.19269064527270588,
+      "candidateN": 2,
+      "brier": 0.1947712185978148,
       "referenceBrier": 0.18785392442782187,
-      "calibrationGap": 0.6713327746902986,
+      "calibrationGap": 0.14951916406006355,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "SP2|HOME": {
       "eligible": false,
       "n": 107,
       "candidateN": 0,
-      "brier": 0.21129781756786903,
+      "brier": 0.21236301365540475,
       "referenceBrier": 0.21474694396651592,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -365,7 +498,7 @@
       "eligible": false,
       "n": 107,
       "candidateN": 0,
-      "brier": 0.16812921867315686,
+      "brier": 0.16846148871795055,
       "referenceBrier": 0.16973915551789517,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -373,26 +506,26 @@
     "SP2|AWAY": {
       "eligible": false,
       "n": 107,
-      "candidateN": 4,
-      "brier": 0.1823689682442457,
+      "candidateN": 3,
+      "brier": 0.1824389301865004,
       "referenceBrier": 0.18567911419409283,
-      "calibrationGap": 0.12019751963995612,
-      "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek"
+      "calibrationGap": 0.011406388302117487,
+      "reason": "Benzer aday kararlarda en az 30 sonuç yok"
     },
     "F1|HOME": {
       "eligible": false,
       "n": 64,
-      "candidateN": 1,
-      "brier": 0.2350968842959919,
+      "candidateN": 6,
+      "brier": 0.23269939310132548,
       "referenceBrier": 0.23003564045718972,
-      "calibrationGap": 0.7022056985605438,
+      "calibrationGap": 0.43299088593172114,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "F1|DRAW": {
       "eligible": false,
       "n": 64,
       "candidateN": 0,
-      "brier": 0.23543017541498945,
+      "brier": 0.23576004716276888,
       "referenceBrier": 0.22214482462405086,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -400,17 +533,17 @@
     "F1|AWAY": {
       "eligible": false,
       "n": 64,
-      "candidateN": 4,
-      "brier": 0.18989375577189918,
+      "candidateN": 6,
+      "brier": 0.19313483422067979,
       "referenceBrier": 0.18383252904090466,
-      "calibrationGap": 0.6303674515146588,
+      "calibrationGap": 0.6219991341742107,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
     },
     "F2|HOME": {
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.2277232395681524,
+      "brier": 0.22814195717554184,
       "referenceBrier": 0.22587053744654662,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -419,7 +552,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.22532598520922315,
+      "brier": 0.22525709958487947,
       "referenceBrier": 0.22193044823822314,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -428,7 +561,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.19697957109983438,
+      "brier": 0.19846012684807682,
       "referenceBrier": 0.19181974354680412,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -437,7 +570,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.17659160244455882,
+      "brier": 0.17618857975574398,
       "referenceBrier": 0.18131928314994286,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -446,7 +579,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.206296319990676,
+      "brier": 0.20603515751192394,
       "referenceBrier": 0.2087230879717905,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -455,16 +588,16 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.15651123406212003,
+      "brier": 0.1582332553336633,
       "referenceBrier": 0.1580958757402493,
       "calibrationGap": null,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
     },
     "B1|HOME": {
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.2057868955511263,
+      "brier": 0.20720429242861968,
       "referenceBrier": 0.2078856237973205,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -473,7 +606,7 @@
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.18031323861437612,
+      "brier": 0.17987588576100497,
       "referenceBrier": 0.17862551151783473,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -482,7 +615,7 @@
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.20432165665280752,
+      "brier": 0.20543181547644296,
       "referenceBrier": 0.20731710108678653,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -491,7 +624,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.21114290984972037,
+      "brier": 0.20999562497884114,
       "referenceBrier": 0.209353891012538,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -500,7 +633,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.2229413877800993,
+      "brier": 0.22281289892386588,
       "referenceBrier": 0.22095365017027566,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -509,7 +642,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.18456796233754832,
+      "brier": 0.18367216364095404,
       "referenceBrier": 0.1792172950321194,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -518,7 +651,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.2537639968892148,
+      "brier": 0.2532379220590313,
       "referenceBrier": 0.25596344526768006,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -527,7 +660,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.19017620864080356,
+      "brier": 0.18963213801367673,
       "referenceBrier": 0.18952710294094027,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -536,7 +669,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.14191799301970687,
+      "brier": 0.14244198879875392,
       "referenceBrier": 0.141877493759193,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -545,7 +678,7 @@
       "eligible": false,
       "n": 42,
       "candidateN": 0,
-      "brier": 0.21465868373009858,
+      "brier": 0.21393912469716367,
       "referenceBrier": 0.21538740435610262,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -554,7 +687,7 @@
       "eligible": false,
       "n": 42,
       "candidateN": 0,
-      "brier": 0.1301063229171357,
+      "brier": 0.13022556216478848,
       "referenceBrier": 0.13158532069235407,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -563,7 +696,7 @@
       "eligible": false,
       "n": 42,
       "candidateN": 0,
-      "brier": 0.21234797335993824,
+      "brier": 0.21062241372611715,
       "referenceBrier": 0.20883051733355387,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -572,7 +705,7 @@
       "eligible": false,
       "n": 27,
       "candidateN": 0,
-      "brier": 0.21030905761720328,
+      "brier": 0.2111076691000998,
       "referenceBrier": 0.20784506630712002,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -581,7 +714,7 @@
       "eligible": false,
       "n": 27,
       "candidateN": 0,
-      "brier": 0.21093894234077007,
+      "brier": 0.2111910823038869,
       "referenceBrier": 0.2098069939025957,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -590,7 +723,7 @@
       "eligible": false,
       "n": 27,
       "candidateN": 0,
-      "brier": 0.15726331383688688,
+      "brier": 0.15667749980171827,
       "referenceBrier": 0.16231290454107553,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -887,25 +1020,25 @@
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.244304562839275,
+      "brier": 0.245714136328024,
       "referenceBrier": 0.2455801455536427,
       "calibrationGap": null,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
     },
     "E0|BTTS_NO": {
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.244304562839275,
+      "brier": 0.245714136328024,
       "referenceBrier": 0.2455801455536427,
       "calibrationGap": null,
-      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
+      "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
     },
     "E1|BTTS_YES": {
       "eligible": false,
       "n": 85,
       "candidateN": 0,
-      "brier": 0.23990449138788458,
+      "brier": 0.23996535860449417,
       "referenceBrier": 0.24121937875498792,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -914,7 +1047,7 @@
       "eligible": false,
       "n": 85,
       "candidateN": 0,
-      "brier": 0.23990449138788458,
+      "brier": 0.23996535860449417,
       "referenceBrier": 0.24121937875498792,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -923,7 +1056,7 @@
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.21843828596856035,
+      "brier": 0.2172545108810719,
       "referenceBrier": 0.23286892782836027,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -932,7 +1065,7 @@
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.21843828596856033,
+      "brier": 0.2172545108810719,
       "referenceBrier": 0.23286892782836027,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -941,7 +1074,7 @@
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.24418315741976437,
+      "brier": 0.24412641673955437,
       "referenceBrier": 0.24603532178518464,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -950,7 +1083,7 @@
       "eligible": false,
       "n": 63,
       "candidateN": 0,
-      "brier": 0.24418315741976437,
+      "brier": 0.24412641673955435,
       "referenceBrier": 0.24603532178518464,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -959,7 +1092,7 @@
       "eligible": false,
       "n": 80,
       "candidateN": 0,
-      "brier": 0.2504863260985375,
+      "brier": 0.2508698234990322,
       "referenceBrier": 0.2589623267609758,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -968,7 +1101,7 @@
       "eligible": false,
       "n": 80,
       "candidateN": 0,
-      "brier": 0.2504863260985375,
+      "brier": 0.2508698234990322,
       "referenceBrier": 0.2589623267609758,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -977,7 +1110,7 @@
       "eligible": false,
       "n": 61,
       "candidateN": 0,
-      "brier": 0.2489932578808808,
+      "brier": 0.2492048063326358,
       "referenceBrier": 0.25203966835863956,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -986,7 +1119,7 @@
       "eligible": false,
       "n": 61,
       "candidateN": 0,
-      "brier": 0.2489932578808808,
+      "brier": 0.2492048063326358,
       "referenceBrier": 0.25203966835863956,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -995,7 +1128,7 @@
       "eligible": false,
       "n": 90,
       "candidateN": 0,
-      "brier": 0.24127233866607026,
+      "brier": 0.2415816696621205,
       "referenceBrier": 0.24639440525673437,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -1004,7 +1137,7 @@
       "eligible": false,
       "n": 90,
       "candidateN": 0,
-      "brier": 0.24127233866607026,
+      "brier": 0.2415816696621205,
       "referenceBrier": 0.24639440525673437,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -1013,7 +1146,7 @@
       "eligible": false,
       "n": 107,
       "candidateN": 0,
-      "brier": 0.2363905694200337,
+      "brier": 0.23693852685969038,
       "referenceBrier": 0.24331702634635005,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -1022,7 +1155,7 @@
       "eligible": false,
       "n": 107,
       "candidateN": 0,
-      "brier": 0.2363905694200337,
+      "brier": 0.23693852685969038,
       "referenceBrier": 0.24331702634635005,
       "calibrationGap": null,
       "reason": "Benzer aday kararlarda en az 30 sonuç yok"
@@ -1031,7 +1164,7 @@
       "eligible": false,
       "n": 64,
       "candidateN": 0,
-      "brier": 0.25038767530788136,
+      "brier": 0.2501501758096303,
       "referenceBrier": 0.24317387537127252,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1040,7 +1173,7 @@
       "eligible": false,
       "n": 64,
       "candidateN": 0,
-      "brier": 0.2503876753078813,
+      "brier": 0.2501501758096303,
       "referenceBrier": 0.24317387537127252,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1049,7 +1182,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.2539435132724341,
+      "brier": 0.25385837369048886,
       "referenceBrier": 0.24304295952227,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1058,7 +1191,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.2539435132724341,
+      "brier": 0.25385837369048886,
       "referenceBrier": 0.24304295952227,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1067,7 +1200,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.2399206226474456,
+      "brier": 0.24070439089967727,
       "referenceBrier": 0.245835830967657,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1076,7 +1209,7 @@
       "eligible": false,
       "n": 54,
       "candidateN": 0,
-      "brier": 0.2399206226474456,
+      "brier": 0.24070439089967727,
       "referenceBrier": 0.245835830967657,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1085,7 +1218,7 @@
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.25066009244459014,
+      "brier": 0.2507707226869573,
       "referenceBrier": 0.2487663791744363,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1094,7 +1227,7 @@
       "eligible": false,
       "n": 71,
       "candidateN": 0,
-      "brier": 0.25066009244459014,
+      "brier": 0.2507707226869573,
       "referenceBrier": 0.2487663791744363,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1103,7 +1236,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.25125499662631234,
+      "brier": 0.2512591782537934,
       "referenceBrier": 0.2485212842805291,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1112,7 +1245,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.25125499662631234,
+      "brier": 0.2512591782537934,
       "referenceBrier": 0.2485212842805291,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
@@ -1121,7 +1254,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.24563803996444716,
+      "brier": 0.24593374852070957,
       "referenceBrier": 0.24736116844936837,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1130,7 +1263,7 @@
       "eligible": false,
       "n": 65,
       "candidateN": 0,
-      "brier": 0.24563803996444716,
+      "brier": 0.24593374852070957,
       "referenceBrier": 0.24736116844936837,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1139,7 +1272,7 @@
       "eligible": false,
       "n": 42,
       "candidateN": 0,
-      "brier": 0.23877807781000832,
+      "brier": 0.23839756333004222,
       "referenceBrier": 0.24423990442743587,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1148,7 +1281,7 @@
       "eligible": false,
       "n": 42,
       "candidateN": 0,
-      "brier": 0.23877807781000832,
+      "brier": 0.23839756333004222,
       "referenceBrier": 0.24423990442743587,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1157,7 +1290,7 @@
       "eligible": false,
       "n": 27,
       "candidateN": 0,
-      "brier": 0.24697642636504186,
+      "brier": 0.2472894124789464,
       "referenceBrier": 0.2556108810265114,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
@@ -1166,11 +1299,11 @@
       "eligible": false,
       "n": 27,
       "candidateN": 0,
-      "brier": 0.24697642636504183,
+      "brier": 0.2472894124789464,
       "referenceBrier": 0.2556108810265114,
       "calibrationGap": null,
       "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
     }
   },
-  "modelId": "238cef2c5b5075dc"
+  "modelId": "fd8989c85bd0aee9"
 }
