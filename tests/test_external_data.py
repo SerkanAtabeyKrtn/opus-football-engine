@@ -115,5 +115,8 @@ class ExternalDataTests(unittest.TestCase):
         self.assertEqual(calls[:4],['fpl','events_B1','events_E0','lineup_E0'])
         self.assertEqual(calls[4:],['roster_E0_E0h','roster_E0_E0a','roster_B1_B1h','roster_B1_B1a'])
         self.assertEqual(ext.canonical('Spurs'),ext.canonical('Tottenham Hotspur'))
+        for a,b in [('Buyuksehyr','Istanbul Basaksehir'),('Goztep','Goztepe'),('Sociedad B','Real Sociedad II')]:
+            self.assertEqual(ext.event_name(a),ext.event_name(b))
+        self.assertNotEqual(ext.event_name('Real Sociedad II'),ext.event_name('Real Sociedad'))
 
 if __name__=='__main__':unittest.main()
