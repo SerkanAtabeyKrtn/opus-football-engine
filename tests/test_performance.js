@@ -59,11 +59,13 @@ test('Empty and losing samples never imply a successful prediction',()=>{
   assert.equal(P.wilsonLower(0,2),0);
 });
 test('New model candidates and legacy outcomes remain separate',()=>{
-  const original=[record('old'),record('new',{modelVersion:'1.5',tier:'ADAY',won:false})];
+  const original=[record('old'),record('new',{modelVersion:'1.5',tier:'ADAY',won:false}),record('xg',{modelVersion:'1.6',tier:'ADAY',won:true})];
   const before=JSON.stringify(original),rows=P.collect(original,NOW).records;
   assert.equal(P.summary(P.filter(rows,{version:'1.5'},NOW)).hitRate,0);
   assert.equal(P.summary(P.filter(rows,{version:'legacy'},NOW)).hitRate,1);
   assert.equal(P.filter(rows,{version:'1.5',tier:'ADAY'},NOW).length,1);
+  assert.equal(P.filter(rows,{version:'1.6',tier:'ADAY'},NOW).length,1);
+  assert.equal(P.filter(rows,{version:'legacy'},NOW).length,1);
   assert.equal(JSON.stringify(original),before);
 });
 console.log(`${passed} performance tests passed`);

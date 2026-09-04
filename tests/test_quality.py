@@ -48,6 +48,10 @@ class QualityTests(unittest.TestCase):
 
     def test_changing_holdout_labels_cannot_change_fitted_parameters(self):
         rows=training_rows()
+        for i,r in enumerate(rows):
+            r['context']={'availability':{'xg':True},
+                'home':{'xg':{'matches':8,'for':1+(i%7)/7,'against':.9}},
+                'away':{'xg':{'matches':8,'for':.8,'against':1+(i%5)/5}}}
         with patch.object(quality,'replay',return_value=rows):
             first=quality.build({})
         changed=copy.deepcopy(rows)
