@@ -90,7 +90,7 @@ def audit_and_settle(records, histories, now, fixtures=()):
         rec['forwardTestEligible'] = valid
         rec['auditReason'] = reason
         rec['auditedKickoffAt'] = iso(start) if start else None
-        if rec.get('status') == 'PENDING' and key in results:
+        if rec.get('status') == 'PENDING' and key in results and (not start or start <= now):
             hg, ag = results[key]
             rec.update(hg=hg, ag=ag, won=bool(outcome(rec['market'], hg, ag)), status='SETTLED', settledAt=iso(now))
         if rec.get('status') == 'SETTLED':
@@ -117,8 +117,11 @@ def register_prediction(records, prediction, now):
     record.update(id=prediction['id'], createdAt=iso(now), kickoffAt=iso(start),
                   market=d['market'], tier=d['tier'], p=d['p'], marketP=d['marketP'],
                   edge=d['edge'], status='PENDING', hg=None, ag=None, won=None,
-                  modelVersion='1.3', forwardTestEligible=True, auditReason='Maç öncesi kaydedildi',
+                  modelVersion=prediction.get('modelVersion','1.3'), forwardTestEligible=True, auditReason='Maç öncesi kaydedildi',
                   displayStatus='SCHEDULED')
+    if prediction.get('modelId'):
+        record.update(modelId=prediction['modelId'],referenceOdds=d.get('referenceOdds'),
+                      expectedValue=d.get('expectedValue'),minimumOdds=d.get('minimumOdds'))
     records.append(record)
     return record
 

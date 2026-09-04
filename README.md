@@ -1,66 +1,49 @@
-# OPUS V1.4
+# OPUS V1.5
 
-Bu sürüm veri kontrolünü, geçmiş maç filtresini ve test defterinin zaman denetimini düzeltir. Poisson modeli, olasılık eşikleri ve pazar sıralama formülü korunur.
+Maç öncesi futbol olasılıkları, değişmez tahmin kaydı ve ölçülen model kalitesi.
+Canlı site: https://serkanatabeykrtn.github.io/opus-football-engine/
 
-## Güncellemeler
+## Yeni model
 
-- Veri kontrolü yaklaşık iki saatte bir; GitHub kuyruk gecikmeleri mümkündür.
-- Son veri kontrolü, verinin yaşı ve kaynağın fikstür aralığı ayrı gösterilir.
-- Başlamış, sonucu mevcut veya saati doğrulanamayan maçlara yeni tahmin yazılmaz.
-- İlk kayıt kilitlidir; güncel hesaplama ve testteki karar ayrı gösterilir.
-- Maç sonrası oluşturulan kayıtlar silinmeden TEST DIŞI işaretlenir ve başarı özetinden çıkarılır.
-- Fikstürden düşen kayıtlar sezon sonuçlarından kapatılır. Sonuç gecikmesi açıkça gösterilir.
-- Yedi pazar için olasılık, piyasa farkı ve seçilme/elenme gerekçesi gösterilir.
-- Bozuk sonuç CSV'si son iyi önbelleği bozmaz. Bozuk defter güncellemeyi durdurur.
+Gol geçmişi, ev/deplasman etkisi ve son sekiz maçın formuna; lig maçları arasındaki dinlenme, son 14 gündeki maç yoğunluğu ve mevcut geçmiş isabetli şut verisi eklenir. Sonuç olasılıkları düzenlileştirilmiş lojistik/çok sınıflı kalibrasyonla ayarlanır. Sonuç ve 2,5 gol gruplarında piyasa olasılıkları da girdi olarak kullanılır; karşılıklı golde piyasa oranı bulunmadığında model tabanlı kalibrasyon kullanılır.
 
-## Kaynak ve model sınırları
+- İlk eğitim: 1 Ocak 2026 öncesi, 6.797 uygun maç.
+- Yöntem seçimi: Ocak–Mart 2026, 1.728 uygun maç; iki sabit düzenlileştirme seçeneği (30/100), piyasalı/piyasasız modeller aynı maçlarda karşılaştırılır.
+- Katsayılar ilk iki dönemle yeniden kurulur. Son kontrol: Nisan–Haziran 2026, ayrı 1.062 maç.
+- Son kontrol etiketleri katsayı eğitimine ve yöntem seçimine girmez. Bu dönemde lig/pazar aday izinleri denetlenir; buradaki sonuçlar yeni canlı test başarısı sayılmaz.
+- Yeni sezon sonuçları takım formunu günceller; kalibrasyonu sessizce yeniden eğitmez. Yeni kalibrasyon için yeni, açık bir model sürümü ve zaman planı gerekir.
 
-Football-Data CSV'si canlı skor servisi değildir. Fikstür ve oranlar genel olarak salı ve cuma yayımlanır. Yeni veri yayımlanmadığında daha sık kontrol yapmak yeni maç veya sonuç getirmez. updatedAt kontrolün tamamlandığı zamandır; her kaynak kaydının o anda değiştiği anlamına gelmez.
+`Model Kontrolü` ekranı aynı maçlardaki eski/yeni/referans sonuçlarını, olasılık gruplarının gerçekleşme oranlarını ve her lig/pazarın aday durumunu gösterir. Yeni model eski motora göre üç grupta da daha düşük olasılık hatası verdi; maç sonucu ve 2,5 gol gruplarında piyasa referansını genel olarak geçemedi. Kalıcı üstünlük veya kazanç kanıtlanmış değildir.
 
-Model 2,5 Alt/Üst, KG Yok/Var ve Ev/Beraberlik/Deplasman olasılıklarını hesaplar. Mevcut kaynakta KG oranları yoktur; bu yüzden KG için DENGELİ/AGRESİF piyasa farkı kriteri karşılanamaz. Önceki GÜVENLİ kuralı yüksek model olasılığıyla piyasa oranı olmadan çalışabilir; ekran bunu açıklar. İsteğe bağlı oddsBTTSYes ve oddsBTTSNo alanları eklendi; yeni veri sağlayıcısı bağlanmadı.
+## Karar ve gerçek takip
 
-Korner, kart, ilk yarı ve diğer gol çizgileri uygulanmamıştır. Lig–pazar matrisi rapordur; ana kararın sıralama ağırlığı değildir.
+Yeni sürümde GÜVENLİ/DENGELİ/AGRESİF yerine ADAY veya PAS kullanılır. Eski etiketler eski kayıtlarda aynen saklanır.
 
-Kaynak maç saatleri Europe/London kabulüyle yaz/kış saatine göre UTC'ye çevrilir; sağlayıcı değiştiğinde bu kabul yeniden doğrulanmalıdır. Belirsiz veya eksik saatler tahmine alınmaz. Ekran Türkiye saatini gösterir. Yeni kayıtlarda createdAt, kickoffAt ve modelVersion saklanır. Eski kayıtların zamanı sezon/fikstür kayıtlarından denetlenir. Sağlayıcının takım adını veya maç tarihini değiştirmesini mevcut kimlik yapısı otomatik çözmez.
+ADAY için lig/pazar bağımsız testinde en az 80 maç ve olasılık ≥%55, referans oran üzerinden beklenen değer ≥%5 koşullarına benzeyen en az 30 karar aranır. Test olasılık hatası referanstan kötü olmamalı ve bu adayların ortalama olasılık–gerçekleşme farkı 8 puanı aşmamalıdır. Güncel maçın ağırlıklı takım örneklemleri en az sekiz olmalıdır. Eksik fiyat veya başarısız kaynak kontrolü aktif adayı engeller. Bunlar deneysel tarama kurallarıdır; çok sayıda lig/pazar karşılaştırması ve küçük örneklem nedeniyle kalıcı avantaj kanıtı değildir.
 
-## Paketi uygulama
+Görünen oranlar kaynağın referans fiyatlarıdır; bahis sitesinde halen mevcut oldukları doğrulanmış değildir. Beklenen değer `p × oran − 1` ile hesaplanır. Kalibre model olasılığı da hatalı olabilir. Hiçbir stake veya para işlemi otomatik yapılmaz.
 
-1. GitHub Desktop ile projenin son sürümünü alın ve kendi değişikliklerinizi saklayın.
-2. Paket dosyalarını klasör yapısını koruyarak proje üzerine kopyalayın. Paket data/ ve raw/ içermez; mevcut defteri değiştirmeyin.
-3. Aşağıdaki testleri çalıştırıp kaynak değişikliklerini GitHub'a gönderin.
-4. OPUS automatic data update kaynak değişikliklerinde otomatik başlar. Gerekirse Actions üzerinden Run workflow kullanılabilir.
-5. Veri işlemi ve mevcut Pages yayını tamamlandıktan sonra V1.3 başlığını, son veri kontrolünü ve TEST DIŞI kayıtları doğrulayın. Yeni fikstür yoksa boş aktif liste beklenen davranıştır.
+`data/ledger.json` ilk seçilmiş kararı korur. `data/forecast-ledger.json`, PAS dahil her modellenebilen maçın yedi olasılığını sürüm başına maç başlamadan bir kez kaydeder. Sonradan model, oran veya karar değişse bile ilk kayıt değişmez. Sonuçlar fikstürden bağımsız işlenir. Başarı Analizi yeni modeli varsayılan olarak gösterir; Önceki motor filtresi eski sonuçları açar.
 
-## Yerel kullanım ve test
+## Veri kapsamı
 
-Python 3.12 önerilir. Windows saat dilimi verisi için tzdata gerekebilir; başlatma dosyaları eksikse kurar. GitHub iş akışı da bağımlılığı kurar.
+Football-Data CSV kaynağı kullanılır. Sakatlık, ceza, kadro ve gerçek xG kaynağı henüz bağlı değildir. Eksiklikler ekranda belirtilir. İsabetli şut xG olarak sunulmaz; dinlenme/yoğunluk yalnız mevcut lig maçlarını kapsar, kupa ve milli maçları kapsamaz. KG piyasa oranı kaynakta yoktur. Kart, korner ve ilk yarı pazarları hesaplanmaz.
+
+Kaynak: https://www.football-data.co.uk/matches.php
+Kalibrasyon yöntemi açıklaması: https://scikit-learn.org/stable/modules/calibration.html
+
+## Güncelleme ve çalıştırma
+
+GitHub görevi yaklaşık iki saatte bir çalışır. Kaynağın fikstür yayımlama zamanı ayrıca beklenir. Yeni tahmin yalnız henüz başlamamış maçlara üretilir; tarihi veya saati doğrulanamayan maçlar alınmaz. İlk yeni model kurulumu birkaç dakika sürebilir; değişmeyen eğitim verisinde kaydedilmiş model yeniden kullanılır.
+
+Python 3.12 ve Node.js ile:
 
 ```text
 python -m pip install -r requirements.txt
-python tests/test_engine.py
-python tests/test_ledger.py
-python tests/test_update.py
-python -m unittest discover -s tests -p "test_lifecycle.py" -v
+python -m unittest discover -s tests -p "test_*.py" -v
+node tests/test_performance.js
+python app/update.py
+python app/server.py
 ```
 
-START_OPUS.bat yerel veri işlemini ve arayüzü açar. GitHub Pages üzerinde yerel güncelleme düğmesi gizlidir. Ekran beş dakikada bir veriyi yeniden okur, otuz saniyede bir başlamış maçları eler.
-
-Bu düzeltmeler modelin tahmin başarısını veya kârlılığını doğrulamaz.
-
-## V1.4 — Başarı Analizi
-
-Üstteki Başarı Analizi sekmesi veya #basari adresi açılır. Lig sıralaması mevcut tahmin ekranındaki varsayılan sekiz lige bağlı değildir; tüm liglerdeki geçerli sonuçları kapsar.
-
-- En başarılı 5 lig; doğru/toplam, yanlış ve başarı yüzdesi.
-- Lige tıklayınca o ligin en başarılı 5 takımı ve tüm maçları.
-- Takıma tıklayınca takımın maçları, kilitli tahmin, model olasılığı, gerçek skor ve sonuç.
-- Dönem (tümü/30/90 gün), karar türü, pazar ve en az maç sayısı filtreleri.
-- Yalnız doğru / yalnız yanlış seçimi sadece maç listesini filtreler; başarı oranının paydasını değiştirmez.
-- Bir maç lig toplamında bir kez; her iki takımın katılım kaydında birer kez sayılır. Takım satırı takımın galibiyetini değil motorun o maçlardaki tahmin isabetini ölçer.
-- Bekleyen, geç kaydedilen, zamanı doğrulanmayan, yinelenen ve PAS kayıtları başarıya katılmaz.
-
-Varsayılan sıralama, başarı ve maç sayısını birlikte dikkate almak için %95 iki taraflı Wilson aralığının alt sınırını kullanır. Bu puan ekrandaki gerçekleşen başarı yüzdesinden farklıdır. Başarı yüzdesi seçeneğiyle doğrudan isabet oranına göre de sıralanabilir. 20'den az maç Az veri etiketlidir; 20 maçın aşılması da kesin başarı iddiası değildir. Sıralama karar motorunun kurallarını değiştirmez.
-
-Yöntem: https://www.itl.nist.gov/div898/handbook/prc/section2/prc241.htm
-Yeni hesaplama testleri: node tests/test_performance.js
-Bu test için Node.js gerekir; GitHub Ubuntu çalıştırıcısında mevcuttur. Arayüzün kullanımı için Node.js kurulması gerekmez.
+Windows: START_OPUS.bat veya UPDATE_ONLY.bat. GitHub Pages üzerinde yerel veri güncelleme düğmesi gizlenir. Ekran beş dakikada bir veriyi yeniden okur; başlamış maçlar otuz saniyede bir listeden çıkarılır. Veri bağlantısı yapılandırılacaksa anahtarlar tarayıcıya veya açık depoya konulmamalıdır.

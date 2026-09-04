@@ -62,7 +62,7 @@ class LifecycleTests(unittest.TestCase):
         rec=register_prediction([],prediction(),NOW)
         rec['createdAt']='2026-09-05T12:00:00Z'
         history={'E1':[dict(fixture(),FTHG='1',FTAG='0')]}
-        audit_and_settle([rec],history,NOW)
+        audit_and_settle([rec],history,datetime(2026,9,6,tzinfo=timezone.utc))
         self.assertFalse(rec['forwardTestEligible'])
         self.assertEqual(rec['status'],'SETTLED')
         self.assertTrue(rec['won'])
@@ -71,11 +71,12 @@ class LifecycleTests(unittest.TestCase):
     def test_valid_prediction_settles_even_without_fixture_feed(self):
         rec=register_prediction([],prediction(),NOW)
         history={'E1':[dict(fixture(),Date='2026-09-04',FTHG='0',FTAG='0')]}
-        audit_and_settle([rec],history,NOW,[])
+        later=datetime(2026,9,5,tzinfo=timezone.utc)
+        audit_and_settle([rec],history,later,[])
         self.assertTrue(rec['forwardTestEligible'])
         self.assertEqual(rec['status'],'SETTLED')
         settled=copy.deepcopy(rec)
-        audit_and_settle([rec],history,NOW,[])
+        audit_and_settle([rec],history,later,[])
         self.assertEqual(rec,settled)
 
     def test_missing_result_has_explicit_awaiting_status(self):
@@ -84,6 +85,12 @@ class LifecycleTests(unittest.TestCase):
         audit_and_settle([rec],{},later)
         self.assertEqual(rec['status'],'PENDING')
         self.assertEqual(rec['displayStatus'],'AWAITING_RESULT')
+
+    def test_result_cannot_settle_before_known_kickoff(self):
+        rec=register_prediction([],prediction(),NOW)
+        history={'E1':[dict(fixture(),FTHG='0',FTAG='0')]}
+        audit_and_settle([rec],history,NOW)
+        self.assertEqual(rec['status'],'PENDING')
 
     def test_unverifiable_legacy_timing_is_excluded(self):
         rec=dict(prediction(),createdAt='2026-09-04T10:00:00Z',status='PENDING')
@@ -125,6 +132,7 @@ class LifecycleTests(unittest.TestCase):
              patch.object(update,'SEASONS',['2627']), \
              patch.object(update,'fetch_cached',return_value=([dict(past,FTHG='1',FTAG='0')],False)), \
              patch.object(update,'fetch_fixtures',return_value=([past],False,'test',[])), \
+             patch.object(update,'ensure_model',return_value={'report':{}}), \
              patch.object(update,'predict') as predictor:
             Path(tmp,'ledger.json').write_text(json.dumps({'predictions':[old]}),encoding='utf-8')
             update.main()
