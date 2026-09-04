@@ -7,7 +7,7 @@ function renderPerformance(data){
   const marketNames={U25:'2,5 Alt',O25:'2,5 Üst',BTTS_NO:'KG Yok',BTTS_YES:'KG Var',HOME:'Ev kazanır',DRAW:'Beraberlik',AWAY:'Deplasman kazanır'};
   if(!performanceInitialized){
     for(const [key,name] of Object.entries(marketNames))byId('perf-market').add(new Option(name,key));
-    for(const id of ['perf-period','perf-tier','perf-market','perf-min','perf-sort','perf-league','perf-team','perf-result']){
+    for(const id of ['perf-version','perf-period','perf-tier','perf-market','perf-min','perf-sort','perf-league','perf-team','perf-result']){
       byId(id).onchange=()=>{
         if(id!=='perf-team'&&id!=='perf-result')byId('perf-team').value='';
         performanceLimit=50;renderPerformance(performanceData);
@@ -18,14 +18,14 @@ function renderPerformance(data){
   }
   byId('perf-updated').textContent='Veri kontrolü: '+new Date(data.updatedAt).toLocaleString('tr-TR',{timeZone:'Europe/Istanbul'})+' (Türkiye)';
   const now=Date.now(),audit=api.collect(data.ledger,now);
-  const filters={days:Number(byId('perf-period').value),tier:byId('perf-tier').value,market:byId('perf-market').value};
+  const filters={version:byId('perf-version').value,days:Number(byId('perf-period').value),tier:byId('perf-tier').value,market:byId('perf-market').value};
   const base=api.filter(audit.records,filters,now),overview=api.summary(base);
   const rankOptions={min:Number(byId('perf-min').value),sort:byId('perf-sort').value,limit:5};
   byId('perf-total').textContent=overview.n;byId('perf-wins').textContent=overview.wins;
   byId('perf-losses').textContent=overview.losses;byId('perf-rate').textContent=percent(overview.hitRate);
-  byId('perf-data-note').textContent=`${audit.records.length} doğrulanmış ve sonuçlanmış kayıt · ${audit.pending} sonuç bekliyor · ${audit.excluded} hesap dışı`+
+  byId('perf-data-note').textContent=`Seçili filtrelerde ${base.length} sonuçlanan aday. Tüm sürümlerde ${audit.records.length} doğrulanmış ve sonuçlanmış kayıt · ${audit.pending} sonuç bekliyor · ${audit.excluded} hesap dışı`+
     (audit.duplicates?` · ${audit.duplicates} yinelenen kayıt sayılmadı`:'')+
-    '. Başarı, ilk kaydedilen tahminin gerçek sonuçla karşılaştırılmasıdır.';
+    '. Başarı, ilk kaydedilen tahminin gerçek sonuçla karşılaştırılmasıdır. Yeni sürümün başarısı eski modelden ayrı izlenir.';
   byId('perf-ranking-note').textContent=rankOptions.sort==='confidence'?
     'Sıralama başarıyı ve maç sayısını birlikte dikkate alır. Örneğin 1/1 yapan lig, 18/20 yapan ligin önüne geçmez. Yüzde sütunu gerçekleşen isabet oranıdır.':
     'Sıralama doğrudan gerçekleşen başarı yüzdesine göredir; eşitlikte daha çok maç öne çıkar. Az maçla oluşan yüksek yüzdeler kalıcı başarı göstermez.';

@@ -1,23 +1,31 @@
-# V1.3 doğrulama — 4 Eylül 2026
+# OPUS V1.5 — model ve doğrulama raporu
 
-İncelenen üretim sürümü: d929e5cc7275ae4d50942c7459bd33cc161a5db9.
-Veri anı: 2026-09-04 05:27:22 UTC.
+4 Eylül 2026. Baz sürüm: V1.4, ana kaynak birleştirmesi fe7d89c; üretim veri anı 07:27:45 UTC.
 
-- Mevcut motor ve fikstür şema testleri geçti.
-- On bir yeni test; saat dilimi, geçmiş/sonuçlanmış maç engeli, kayıt değişmezliği, geç kayıtların denetimi, sonuç eşleştirme, sonuç bekleme, eksik zaman, yedi pazar, KG oranları, bozuk CSV ve defter koruması ile ana güncelleme akışını kapsıyor.
-- JavaScript sözdizimi kontrolü geçti.
-- Üretim CSV'leri ve defteri ağdan yeniden çekilmeden değerlendirildi: 52 kayıt korundu, 43 geç kayıt test dışında, 9 kayıt maç öncesi. Desteklenen 23 fikstürün tamamı geçmiş olduğundan aktif tahmin sıfır. Bu yerel kontrol için değişmeyen geçmiş performans matrisleri yeniden kullanıldı.
-- Tarayıcıda boş aktif liste, Türkiye saati ve TEST DIŞI etiketleri doğrulandı. Ayrı, açıkça etiketlenmiş sınama maçıyla yedi pazarın gerekçeleri ve eksik KG oranı gösterimi kontrol edildi.
+## Zaman sıralı karşılaştırma
 
-Canlı site değiştirilmedi. Yeni zamanlamanın canlı çalışması, değişiklikler gönderilip iş akışı tamamlandığında doğrulanmalıdır. Üretilmiş önizleme verisi ve sınama fikstürleri pakete dahil edilmedi.
+6.797 eğitim, 1.728 yöntem seçimi, 1.062 bağımsız değerlendirme maçı. Bağımsız dönem Nisan–Haziran 2026'dır. Her maçın özellikleri yalnız daha önceki tarihlerden hesaplandı. Katsayılar bağımsız test dönemiyle eğitilmedi. Aynı değerlendirme maçlarında:
 
+| Grup | Eski isabet | Yeni isabet | Referans isabet | Eski Brier | Yeni Brier | Referans Brier |
+|---|---:|---:|---:|---:|---:|---:|
+| Maç sonucu | %48,5 | %50,9 | %52,2 | 0,2047 | 0,2002 | 0,1993 |
+| 2,5 gol | %53,6 | %58,4 | %59,4 | 0,2478 | 0,2413 | 0,2397 |
+| Karşılıklı gol | %53,0 | %56,1 | %57,0 | 0,2482 | 0,2435 | 0,2462 |
 
-## V1.4 başarı ekranı doğrulaması
+İlk iki referans piyasa olasılığıdır; KG referansı eğitim dönemi sonuç sıklığıdır. İsabet, her grupta en olası sonucu seçme isabetidir, yalnız ADAY kararlarının sonucu değildir. Brier burada sınıflar üzerinden ortalama kare olasılık hatasıdır. Gruplar farklı sınıf sayılarına sahip olduğundan farklı grupların Brier değerleri doğrudan birbirine üstünlük ölçüsü olarak kullanılmaz.
 
-- Yedi yeni başarı analizi testi geçti: geçerli kayıt süzme, aynı maçın yinelenmesi, lig/takım sayımı, birleşik filtreler, küçük örneklemin sıralanması, ilk beş sınırı ve boş/kayıp örneklem.
-- On bir önceki yaşam döngüsü testi tekrar geçti. Yeni arayüz dosyaları ve dashboard.js sözdizimi kontrolünden geçti.
-- Gerçek denetlenmiş veride 9 maç / 6 doğru / 3 yanlış; toplam %66,7.
-- Başarı + maç sayısı sırası: Scotland Premiership 3/4; Championship 1/1; Ligue 1 1/1; Portugal 1 1/2; La Liga 2 0/1. Bu kayıtların tamamı az örneklemlidir.
-- Tarayıcıda lig → takım → maç geçişi doğrulandı. Aberdeen seçimi Celtic–Aberdeen maçını ve 1/1 sonucu gösterdi. Yalnız yanlış filtresi boş liste gösterirken 1/1 özetini değiştirmedi.
-- DENGELİ filtresinde 5 maç / 3 doğru / %60 ve 4 lig gösterildi. En az 20 maç filtresi boş sıralama durumunu doğru gösterdi. Sayfa görünümü kontrol edildi.
-- Canlı siteye gönderim yapılmadı. HTML önizleme 4 Eylül 2026 veri anını içerir; canlı veri çekmez. ZIP kaynak değişikliklerini içerir, data/ veya raw/ içermez.
+Gelişmeler bu örneklemde gözlenmiştir; istatistiksel olarak kalıcı üstünlük ya da kazanç kanıtı değildir. Piyasa ölçütü sonuç ve 2,5 golde genel olarak hâlâ daha iyi. 112 lig/pazar birleşiminin yalnız biri mevcut aday kontrolünü geçti (La Liga 2 / 2,5 Üst; 107 maç, 31 benzer karar). Küçük fark ve çoklu karşılaştırma nedeniyle bu da yalnız izleme adayıdır.
+
+## Doğrulama
+
+- 22 Python yaşam döngüsü/model testi; ayrıca mevcut motor ve defter kontrolleri geçti. Tarih sızıntısı, ayrılmış test etiketlerinin katsayılara etkisizliği, yeni sezonun sabit modeli sessizce değiştirmemesi, eksik oran ve eksik kanıtta PAS, fiyat üzerinden beklenen değer, önceki kayıtların değişmezliği, PAS olasılıklarının saklanması ve sonuç işleme kontrol edildi.
+- Sekiz JavaScript performans testi geçti; yeni ADAY sürümü eski modelden ayrı sayılıyor.
+- JavaScript sözdizimi kontrolleri geçti.
+- Mevcut üretim CSV anlık görüntüsüyle tam yerel güncelleme akışı geçti; 52 kaydın bütün mevcut alanları korundu. Eski 9 geçerli sonuç ve 43 test dışı kayıt kaybolmadı.
+- Tarayıcıda Model Kontrolü, olasılık grubu seçimi, yeni sürümün boş başlangıcı ve Önceki motor filtresindeki 6/9 sonucu doğrulandı. Hata günlüğünde uygulama hatası görülmedi.
+
+## Açık kapsam
+
+Sakatlık, ceza, kadro ve gerçek xG entegrasyonu için veri hesabı/erişimi henüz sağlanmadı; bu alanların kullanıldığı iddia edilmiyor. Geçmiş oranların kayıt saati bilinmiyor. Maç dinlenme/yoğunluk verisi yalnız kapsanan ligleri içerir. Gerçek para ile performans doğrulanmış değildir. Yeni sürümün canlı sonuçları ayrıca birikmelidir.
+
+Canlı yayın, kaynak dosyalarının karşılaştırılması ve GitHub güncelleme görevinin başarılı tamamlanmasıyla ayrıca doğrulanır.

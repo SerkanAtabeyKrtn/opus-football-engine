@@ -1,7 +1,7 @@
 /* Pure calculations shared by the page and regression tests. */
 const OpusPerformance=(()=>{
   const markets=['U25','O25','BTTS_NO','BTTS_YES','HOME','DRAW','AWAY'];
-  const tiers=['GÜVENLİ','DENGELİ','AGRESİF'];
+  const tiers=['ADAY','GÜVENLİ','DENGELİ','AGRESİF'];
   const teamId=(league,team)=>JSON.stringify([league,team.trim().toLocaleLowerCase('en')]);
   const time=value=>typeof value==='string'?Date.parse(value):NaN;
   function matchKey(r){
@@ -31,6 +31,7 @@ const OpusPerformance=(()=>{
     const since=options.days?now-Number(options.days)*86400000:-Infinity;
     return records.filter(r=>r.startMs>=since && r.startMs<=now &&
       (!options.tier||r.tier===options.tier) && (!options.market||r.market===options.market) &&
+      (!options.version||(options.version==='legacy'?r.modelVersion!=='1.5':r.modelVersion===options.version)) &&
       (!options.league||r.league===options.league) &&
       (!options.team||[teamId(r.league,r.home),teamId(r.league,r.away)].includes(options.team)));
   }
