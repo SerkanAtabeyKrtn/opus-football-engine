@@ -62,6 +62,31 @@ def number(value):
 def date(value):
     return engine.parse_date(value)
 
+# Explicit provider name pairs verified against the public league scoreboards.
+# Keep this map separate from historical xG identity and never fuzzy-match clubs.
+EVENT_ALIASES={canonical(long):canonical(short) for long,short in [
+ ('Royal Charleroi SC','Charleroi'),('Union St.-Gilloise','St. Gilloise'),
+ ('KV Mechelen','Mechelen'),('KVC Westerlo','Westerlo'),('Sint-Truidense','St Truiden'),
+ ('Standard Liege','Standard'),('Cercle Brugge KSV','Cercle Brugge'),('KAA Gent','Gent'),
+ ('KV Kortrijk','Kortrijk'),('Zulte-Waregem','Waregem'),('Racing Genk','Genk'),
+ ('TSG Hoffenheim','Hoffenheim'),('Hannover 96','Hannover'),('Karlsruher SC','Karlsruhe'),
+ ('SV Darmstadt 98','Darmstadt'),('Dynamo Dresden','Dresden'),('Hertha Berlin','Hertha'),
+ ('Preston North End','Preston'),('Blackburn Rovers','Blackburn'),('Stoke City','Stoke'),
+ ('Charlton Athletic','Charlton'),('Cardiff City','Cardiff'),('Norwich City','Norwich'),('Swansea City','Swansea'),
+ ('AJ Auxerre','Auxerre'),('AS Monaco','Monaco'),('Stade Rennais','Rennes'),
+ ('Clermont Foot','Clermont'),('Stade Laval','Laval'),('Red Star FC 93','Red Star'),
+ ('Rodez Aveyron','Rodez'),('Stade de Reims','Reims'),('AS Roma','Roma'),('US Avellino','Avellino'),
+ ('PEC Zwolle','Zwolle'),('NEC Nijmegen','Nijmegen'),('Feyenoord Rotterdam','Feyenoord'),('Ajax Amsterdam','Ajax'),
+ ('Sporting CP','Sp Lisbon'),('C.D. Nacional','Nacional'),('Vitoria de Guimaraes','Guimaraes'),
+ ('Heart of Midlothian','Hearts'),('Dunfermline Athletic','Dunfermline'),('Partick Thistle','Partick'),
+ ('Ayr United','Ayr'),('Greenock Morton','Morton'),('Real Sociedad II','Sociedad B'),
+ ('Istanbul Basaksehir','Buyuksehyr'),('Goztepe','Goztep'),('Gaziantep FK','Gaziantep'),('Caykur Rizespor','Rizespor'),
+]}
+
+def event_name(value):
+    name=canonical(value)
+    return EVENT_ALIASES.get(name,name)
+
 class Client:
     def __init__(self, root, now=None, budget=100):
         self.root=Path(root); self.root.mkdir(parents=True,exist_ok=True)
@@ -209,7 +234,7 @@ def match_event(fixture,events):
     matches=[]
     for e in events or []:
         t=date(e.get('date'))
-        if start and t and abs((start-t).total_seconds())<=900 and all(canonical(e[s]['name'])==canonical(f[s]) for s in ('home','away')):
+        if start and t and abs((start-t).total_seconds())<=900 and all(event_name(e[s]['name'])==event_name(f[s]) for s in ('home','away')):
             matches.append(e)
     return matches[0] if len(matches)==1 else None
 
