@@ -1,24 +1,41 @@
 name: OPUS automatic data update
 on:
   schedule:
-    - cron: '15 5 * * *'
-    - cron: '15 12 * * 5,6,0'
+    - cron: '17 */2 * * *'
   workflow_dispatch:
+  push:
+    paths:
+      - 'app/**'
+      - 'index.html'
+      - 'dashboard.js'
+      - 'performance.js'
+      - 'performance-ui.js'
+      - 'tests/**'
+      - '.github/workflows/update.yml'
+      - 'requirements.txt'
+concurrency:
+  group: opus-data-update
+  cancel-in-progress: false
 permissions:
   contents: write
 jobs:
   update:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - name: Install timezone data
+        run: python -m pip install -r requirements.txt
       - name: Run unit tests
         run: |
+          node tests/test_performance.js
           python tests/test_engine.py
           python tests/test_ledger.py
           python tests/test_update.py
+          python -m unittest discover -s tests -p 'test_lifecycle.py' -v
       - name: Fetch, predict, settle and backtest
         run: python app/update.py
       - name: Commit generated data

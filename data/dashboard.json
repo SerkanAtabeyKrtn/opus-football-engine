@@ -1,7 +1,9 @@
 {
-  "version": "1.2",
-  "updatedAt": "2026-09-04T05:27:22Z",
+  "version": "1.4",
+  "updatedAt": "2026-09-04T07:23:57Z",
   "dataMode": "validated cache-first server-side",
+  "refreshIntervalMinutes": 120,
+  "sourceTimezone": "Europe/London",
   "staleSources": 0,
   "health": {
     "fixtureSource": "https://www.football-data.co.uk/fixtures.csv",
@@ -104,9 +106,14 @@
       "Time"
     ],
     "evaluatedFixtures": 23,
-    "predictions": 20,
-    "skipped": 3,
-    "ledger": 52
+    "predictions": 0,
+    "skipped": 23,
+    "ledger": 52,
+    "excludedFromForwardTest": 43,
+    "awaitingResults": 0,
+    "fixtureFirstDate": "2026-09-01T18:45:00Z",
+    "fixtureLastDate": "2026-09-03T19:00:00Z",
+    "futureFixtureCount": 0
   },
   "leagues": {
     "E0": "Premier League",
@@ -126,1189 +133,168 @@
     "SC0": "Scotland Premiership",
     "SC1": "Scotland Championship"
   },
-  "predictions": [
+  "predictions": [],
+  "skipped": [
     {
-      "id": "e83506e5c6dba896",
       "league": "B1",
-      "leagueName": "Belgium 1",
       "date": "02/09/2026",
-      "time": "19:30",
       "home": "St Truiden",
       "away": "St. Gilloise",
-      "lambdaH": 1.1735092758213037,
-      "lambdaA": 1.4687716952506713,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12271975057422405
-        },
-        {
-          "score": "0-1",
-          "p": 0.104575015385657
-        },
-        {
-          "score": "1-2",
-          "p": 0.0901236480458213
-        },
-        {
-          "score": "1-0",
-          "p": 0.08355263855576942
-        },
-        {
-          "score": "0-2",
-          "p": 0.07679841131442824
-        }
-      ],
-      "model": {
-        "HOME": 0.30251626900492823,
-        "DRAW": 0.25809639860793526,
-        "AWAY": 0.4393873323871365,
-        "U25": 0.5078696727911735,
-        "O25": 0.49213032720882655,
-        "BTTS_YES": 0.5317102625618517,
-        "BTTS_NO": 0.4682897374381483
-      },
-      "market": {
-        "HOME": 0.2484220190505336,
-        "DRAW": 0.2703416089667572,
-        "AWAY": 0.48123637198270913,
-        "O25": 0.5394736842105263,
-        "U25": 0.46052631578947373
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
-      "id": "0adea79466f62fc1",
       "league": "B1",
-      "leagueName": "Belgium 1",
       "date": "03/09/2026",
-      "time": "19:30",
       "home": "Anderlecht",
       "away": "Kortrijk",
-      "lambdaH": 2.191650728098431,
-      "lambdaA": 1.0702227303316154,
-      "reliability": 0.48665189494865846,
-      "topScores": [
-        {
-          "score": "2-1",
-          "p": 0.09849536792049807
-        },
-        {
-          "score": "2-0",
-          "p": 0.09203258829120424
-        },
-        {
-          "score": "1-1",
-          "p": 0.08988235822224903
-        },
-        {
-          "score": "1-0",
-          "p": 0.08398472175450657
-        },
-        {
-          "score": "3-1",
-          "p": 0.07195581493909413
-        }
-      ],
-      "model": {
-        "HOME": 0.6283564403283193,
-        "DRAW": 0.19686025725255402,
-        "AWAY": 0.17478330241912665,
-        "U25": 0.36717682367582494,
-        "O25": 0.6328231763241751,
-        "BTTS_YES": 0.5836450146422841,
-        "BTTS_NO": 0.41635498535771587
-      },
-      "market": {
-        "HOME": 0.6167236223835967,
-        "DRAW": 0.21732165741136264,
-        "AWAY": 0.16595472020504057,
-        "O25": 0.5994897959183673,
-        "U25": 0.4005102040816326
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
-      "id": "96961905ecde8510",
       "league": "B1",
-      "leagueName": "Belgium 1",
       "date": "03/09/2026",
-      "time": "19:30",
       "home": "Gent",
       "away": "Oud-Heverlee Leuven",
-      "lambdaH": 1.6070711342746364,
-      "lambdaA": 0.8838654303707887,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-0",
-          "p": 0.13311847464528706
-        },
-        {
-          "score": "1-1",
-          "p": 0.11765881788265956
-        },
-        {
-          "score": "2-0",
-          "p": 0.10696542902055543
-        },
-        {
-          "score": "2-1",
-          "p": 0.09454304495604929
-        },
-        {
-          "score": "0-0",
-          "p": 0.08283296974615317
-        }
-      ],
-      "model": {
-        "HOME": 0.5439927050018789,
-        "DRAW": 0.24948771880997783,
-        "AWAY": 0.2065195761881432,
-        "U25": 0.5461441973282245,
-        "O25": 0.4538558026717755,
-        "BTTS_YES": 0.4691748597053184,
-        "BTTS_NO": 0.5308251402946815
-      },
-      "market": {
-        "HOME": 0.5675891268331594,
-        "DRAW": 0.24851199607289684,
-        "AWAY": 0.1838988770939437,
-        "O25": 0.5394736842105263,
-        "U25": 0.46052631578947373
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
-    {
-      "id": "e8fa5fe11b5681ba",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "01/09/2026",
-      "time": "19:45",
-      "home": "Portsmouth",
-      "away": "Derby",
-      "lambdaH": 1.3827452146787464,
-      "lambdaA": 1.3307754528027926,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12200605791618625
-        },
-        {
-          "score": "1-0",
-          "p": 0.0916804241160483
-        },
-        {
-          "score": "0-1",
-          "p": 0.08823466291621335
-        },
-        {
-          "score": "2-1",
-          "p": 0.08435164637271227
-        },
-        {
-          "score": "1-2",
-          "p": 0.08118133348404825
-        }
-      ],
-      "model": {
-        "HOME": 0.3832813087639584,
-        "DRAW": 0.2573334066834279,
-        "AWAY": 0.3593852845526138,
-        "U25": 0.4903199344829503,
-        "O25": 0.5096800655170497,
-        "BTTS_YES": 0.5511411927826545,
-        "BTTS_NO": 0.4488588072173455
-      },
-      "market": {
-        "HOME": 0.497003362081567,
-        "DRAW": 0.2718900745505043,
-        "AWAY": 0.23110656336792865,
-        "O25": 0.4805194805194806,
-        "U25": 0.5194805194805195
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "901ee69c0582d716",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "01/09/2026",
-      "time": "19:45",
-      "home": "Preston",
-      "away": "Bristol City",
-      "lambdaH": 1.1564685633123375,
-      "lambdaA": 1.447459362584725,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12384263039999677
-        },
-        {
-          "score": "0-1",
-          "p": 0.10708689741231601
-        },
-        {
-          "score": "1-2",
-          "p": 0.08962858742979751
-        },
-        {
-          "score": "1-0",
-          "p": 0.08555862333768822
-        },
-        {
-          "score": "0-2",
-          "p": 0.07750196613480338
-        }
-      ],
-      "model": {
-        "HOME": 0.30193143004693446,
-        "DRAW": 0.26037023021589634,
-        "AWAY": 0.437698339737169,
-        "U25": 0.5174457088262275,
-        "O25": 0.48255429117377246,
-        "BTTS_YES": 0.5242196265977225,
-        "BTTS_NO": 0.4757803734022775
-      },
-      "market": {
-        "HOME": 0.32841488192385837,
-        "DRAW": 0.27239116677214137,
-        "AWAY": 0.3991939513040003,
-        "O25": 0.5,
-        "U25": 0.5
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "4e9debfcad36abf8",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "01/09/2026",
-      "time": "19:45",
-      "home": "Swansea",
-      "away": "Watford",
-      "lambdaH": 1.7686508869436453,
-      "lambdaA": 0.8579939258865955,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-0",
-          "p": 0.12791222237583477
-        },
-        {
-          "score": "2-0",
-          "p": 0.11311603277797648
-        },
-        {
-          "score": "1-1",
-          "p": 0.1097479098451217
-        },
-        {
-          "score": "2-1",
-          "p": 0.09705286904389286
-        },
-        {
-          "score": "0-0",
-          "p": 0.07232191684639144
-        }
-      ],
-      "model": {
-        "HOME": 0.5893943430756017,
-        "DRAW": 0.23143334919221675,
-        "AWAY": 0.1791723077321815,
-        "U25": 0.5117698660938632,
-        "O25": 0.4882301339061368,
-        "BTTS_YES": 0.4777442809350565,
-        "BTTS_NO": 0.5222557190649435
-      },
-      "market": {
-        "HOME": 0.5241264559068219,
-        "DRAW": 0.2562396006655574,
-        "AWAY": 0.2196339434276206,
-        "O25": 0.5,
-        "U25": 0.5
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "c3999ccf748de4ad",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "01/09/2026",
-      "time": "20:00",
-      "home": "Birmingham",
-      "away": "Southampton",
-      "lambdaH": 1.7226498199786533,
-      "lambdaA": 1.7079337805994061,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.09523481212133912
-        },
-        {
-          "score": "2-1",
-          "p": 0.08202811597826286
-        },
-        {
-          "score": "1-2",
-          "p": 0.08132737635553644
-        },
-        {
-          "score": "2-2",
-          "p": 0.07004929511910052
-        },
-        {
-          "score": "1-0",
-          "p": 0.05576024855478653
-        }
-      ],
-      "model": {
-        "HOME": 0.39039447706099073,
-        "DRAW": 0.22530220570994217,
-        "AWAY": 0.3843033172290672,
-        "U25": 0.3338861664302085,
-        "O25": 0.6661138335697915,
-        "BTTS_YES": 0.6725320624212002,
-        "BTTS_NO": 0.3274679375787998
-      },
-      "market": {
-        "HOME": 0.3662549663154258,
-        "DRAW": 0.2774658835722923,
-        "AWAY": 0.3562791501122819,
-        "O25": 0.5263157894736842,
-        "U25": 0.47368421052631576
-      },
-      "decision": {
-        "market": "O25",
-        "p": 0.6661138335697915,
-        "marketP": 0.5263157894736842,
-        "edge": 0.1397980440961073,
-        "tier": "DENGELİ",
-        "score": 1.8914198435240122
-      }
-    },
-    {
-      "id": "c80bdb26c4886f29",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "01/09/2026",
-      "time": "20:00",
-      "home": "Stoke",
-      "away": "Norwich",
-      "lambdaH": 1.3527038017690642,
-      "lambdaA": 1.6459199636063644,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.11100188189549097
-        },
-        {
-          "score": "1-2",
-          "p": 0.0913501067048322
-        },
-        {
-          "score": "0-1",
-          "p": 0.08205926659651791
-        },
-        {
-          "score": "2-1",
-          "p": 0.07507633382177566
-        },
-        {
-          "score": "0-2",
-          "p": 0.06753149254505283
-        }
-      ],
-      "model": {
-        "HOME": 0.31559536201057664,
-        "DRAW": 0.2402559077779244,
-        "AWAY": 0.4441487302114989,
-        "U25": 0.42350304266210204,
-        "O25": 0.576496957337898,
-        "BTTS_YES": 0.598478633465805,
-        "BTTS_NO": 0.401521366534195
-      },
-      "market": {
-        "HOME": 0.2750285062713797,
-        "DRAW": 0.25974914481185857,
-        "AWAY": 0.4652223489167617,
-        "O25": 0.5263157894736842,
-        "U25": 0.47368421052631576
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "258945697ebb55c8",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "Millwall",
-      "away": "Wrexham",
-      "lambdaH": 1.4710371423749207,
-      "lambdaA": 0.9434054908706051,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-0",
-          "p": 0.13153643200976464
-        },
-        {
-          "score": "1-1",
-          "p": 0.12409219220753998
-        },
-        {
-          "score": "2-0",
-          "p": 0.09674748853091862
-        },
-        {
-          "score": "2-1",
-          "p": 0.09127211190800952
-        },
-        {
-          "score": "0-0",
-          "p": 0.08941747847196109
-        }
-      ],
-      "model": {
-        "HOME": 0.4941751382014061,
-        "DRAW": 0.26381077646831064,
-        "AWAY": 0.24201408533028343,
-        "U25": 0.5659419316652661,
-        "O25": 0.4340580683347339,
-        "BTTS_YES": 0.4704296964175942,
-        "BTTS_NO": 0.5295703035824058
-      },
-      "market": {
-        "HOME": 0.4248366013071895,
-        "DRAW": 0.2875816993464052,
-        "AWAY": 0.2875816993464052,
-        "O25": 0.5,
-        "U25": 0.5
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "ed80b570cc806f8d",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "QPR",
-      "away": "Cardiff",
-      "lambdaH": 1.8729103995237881,
-      "lambdaA": 1.5647548686844264,
-      "reliability": 0.6983864340005056,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.0941929832595106
-        },
-        {
-          "score": "2-1",
-          "p": 0.08820750895445374
-        },
-        {
-          "score": "1-2",
-          "p": 0.07369446457561493
-        },
-        {
-          "score": "2-2",
-          "p": 0.06901156454550329
-        },
-        {
-          "score": "1-0",
-          "p": 0.06019663855636615
-        }
-      ],
-      "model": {
-        "HOME": 0.45227116774849113,
-        "DRAW": 0.22245764499559478,
-        "AWAY": 0.3252711872559142,
-        "U25": 0.33254164186301177,
-        "O25": 0.6674583581369882,
-        "BTTS_YES": 0.6693202813064089,
-        "BTTS_NO": 0.33067971869359114
-      },
-      "market": {
-        "HOME": 0.49685326266975816,
-        "DRAW": 0.2567075190460417,
-        "AWAY": 0.24643921828420007,
-        "O25": 0.5483028720626633,
-        "U25": 0.4516971279373368
-      },
-      "decision": {
-        "market": "O25",
-        "p": 0.6674583581369882,
-        "marketP": 0.5483028720626633,
-        "edge": 0.11915548607432491,
-        "tier": "DENGELİ",
-        "score": 1.811538660571276
-      }
-    },
-    {
-      "id": "dbb43b656d7cb4c2",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "West Brom",
-      "away": "Charlton",
-      "lambdaH": 1.3986330626688366,
-      "lambdaA": 0.9827567491230141,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-0",
-          "p": 0.12926481989474556
-        },
-        {
-          "score": "1-1",
-          "p": 0.12703587417573203
-        },
-        {
-          "score": "0-0",
-          "p": 0.0924222538026419
-        },
-        {
-          "score": "0-1",
-          "p": 0.09082859369370647
-        },
-        {
-          "score": "2-0",
-          "p": 0.09039702547236177
-        }
-      ],
-      "model": {
-        "HOME": 0.46523673181094743,
-        "DRAW": 0.2703836952940434,
-        "AWAY": 0.26437957289500896,
-        "U25": 0.5745797737721087,
-        "O25": 0.42542022622789133,
-        "BTTS_YES": 0.4712095055510682,
-        "BTTS_NO": 0.5287904944489318
-      },
-      "market": {
-        "HOME": 0.5409582689335395,
-        "DRAW": 0.2642967542503864,
-        "AWAY": 0.19474497681607422,
-        "O25": 0.4516971279373368,
-        "U25": 0.5483028720626633
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "b0b2c14d7a5609a8",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "02/09/2026",
-      "time": "20:00",
-      "home": "Burnley",
-      "away": "Middlesbrough",
-      "lambdaH": 1.6254913548215275,
-      "lambdaA": 1.4207798563117522,
-      "reliability": 0.7243245054362248,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.10978356747095612
-        },
-        {
-          "score": "2-1",
-          "p": 0.08922611991275252
-        },
-        {
-          "score": "1-2",
-          "p": 0.0779891406083883
-        },
-        {
-          "score": "1-0",
-          "p": 0.07726993522835184
-        },
-        {
-          "score": "0-1",
-          "p": 0.06753869661952765
-        }
-      ],
-      "model": {
-        "HOME": 0.42486178911731237,
-        "DRAW": 0.23954960770606493,
-        "AWAY": 0.33558860317662265,
-        "U25": 0.4129081707077184,
-        "O25": 0.5870918292922815,
-        "BTTS_YES": 0.6091935951804958,
-        "BTTS_NO": 0.39080640481950424
-      },
-      "market": {
-        "HOME": 0.32841488192385837,
-        "DRAW": 0.27239116677214137,
-        "AWAY": 0.3991939513040003,
-        "O25": 0.5263157894736842,
-        "U25": 0.47368421052631576
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "420bdc4e6968b5e0",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "03/09/2026",
-      "time": "19:45",
-      "home": "Toulouse",
-      "away": "Lille",
-      "lambdaH": 0.8461053293437868,
-      "lambdaA": 1.6189723896286703,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "0-1",
-          "p": 0.13761736339306696
-        },
-        {
-          "score": "1-1",
-          "p": 0.11643878457711451
-        },
-        {
-          "score": "0-2",
-          "p": 0.11139935583343537
-        },
-        {
-          "score": "1-2",
-          "p": 0.09425558865613454
-        },
-        {
-          "score": "0-0",
-          "p": 0.08500290942245844
-        }
-      ],
-      "model": {
-        "HOME": 0.1955036366324208,
-        "DRAW": 0.24793503424176408,
-        "AWAY": 0.5565613291258155,
-        "U25": 0.5528063740221357,
-        "O25": 0.4471936259778643,
-        "BTTS_YES": 0.4578163494844877,
-        "BTTS_NO": 0.5421836505155123
-      },
-      "market": {
-        "HOME": 0.2847682119205298,
-        "DRAW": 0.2847682119205298,
-        "AWAY": 0.4304635761589404,
-        "O25": 0.47368421052631576,
-        "U25": 0.5263157894736842
-      },
-      "decision": {
-        "market": "AWAY",
-        "p": 0.5565613291258155,
-        "marketP": 0.4304635761589404,
-        "edge": 0.1260977529668751,
-        "tier": "AGRESİF",
-        "score": 1.187050093960191
-      }
-    },
-    {
-      "id": "1abe7ac7eba8e90c",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "Celtic",
-      "away": "Aberdeen",
-      "lambdaH": 2.6233611386305875,
-      "lambdaA": 0.514101945751232,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "2-0",
-          "p": 0.14937504325310813
-        },
-        {
-          "score": "3-0",
-          "p": 0.13062156118382232
-        },
-        {
-          "score": "1-0",
-          "p": 0.11388065566228743
-        },
-        {
-          "score": "4-0",
-          "p": 0.08566688186922426
-        },
-        {
-          "score": "2-1",
-          "p": 0.07679400038309732
-        }
-      ],
-      "model": {
-        "HOME": 0.8235889593447984,
-        "DRAW": 0.12491785149108785,
-        "AWAY": 0.05149318916411389,
-        "U25": 0.3932661244220279,
-        "O25": 0.6067338755779721,
-        "BTTS_YES": 0.3727850051028496,
-        "BTTS_NO": 0.6272149948971504
-      },
-      "market": {
-        "HOME": 0.7744381261846738,
-        "DRAW": 0.14178174925534798,
-        "AWAY": 0.08378012455997834,
-        "O25": 0.6818181818181818,
-        "U25": 0.3181818181818181
-      },
-      "decision": {
-        "market": "HOME",
-        "p": 0.8235889593447984,
-        "marketP": 0.7744381261846738,
-        "edge": 0.049150833160124585,
-        "tier": "GÜVENLİ",
-        "score": 2.5199177111945197
-      }
-    },
-    {
-      "id": "1d363d0227bfed18",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "Dundee",
-      "away": "St Johnstone",
-      "lambdaH": 1.8377932077695127,
-      "lambdaA": 1.0815503119599603,
-      "reliability": 0.4990150238292628,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.10727504522723458
-        },
-        {
-          "score": "1-0",
-          "p": 0.0991863661273725
-        },
-        {
-          "score": "2-1",
-          "p": 0.09857467474088948
-        },
-        {
-          "score": "2-0",
-          "p": 0.09114201498611262
-        },
-        {
-          "score": "3-1",
-          "p": 0.060386622565631876
-        }
-      ],
-      "model": {
-        "HOME": 0.5506197647835273,
-        "DRAW": 0.2279105346523374,
-        "AWAY": 0.22146970056413554,
-        "U25": 0.4415113968087949,
-        "O25": 0.5584886031912051,
-        "BTTS_YES": 0.5557288687572999,
-        "BTTS_NO": 0.4442711312427001
-      },
-      "market": {
-        "HOME": 0.36649214659685864,
-        "DRAW": 0.26701570680628267,
-        "AWAY": 0.36649214659685864,
-        "O25": 0.5129533678756476,
-        "U25": 0.4870466321243523
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "0f3027a411c07f1a",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "Kilmarnock",
-      "away": "St Mirren",
-      "lambdaH": 1.4562208945562547,
-      "lambdaA": 1.6845838852376935,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.10609426414199447
-        },
-        {
-          "score": "1-2",
-          "p": 0.08936234384487758
-        },
-        {
-          "score": "2-1",
-          "p": 0.07724834211807137
-        },
-        {
-          "score": "0-1",
-          "p": 0.07285588645143284
-        },
-        {
-          "score": "2-2",
-          "p": 0.06506565614671563
-        }
-      ],
-      "model": {
-        "HOME": 0.333329580108665,
-        "DRAW": 0.23514850070452192,
-        "AWAY": 0.4315219191868131,
-        "U25": 0.3924002174760948,
-        "O25": 0.6075997825239052,
-        "BTTS_YES": 0.624608605593727,
-        "BTTS_NO": 0.375391394406273
-      },
-      "market": {
-        "HOME": 0.33844877644131066,
-        "DRAW": 0.2737453338863542,
-        "AWAY": 0.38780588967233515,
-        "O25": 0.5259067357512953,
-        "U25": 0.47409326424870474
-      },
-      "decision": {
-        "market": "O25",
-        "p": 0.6075997825239052,
-        "marketP": 0.5259067357512953,
-        "edge": 0.08169304677260991,
-        "tier": "AGRESİF",
-        "score": 1.0160650163869547
-      }
-    },
-    {
-      "id": "4b32278c19bbb7a1",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "time": "19:45",
-      "home": "Motherwell",
-      "away": "Dundee United",
-      "lambdaH": 1.820172660011602,
-      "lambdaA": 0.9432115919070956,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-0",
-          "p": 0.11481518440093236
-        },
-        {
-          "score": "1-1",
-          "p": 0.10829501285391013
-        },
-        {
-          "score": "2-0",
-          "p": 0.1044917298003838
-        },
-        {
-          "score": "2-1",
-          "p": 0.0985578108061461
-        },
-        {
-          "score": "3-0",
-          "p": 0.06339766325999273
-        }
-      ],
-      "model": {
-        "HOME": 0.5799686987835436,
-        "DRAW": 0.2277411063622706,
-        "AWAY": 0.19229019485418572,
-        "U25": 0.47823750081879596,
-        "O25": 0.521762499181204,
-        "BTTS_YES": 0.5117027196017557,
-        "BTTS_NO": 0.48829728039824427
-      },
-      "market": {
-        "HOME": 0.49022277901846506,
-        "DRAW": 0.24968680211340488,
-        "AWAY": 0.2600904188681301,
-        "O25": 0.5483028720626633,
-        "U25": 0.4516971279373368
-      },
-      "decision": {
-        "market": "HOME",
-        "p": 0.5799686987835436,
-        "marketP": 0.49022277901846506,
-        "edge": 0.08974591976507856,
-        "tier": "AGRESİF",
-        "score": 1.0286982976089365
-      }
-    },
-    {
-      "id": "fc965807456e824e",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "time": "20:00",
-      "home": "Falkirk",
-      "away": "Rangers",
-      "lambdaH": 1.2363519576528252,
-      "lambdaA": 2.5176906944551014,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-2",
-          "p": 0.09180882886160695
-        },
-        {
-          "score": "1-3",
-          "p": 0.07704874469789626
-        },
-        {
-          "score": "0-2",
-          "p": 0.07425784243178059
-        },
-        {
-          "score": "1-1",
-          "p": 0.07293098319329248
-        },
-        {
-          "score": "0-3",
-          "p": 0.062319426293602376
-        }
-      ],
-      "model": {
-        "HOME": 0.1705182663689899,
-        "DRAW": 0.17708185550737632,
-        "AWAY": 0.6523998781236338,
-        "U25": 0.27648179363562925,
-        "O25": 0.7235182063643708,
-        "BTTS_YES": 0.6523184343904017,
-        "BTTS_NO": 0.3476815656095983
-      },
-      "market": {
-        "HOME": 0.18657194626126924,
-        "DRAW": 0.215441046491073,
-        "AWAY": 0.5979870072476577,
-        "O25": 0.586734693877551,
-        "U25": 0.413265306122449
-      },
-      "decision": {
-        "market": "O25",
-        "p": 0.7235182063643708,
-        "marketP": 0.586734693877551,
-        "edge": 0.13678351248681986,
-        "tier": "DENGELİ",
-        "score": 1.994170462676021
-      }
-    },
-    {
-      "id": "677dd1d90537f2a1",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "03/09/2026",
-      "time": "19:45",
-      "home": "Hibernian",
-      "away": "Hearts",
-      "lambdaH": 1.4088882791022432,
-      "lambdaA": 1.277503133504512,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12261822691920855
-        },
-        {
-          "score": "1-0",
-          "p": 0.09598272106216754
-        },
-        {
-          "score": "0-1",
-          "p": 0.08703190220117527
-        },
-        {
-          "score": "2-1",
-          "p": 0.08637769135538606
-        },
-        {
-          "score": "1-2",
-          "p": 0.07832258455702812
-        }
-      ],
-      "model": {
-        "HOME": 0.4011773250606027,
-        "DRAW": 0.25828780848375665,
-        "AWAY": 0.3405348664556407,
-        "U25": 0.4969656459390246,
-        "O25": 0.5030343540609754,
-        "BTTS_YES": 0.5449784624902527,
-        "BTTS_NO": 0.4550215375097473
-      },
-      "market": {
-        "HOME": 0.3810208483105679,
-        "DRAW": 0.26671459381739754,
-        "AWAY": 0.35226455787203453,
-        "O25": 0.5129533678756476,
-        "U25": 0.4870466321243523
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    },
-    {
-      "id": "c79de633e48f1109",
-      "league": "SP1",
-      "leagueName": "La Liga",
-      "date": "03/09/2026",
-      "time": "20:00",
-      "home": "Sociedad",
-      "away": "Celta",
-      "lambdaH": 1.3527591503917396,
-      "lambdaA": 1.4701541484382583,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.1181979388523636
-        },
-        {
-          "score": "0-1",
-          "p": 0.0873754495160023
-        },
-        {
-          "score": "1-2",
-          "p": 0.08688459507032696
-        },
-        {
-          "score": "1-0",
-          "p": 0.08039833032333721
-        },
-        {
-          "score": "2-1",
-          "p": 0.07994667166998908
-        }
-      ],
-      "model": {
-        "HOME": 0.34792282220251297,
-        "DRAW": 0.25113363629316643,
-        "AWAY": 0.4009435415043207,
-        "U25": 0.4640120459945648,
-        "O25": 0.5359879540054352,
-        "BTTS_YES": 0.5710156183951726,
-        "BTTS_NO": 0.42898438160482744
-      },
-      "market": {
-        "HOME": 0.4866595517609392,
-        "DRAW": 0.26360725720384204,
-        "AWAY": 0.24973319103521877,
-        "O25": 0.5,
-        "U25": 0.5
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0
-      }
-    }
-  ],
-  "skipped": [
     {
       "league": "E1",
       "date": "01/09/2026",
       "home": "Lincoln",
       "away": "Blackburn",
-      "reason": "Takım ev/deplasman örneklemi yetersiz"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "01/09/2026",
+      "home": "Portsmouth",
+      "away": "Derby",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "01/09/2026",
+      "home": "Preston",
+      "away": "Bristol City",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "01/09/2026",
       "home": "Sheffield United",
       "away": "Bolton",
-      "reason": "Takım ev/deplasman örneklemi yetersiz"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "01/09/2026",
+      "home": "Swansea",
+      "away": "Watford",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "01/09/2026",
       "home": "West Ham",
       "away": "Wolves",
-      "reason": "Takım ev/deplasman örneklemi yetersiz"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "01/09/2026",
+      "home": "Birmingham",
+      "away": "Southampton",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "01/09/2026",
+      "home": "Stoke",
+      "away": "Norwich",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "02/09/2026",
+      "home": "Millwall",
+      "away": "Wrexham",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "02/09/2026",
+      "home": "QPR",
+      "away": "Cardiff",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "02/09/2026",
+      "home": "West Brom",
+      "away": "Charlton",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "E1",
+      "date": "02/09/2026",
+      "home": "Burnley",
+      "away": "Middlesbrough",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "F1",
+      "date": "03/09/2026",
+      "home": "Toulouse",
+      "away": "Lille",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SC0",
+      "date": "02/09/2026",
+      "home": "Celtic",
+      "away": "Aberdeen",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SC0",
+      "date": "02/09/2026",
+      "home": "Dundee",
+      "away": "St Johnstone",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SC0",
+      "date": "02/09/2026",
+      "home": "Kilmarnock",
+      "away": "St Mirren",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SC0",
+      "date": "02/09/2026",
+      "home": "Motherwell",
+      "away": "Dundee United",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SC0",
+      "date": "02/09/2026",
+      "home": "Falkirk",
+      "away": "Rangers",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SC0",
+      "date": "03/09/2026",
+      "home": "Hibernian",
+      "away": "Hearts",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "SP1",
+      "date": "03/09/2026",
+      "home": "Sociedad",
+      "away": "Celta",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     }
   ],
   "matrix": {
@@ -19169,158 +18155,6 @@
   },
   "ledger": [
     {
-      "id": "c3999ccf748de4ad",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "01/09/2026",
-      "home": "Birmingham",
-      "away": "Southampton",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6661138335697915,
-      "marketP": 0.5263157894736842,
-      "edge": 0.1397980440961073,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 1,
-      "won": false,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "ed80b570cc806f8d",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "02/09/2026",
-      "home": "QPR",
-      "away": "Cardiff",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6679002724708263,
-      "marketP": 0.5483028720626633,
-      "edge": 0.11959740040816302,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "1abe7ac7eba8e90c",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "home": "Celtic",
-      "away": "Aberdeen",
-      "market": "HOME",
-      "tier": "GÜVENLİ",
-      "p": 0.8235889593447984,
-      "marketP": 0.7744381261846738,
-      "edge": 0.049150833160124585,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 0,
-      "won": true,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "fc965807456e824e",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "home": "Falkirk",
-      "away": "Rangers",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.7235182063643708,
-      "marketP": 0.586734693877551,
-      "edge": 0.13678351248681986,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 2,
-      "won": true,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "0f3027a411c07f1a",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "home": "Kilmarnock",
-      "away": "St Mirren",
-      "market": "O25",
-      "tier": "AGRESİF",
-      "p": 0.6075997825239052,
-      "marketP": 0.5259067357512953,
-      "edge": 0.08169304677260991,
-      "status": "SETTLED",
-      "hg": 0,
-      "ag": 1,
-      "won": false,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "4b32278c19bbb7a1",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "SC0",
-      "leagueName": "Scotland Premiership",
-      "date": "02/09/2026",
-      "home": "Motherwell",
-      "away": "Dundee United",
-      "market": "HOME",
-      "tier": "AGRESİF",
-      "p": 0.5799686987835436,
-      "marketP": 0.49022277901846506,
-      "edge": 0.08974591976507856,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 0,
-      "won": true,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "420bdc4e6968b5e0",
-      "createdAt": "2026-09-02T05:30:14Z",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "03/09/2026",
-      "home": "Toulouse",
-      "away": "Lille",
-      "market": "AWAY",
-      "tier": "AGRESİF",
-      "p": 0.5565613291258155,
-      "marketP": 0.4304635761589404,
-      "edge": 0.1260977529668751,
-      "status": "SETTLED",
-      "hg": 0,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-04T05:25:58Z"
-    },
-    {
-      "id": "517d491aee2c7e4f",
-      "createdAt": "2026-08-31T09:18:49Z",
-      "league": "D1",
-      "leagueName": "Bundesliga",
-      "date": "28/08/2026",
-      "home": "Bayern Munich",
-      "away": "Stuttgart",
-      "market": "O25",
-      "tier": "GÜVENLİ",
-      "p": 0.9069195253150661,
-      "marketP": 0.7894736842105263,
-      "edge": 0.11744584110453982,
-      "status": "SETTLED",
-      "hg": 5,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
       "id": "3221bc18a2b8af3a",
       "createdAt": "2026-08-31T09:18:50Z",
       "league": "F2",
@@ -19337,7 +18171,11 @@
       "hg": 0,
       "ag": 0,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T18:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "383bd433f2ba341a",
@@ -19356,7 +18194,11 @@
       "hg": 2,
       "ag": 0,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T18:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "8e19cefd989b1bb8",
@@ -19375,26 +18217,34 @@
       "hg": 2,
       "ag": 2,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T18:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "f3548935c1b7bcb5",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "P1",
-      "leagueName": "Portugal 1",
+      "id": "517d491aee2c7e4f",
+      "createdAt": "2026-08-31T09:18:49Z",
+      "league": "D1",
+      "leagueName": "Bundesliga",
       "date": "28/08/2026",
-      "home": "Rio Ave",
-      "away": "Sp Lisbon",
-      "market": "AWAY",
+      "home": "Bayern Munich",
+      "away": "Stuttgart",
+      "market": "O25",
       "tier": "GÜVENLİ",
-      "p": 0.8082213292382948,
-      "marketP": 0.7244692391135905,
-      "edge": 0.0837520901247043,
+      "p": 0.9069195253150661,
+      "marketP": 0.7894736842105263,
+      "edge": 0.11744584110453982,
       "status": "SETTLED",
-      "hg": 0,
-      "ag": 4,
+      "hg": 5,
+      "ag": 1,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T18:30:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "841b99f9bbc28851",
@@ -19413,7 +18263,11 @@
       "hg": 1,
       "ag": 0,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T18:30:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "7c32e937aa9cf115",
@@ -19432,159 +18286,34 @@
       "hg": 0,
       "ag": 1,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T19:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "748c51b7e05f1e75",
-      "createdAt": "2026-08-31T09:18:49Z",
-      "league": "B1",
-      "leagueName": "Belgium 1",
-      "date": "29/08/2026",
-      "home": "Oud-Heverlee Leuven",
-      "away": "Standard",
+      "id": "f3548935c1b7bcb5",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "P1",
+      "leagueName": "Portugal 1",
+      "date": "28/08/2026",
+      "home": "Rio Ave",
+      "away": "Sp Lisbon",
       "market": "AWAY",
-      "tier": "AGRESİF",
-      "p": 0.5734725452170161,
-      "marketP": 0.39026482255816447,
-      "edge": 0.1832077226588516,
+      "tier": "GÜVENLİ",
+      "p": 0.8082213292382948,
+      "marketP": 0.7244692391135905,
+      "edge": 0.0837520901247043,
       "status": "SETTLED",
-      "hg": 1,
-      "ag": 2,
+      "hg": 0,
+      "ag": 4,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "c50dc28afe0a1593",
-      "createdAt": "2026-08-31T09:18:49Z",
-      "league": "D1",
-      "leagueName": "Bundesliga",
-      "date": "29/08/2026",
-      "home": "FC Koln",
-      "away": "Hoffenheim",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.7468412471058192,
-      "marketP": 0.6203473945409429,
-      "edge": 0.12649385256487633,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 2,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "035651507c0d6fa6",
-      "createdAt": "2026-08-31T09:18:49Z",
-      "league": "D1",
-      "leagueName": "Bundesliga",
-      "date": "29/08/2026",
-      "home": "Union Berlin",
-      "away": "Ein Frankfurt",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6743154493532384,
-      "marketP": 0.586734693877551,
-      "edge": 0.08758075547568744,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 3,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "0aabb3e498feeec8",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "D2",
-      "leagueName": "Bundesliga 2",
-      "date": "29/08/2026",
-      "home": "Nurnberg",
-      "away": "Bielefeld",
-      "market": "HOME",
-      "tier": "AGRESİF",
-      "p": 0.6203600796336782,
-      "marketP": 0.4365343242714649,
-      "edge": 0.18382575536221335,
-      "status": "SETTLED",
-      "hg": 4,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "d0db6c6ba1f3bbd5",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "E0",
-      "leagueName": "Premier League",
-      "date": "29/08/2026",
-      "home": "Bournemouth",
-      "away": "Everton",
-      "market": "U25",
-      "tier": "AGRESİF",
-      "p": 0.611345612518096,
-      "marketP": 0.5,
-      "edge": 0.11134561251809605,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "6e40d27008db8fb7",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "29/08/2026",
-      "home": "Blackburn",
-      "away": "QPR",
-      "market": "U25",
-      "tier": "DENGELİ",
-      "p": 0.6558273070332427,
-      "marketP": 0.5263157894736842,
-      "edge": 0.12951151755955848,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 2,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "ba1c048b058b2a0e",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "29/08/2026",
-      "home": "Bristol City",
-      "away": "Portsmouth",
-      "market": "O25",
-      "tier": "AGRESİF",
-      "p": 0.6114063776334291,
-      "marketP": 0.4516971279373368,
-      "edge": 0.1597092496960923,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "2bc3a9ff9f15d3f3",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "E1",
-      "leagueName": "Championship",
-      "date": "29/08/2026",
-      "home": "Cardiff",
-      "away": "Sheffield United",
-      "market": "U25",
-      "tier": "DENGELİ",
-      "p": 0.6527042893428358,
-      "marketP": 0.4516971279373368,
-      "edge": 0.20100716140549896,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 2,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-28T19:15:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "787f910e56c0959c",
@@ -19603,7 +18332,149 @@
       "hg": 3,
       "ag": 1,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T11:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "c50dc28afe0a1593",
+      "createdAt": "2026-08-31T09:18:49Z",
+      "league": "D1",
+      "leagueName": "Bundesliga",
+      "date": "29/08/2026",
+      "home": "FC Koln",
+      "away": "Hoffenheim",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.7468412471058192,
+      "marketP": 0.6203473945409429,
+      "edge": 0.12649385256487633,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 2,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T13:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "035651507c0d6fa6",
+      "createdAt": "2026-08-31T09:18:49Z",
+      "league": "D1",
+      "leagueName": "Bundesliga",
+      "date": "29/08/2026",
+      "home": "Union Berlin",
+      "away": "Ein Frankfurt",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6743154493532384,
+      "marketP": 0.586734693877551,
+      "edge": 0.08758075547568744,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 3,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T13:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "d0db6c6ba1f3bbd5",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "E0",
+      "leagueName": "Premier League",
+      "date": "29/08/2026",
+      "home": "Bournemouth",
+      "away": "Everton",
+      "market": "U25",
+      "tier": "AGRESİF",
+      "p": 0.611345612518096,
+      "marketP": 0.5,
+      "edge": 0.11134561251809605,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "6e40d27008db8fb7",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "E1",
+      "leagueName": "Championship",
+      "date": "29/08/2026",
+      "home": "Blackburn",
+      "away": "QPR",
+      "market": "U25",
+      "tier": "DENGELİ",
+      "p": 0.6558273070332427,
+      "marketP": 0.5263157894736842,
+      "edge": 0.12951151755955848,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 2,
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "ba1c048b058b2a0e",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "E1",
+      "leagueName": "Championship",
+      "date": "29/08/2026",
+      "home": "Bristol City",
+      "away": "Portsmouth",
+      "market": "O25",
+      "tier": "AGRESİF",
+      "p": 0.6114063776334291,
+      "marketP": 0.4516971279373368,
+      "edge": 0.1597092496960923,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "2bc3a9ff9f15d3f3",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "E1",
+      "leagueName": "Championship",
+      "date": "29/08/2026",
+      "home": "Cardiff",
+      "away": "Sheffield United",
+      "market": "U25",
+      "tier": "DENGELİ",
+      "p": 0.6527042893428358,
+      "marketP": 0.4516971279373368,
+      "edge": 0.20100716140549896,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 2,
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "6e2fc6b6f63a2e93",
@@ -19622,140 +18493,11 @@
       "hg": 5,
       "ag": 1,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "3b6c4464968d7137",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "29/08/2026",
-      "home": "Auxerre",
-      "away": "Angers",
-      "market": "U25",
-      "tier": "DENGELİ",
-      "p": 0.6543211708524477,
-      "marketP": 0.5259067357512953,
-      "edge": 0.12841443510115236,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 3,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "1c436fd8742a02cd",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "29/08/2026",
-      "home": "Brest",
-      "away": "Toulouse",
-      "market": "O25",
-      "tier": "AGRESİF",
-      "p": 0.5608278963958936,
-      "marketP": 0.4805194805194806,
-      "edge": 0.08030841587641296,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 2,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "8d599d36ea06750e",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "29/08/2026",
-      "home": "Strasbourg",
-      "away": "Lens",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6958256999430815,
-      "marketP": 0.5684754521963824,
-      "edge": 0.12735024774669912,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "d26ac74998001e7f",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "I1",
-      "leagueName": "Serie A",
-      "date": "29/08/2026",
-      "home": "Juventus",
-      "away": "Parma",
-      "market": "U25",
-      "tier": "DENGELİ",
-      "p": 0.6501109530413641,
-      "marketP": 0.43152454780361754,
-      "edge": 0.21858640523774658,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 0,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "0392dbf8a391d257",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "I1",
-      "leagueName": "Serie A",
-      "date": "29/08/2026",
-      "home": "Monza",
-      "away": "Udinese",
-      "market": "AWAY",
-      "tier": "DENGELİ",
-      "p": 0.6404443802924874,
-      "marketP": 0.39616613418530355,
-      "edge": 0.24427824610718385,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 3,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "e6fad06509349c17",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "I2",
-      "leagueName": "Serie B",
-      "date": "29/08/2026",
-      "home": "Sampdoria",
-      "away": "Juve Stabia",
-      "market": "U25",
-      "tier": "DENGELİ",
-      "p": 0.7176795446366471,
-      "marketP": 0.5994897959183673,
-      "edge": 0.11818974871827981,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 2,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "02eeeb5e6fbc0e1d",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "I2",
-      "leagueName": "Serie B",
-      "date": "29/08/2026",
-      "home": "Virtus Entella",
-      "away": "Cesena",
-      "market": "U25",
-      "tier": "DENGELİ",
-      "p": 0.6365147289493944,
-      "marketP": 0.5526315789473685,
-      "edge": 0.08388315000202595,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 2,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "6e54167127a906c3",
@@ -19774,7 +18516,11 @@
       "hg": 0,
       "ag": 4,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "520be982476e75e6",
@@ -19793,45 +18539,34 @@
       "hg": 0,
       "ag": 0,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T14:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "b52319a3578da31a",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "SP1",
-      "leagueName": "La Liga",
+      "id": "8d599d36ea06750e",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "F1",
+      "leagueName": "Ligue 1",
       "date": "29/08/2026",
-      "home": "Sociedad",
-      "away": "Espanol",
+      "home": "Strasbourg",
+      "away": "Lens",
       "market": "O25",
       "tier": "DENGELİ",
-      "p": 0.6634975481006216,
-      "marketP": 0.5129533678756476,
-      "edge": 0.15054418022497396,
+      "p": 0.6958256999430815,
+      "marketP": 0.5684754521963824,
+      "edge": 0.12735024774669912,
       "status": "SETTLED",
       "hg": 2,
       "ag": 1,
       "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "1153f421ad0b6d63",
-      "createdAt": "2026-08-31T09:18:52Z",
-      "league": "T1",
-      "leagueName": "Türkiye Süper Lig",
-      "date": "29/08/2026",
-      "home": "Galatasaray",
-      "away": "Goztep",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6959406435695135,
-      "marketP": 0.5714285714285715,
-      "edge": 0.12451207214094195,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 2,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T15:15:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "b462ae1f126afa05",
@@ -19850,159 +18585,241 @@
       "hg": 1,
       "ag": 2,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T16:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "881221d3e289cc88",
-      "createdAt": "2026-08-31T09:18:49Z",
-      "league": "B1",
-      "leagueName": "Belgium 1",
-      "date": "30/08/2026",
-      "home": "Antwerp",
-      "away": "St Truiden",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6607090842218655,
-      "marketP": 0.5263157894736842,
-      "edge": 0.1343932947481813,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 4,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "592eddfef40e31ce",
-      "createdAt": "2026-08-31T09:18:49Z",
-      "league": "B1",
-      "leagueName": "Belgium 1",
-      "date": "30/08/2026",
-      "home": "St. Gilloise",
-      "away": "Anderlecht",
-      "market": "HOME",
-      "tier": "DENGELİ",
-      "p": 0.7734946235762825,
-      "marketP": 0.5546526123112367,
-      "edge": 0.21884201126504577,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 0,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "5f9f30936d022283",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "D2",
-      "leagueName": "Bundesliga 2",
-      "date": "30/08/2026",
-      "home": "Magdeburg",
-      "away": "Holstein Kiel",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6719715715753644,
-      "marketP": 0.5994897959183673,
-      "edge": 0.0724817756569971,
-      "status": "SETTLED",
-      "hg": 2,
-      "ag": 0,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "b8db992b16106997",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "E0",
-      "leagueName": "Premier League",
-      "date": "30/08/2026",
-      "home": "Man United",
-      "away": "Ipswich",
-      "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6816982337091593,
-      "marketP": 0.6025316455696202,
-      "edge": 0.07916658813953903,
-      "status": "SETTLED",
-      "hg": 5,
-      "ag": 2,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "772a3d16519576d6",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "E0",
-      "leagueName": "Premier League",
-      "date": "30/08/2026",
-      "home": "Sunderland",
-      "away": "Fulham",
-      "market": "U25",
-      "tier": "AGRESİF",
-      "p": 0.6169874921626166,
-      "marketP": 0.5263157894736842,
-      "edge": 0.09067170268893243,
-      "status": "SETTLED",
-      "hg": 1,
-      "ag": 0,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "736486b18fd40572",
-      "createdAt": "2026-08-31T09:18:50Z",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "30/08/2026",
-      "home": "Paris FC",
-      "away": "Nice",
-      "market": "O25",
-      "tier": "AGRESİF",
-      "p": 0.5630748903291292,
-      "marketP": 0.4516971279373368,
-      "edge": 0.11137776239179237,
-      "status": "SETTLED",
-      "hg": 3,
-      "ag": 0,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "91a877b8aea0692e",
+      "id": "0392dbf8a391d257",
       "createdAt": "2026-08-31T09:18:51Z",
       "league": "I1",
       "leagueName": "Serie A",
-      "date": "30/08/2026",
-      "home": "Cagliari",
-      "away": "Inter",
-      "market": "O25",
-      "tier": "AGRESİF",
-      "p": 0.6019673192801718,
-      "marketP": 0.5,
-      "edge": 0.10196731928017178,
-      "status": "SETTLED",
-      "hg": 0,
-      "ag": 1,
-      "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
-    },
-    {
-      "id": "97bcfc43303b2567",
-      "createdAt": "2026-08-31T09:18:51Z",
-      "league": "P1",
-      "leagueName": "Portugal 1",
-      "date": "30/08/2026",
-      "home": "Nacional",
-      "away": "Estrela",
-      "market": "HOME",
-      "tier": "AGRESİF",
-      "p": 0.5592646893770492,
-      "marketP": 0.41002004008016035,
-      "edge": 0.14924464929688885,
+      "date": "29/08/2026",
+      "home": "Monza",
+      "away": "Udinese",
+      "market": "AWAY",
+      "tier": "DENGELİ",
+      "p": 0.6404443802924874,
+      "marketP": 0.39616613418530355,
+      "edge": 0.24427824610718385,
       "status": "SETTLED",
       "hg": 2,
       "ag": 3,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T16:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "e6fad06509349c17",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "I2",
+      "leagueName": "Serie B",
+      "date": "29/08/2026",
+      "home": "Sampdoria",
+      "away": "Juve Stabia",
+      "market": "U25",
+      "tier": "DENGELİ",
+      "p": 0.7176795446366471,
+      "marketP": 0.5994897959183673,
+      "edge": 0.11818974871827981,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 2,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T17:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "02eeeb5e6fbc0e1d",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "I2",
+      "leagueName": "Serie B",
+      "date": "29/08/2026",
+      "home": "Virtus Entella",
+      "away": "Cesena",
+      "market": "U25",
+      "tier": "DENGELİ",
+      "p": 0.6365147289493944,
+      "marketP": 0.5526315789473685,
+      "edge": 0.08388315000202595,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 2,
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T17:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "b52319a3578da31a",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "SP1",
+      "leagueName": "La Liga",
+      "date": "29/08/2026",
+      "home": "Sociedad",
+      "away": "Espanol",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6634975481006216,
+      "marketP": 0.5129533678756476,
+      "edge": 0.15054418022497396,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T17:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "0aabb3e498feeec8",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "D2",
+      "leagueName": "Bundesliga 2",
+      "date": "29/08/2026",
+      "home": "Nurnberg",
+      "away": "Bielefeld",
+      "market": "HOME",
+      "tier": "AGRESİF",
+      "p": 0.6203600796336782,
+      "marketP": 0.4365343242714649,
+      "edge": 0.18382575536221335,
+      "status": "SETTLED",
+      "hg": 4,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T18:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "1153f421ad0b6d63",
+      "createdAt": "2026-08-31T09:18:52Z",
+      "league": "T1",
+      "leagueName": "Türkiye Süper Lig",
+      "date": "29/08/2026",
+      "home": "Galatasaray",
+      "away": "Goztep",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6959406435695135,
+      "marketP": 0.5714285714285715,
+      "edge": 0.12451207214094195,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 2,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T18:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "748c51b7e05f1e75",
+      "createdAt": "2026-08-31T09:18:49Z",
+      "league": "B1",
+      "leagueName": "Belgium 1",
+      "date": "29/08/2026",
+      "home": "Oud-Heverlee Leuven",
+      "away": "Standard",
+      "market": "AWAY",
+      "tier": "AGRESİF",
+      "p": 0.5734725452170161,
+      "marketP": 0.39026482255816447,
+      "edge": 0.1832077226588516,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 2,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "3b6c4464968d7137",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "F1",
+      "leagueName": "Ligue 1",
+      "date": "29/08/2026",
+      "home": "Auxerre",
+      "away": "Angers",
+      "market": "U25",
+      "tier": "DENGELİ",
+      "p": 0.6543211708524477,
+      "marketP": 0.5259067357512953,
+      "edge": 0.12841443510115236,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 3,
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "1c436fd8742a02cd",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "F1",
+      "leagueName": "Ligue 1",
+      "date": "29/08/2026",
+      "home": "Brest",
+      "away": "Toulouse",
+      "market": "O25",
+      "tier": "AGRESİF",
+      "p": 0.5608278963958936,
+      "marketP": 0.4805194805194806,
+      "edge": 0.08030841587641296,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 2,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "d26ac74998001e7f",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "I1",
+      "leagueName": "Serie A",
+      "date": "29/08/2026",
+      "home": "Juventus",
+      "away": "Parma",
+      "market": "U25",
+      "tier": "DENGELİ",
+      "p": 0.6501109530413641,
+      "marketP": 0.43152454780361754,
+      "edge": 0.21858640523774658,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 0,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-29T18:45:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "66e1dc9eba92bef9",
@@ -20021,7 +18838,103 @@
       "hg": 0,
       "ag": 1,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T11:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "5f9f30936d022283",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "D2",
+      "leagueName": "Bundesliga 2",
+      "date": "30/08/2026",
+      "home": "Magdeburg",
+      "away": "Holstein Kiel",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6719715715753644,
+      "marketP": 0.5994897959183673,
+      "edge": 0.0724817756569971,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 0,
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T11:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "772a3d16519576d6",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "E0",
+      "leagueName": "Premier League",
+      "date": "30/08/2026",
+      "home": "Sunderland",
+      "away": "Fulham",
+      "market": "U25",
+      "tier": "AGRESİF",
+      "p": 0.6169874921626166,
+      "marketP": 0.5263157894736842,
+      "edge": 0.09067170268893243,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 0,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T13:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "736486b18fd40572",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "F1",
+      "leagueName": "Ligue 1",
+      "date": "30/08/2026",
+      "home": "Paris FC",
+      "away": "Nice",
+      "market": "O25",
+      "tier": "AGRESİF",
+      "p": 0.5630748903291292,
+      "marketP": 0.4516971279373368,
+      "edge": 0.11137776239179237,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 0,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T13:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "881221d3e289cc88",
+      "createdAt": "2026-08-31T09:18:49Z",
+      "league": "B1",
+      "leagueName": "Belgium 1",
+      "date": "30/08/2026",
+      "home": "Antwerp",
+      "away": "St Truiden",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6607090842218655,
+      "marketP": 0.5263157894736842,
+      "edge": 0.1343932947481813,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 4,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T14:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "ac9599915db10e24",
@@ -20040,26 +18953,80 @@
       "hg": 3,
       "ag": 3,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T14:00:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "4fe958dece31827a",
+      "id": "97bcfc43303b2567",
       "createdAt": "2026-08-31T09:18:51Z",
-      "league": "SP1",
-      "leagueName": "La Liga",
+      "league": "P1",
+      "leagueName": "Portugal 1",
       "date": "30/08/2026",
-      "home": "Celta",
-      "away": "Ath Bilbao",
-      "market": "O25",
+      "home": "Nacional",
+      "away": "Estrela",
+      "market": "HOME",
       "tier": "AGRESİF",
-      "p": 0.6188096989854773,
-      "marketP": 0.4516971279373368,
-      "edge": 0.16711257104814053,
+      "p": 0.5592646893770492,
+      "marketP": 0.41002004008016035,
+      "edge": 0.14924464929688885,
       "status": "SETTLED",
-      "hg": 0,
-      "ag": 2,
+      "hg": 2,
+      "ag": 3,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T14:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "b8db992b16106997",
+      "createdAt": "2026-08-31T09:18:50Z",
+      "league": "E0",
+      "leagueName": "Premier League",
+      "date": "30/08/2026",
+      "home": "Man United",
+      "away": "Ipswich",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6816982337091593,
+      "marketP": 0.6025316455696202,
+      "edge": 0.07916658813953903,
+      "status": "SETTLED",
+      "hg": 5,
+      "ag": 2,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T15:30:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "592eddfef40e31ce",
+      "createdAt": "2026-08-31T09:18:49Z",
+      "league": "B1",
+      "leagueName": "Belgium 1",
+      "date": "30/08/2026",
+      "home": "St. Gilloise",
+      "away": "Anderlecht",
+      "market": "HOME",
+      "tier": "DENGELİ",
+      "p": 0.7734946235762825,
+      "marketP": 0.5546526123112367,
+      "edge": 0.21884201126504577,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 0,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T16:30:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "2affcec4ed3661c8",
@@ -20078,7 +19045,11 @@
       "hg": 1,
       "ag": 1,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T18:30:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "81ddd69e1c021079",
@@ -20097,45 +19068,57 @@
       "hg": 0,
       "ag": 2,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T18:30:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "5800166bf260956a",
+      "id": "91a877b8aea0692e",
       "createdAt": "2026-08-31T09:18:51Z",
-      "league": "P1",
-      "leagueName": "Portugal 1",
-      "date": "31/08/2026",
-      "home": "Benfica",
-      "away": "Estoril",
+      "league": "I1",
+      "leagueName": "Serie A",
+      "date": "30/08/2026",
+      "home": "Cagliari",
+      "away": "Inter",
       "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.7399035018639737,
-      "marketP": 0.6728971962616822,
-      "edge": 0.06700630560229148,
+      "tier": "AGRESİF",
+      "p": 0.6019673192801718,
+      "marketP": 0.5,
+      "edge": 0.10196731928017178,
       "status": "SETTLED",
-      "hg": 2,
+      "hg": 0,
       "ag": 1,
-      "won": true,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T18:45:00Z",
+      "displayStatus": "SETTLED"
     },
     {
-      "id": "0617aebab897c51a",
+      "id": "4fe958dece31827a",
       "createdAt": "2026-08-31T09:18:51Z",
-      "league": "P1",
-      "leagueName": "Portugal 1",
-      "date": "31/08/2026",
-      "home": "Sp Braga",
-      "away": "Guimaraes",
+      "league": "SP1",
+      "leagueName": "La Liga",
+      "date": "30/08/2026",
+      "home": "Celta",
+      "away": "Ath Bilbao",
       "market": "O25",
-      "tier": "DENGELİ",
-      "p": 0.6375993348891644,
-      "marketP": 0.4870466321243523,
-      "edge": 0.15055270276481214,
+      "tier": "AGRESİF",
+      "p": 0.6188096989854773,
+      "marketP": 0.4516971279373368,
+      "edge": 0.16711257104814053,
       "status": "SETTLED",
-      "hg": 1,
-      "ag": 0,
+      "hg": 0,
+      "ag": 2,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-08-30T19:30:00Z",
+      "displayStatus": "SETTLED"
     },
     {
       "id": "11969084af2e82c6",
@@ -20154,59 +19137,270 @@
       "hg": 2,
       "ag": 2,
       "won": false,
-      "settledAt": "2026-09-01T05:26:35Z"
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-08-31T17:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "5800166bf260956a",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "P1",
+      "leagueName": "Portugal 1",
+      "date": "31/08/2026",
+      "home": "Benfica",
+      "away": "Estoril",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.7399035018639737,
+      "marketP": 0.6728971962616822,
+      "edge": 0.06700630560229148,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-08-31T19:15:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "0617aebab897c51a",
+      "createdAt": "2026-08-31T09:18:51Z",
+      "league": "P1",
+      "leagueName": "Portugal 1",
+      "date": "31/08/2026",
+      "home": "Sp Braga",
+      "away": "Guimaraes",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6375993348891644,
+      "marketP": 0.4870466321243523,
+      "edge": 0.15055270276481214,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 0,
+      "won": false,
+      "settledAt": "2026-09-01T05:26:35Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-08-31T19:15:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "c3999ccf748de4ad",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "E1",
+      "leagueName": "Championship",
+      "date": "01/09/2026",
+      "home": "Birmingham",
+      "away": "Southampton",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6661138335697915,
+      "marketP": 0.5263157894736842,
+      "edge": 0.1397980440961073,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 1,
+      "won": false,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": false,
+      "auditReason": "Maç başladıktan sonra oluşturuldu",
+      "auditedKickoffAt": "2026-09-01T19:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "ed80b570cc806f8d",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "E1",
+      "leagueName": "Championship",
+      "date": "02/09/2026",
+      "home": "QPR",
+      "away": "Cardiff",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.6679002724708263,
+      "marketP": 0.5483028720626633,
+      "edge": 0.11959740040816302,
+      "status": "SETTLED",
+      "hg": 2,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-09-02T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "1abe7ac7eba8e90c",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "SC0",
+      "leagueName": "Scotland Premiership",
+      "date": "02/09/2026",
+      "home": "Celtic",
+      "away": "Aberdeen",
+      "market": "HOME",
+      "tier": "GÜVENLİ",
+      "p": 0.8235889593447984,
+      "marketP": 0.7744381261846738,
+      "edge": 0.049150833160124585,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 0,
+      "won": true,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-09-02T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "0f3027a411c07f1a",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "SC0",
+      "leagueName": "Scotland Premiership",
+      "date": "02/09/2026",
+      "home": "Kilmarnock",
+      "away": "St Mirren",
+      "market": "O25",
+      "tier": "AGRESİF",
+      "p": 0.6075997825239052,
+      "marketP": 0.5259067357512953,
+      "edge": 0.08169304677260991,
+      "status": "SETTLED",
+      "hg": 0,
+      "ag": 1,
+      "won": false,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-09-02T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "4b32278c19bbb7a1",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "SC0",
+      "leagueName": "Scotland Premiership",
+      "date": "02/09/2026",
+      "home": "Motherwell",
+      "away": "Dundee United",
+      "market": "HOME",
+      "tier": "AGRESİF",
+      "p": 0.5799686987835436,
+      "marketP": 0.49022277901846506,
+      "edge": 0.08974591976507856,
+      "status": "SETTLED",
+      "hg": 3,
+      "ag": 0,
+      "won": true,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-09-02T18:45:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "fc965807456e824e",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "SC0",
+      "leagueName": "Scotland Premiership",
+      "date": "02/09/2026",
+      "home": "Falkirk",
+      "away": "Rangers",
+      "market": "O25",
+      "tier": "DENGELİ",
+      "p": 0.7235182063643708,
+      "marketP": 0.586734693877551,
+      "edge": 0.13678351248681986,
+      "status": "SETTLED",
+      "hg": 1,
+      "ag": 2,
+      "won": true,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-09-02T19:00:00Z",
+      "displayStatus": "SETTLED"
+    },
+    {
+      "id": "420bdc4e6968b5e0",
+      "createdAt": "2026-09-02T05:30:14Z",
+      "league": "F1",
+      "leagueName": "Ligue 1",
+      "date": "03/09/2026",
+      "home": "Toulouse",
+      "away": "Lille",
+      "market": "AWAY",
+      "tier": "AGRESİF",
+      "p": 0.5565613291258155,
+      "marketP": 0.4304635761589404,
+      "edge": 0.1260977529668751,
+      "status": "SETTLED",
+      "hg": 0,
+      "ag": 1,
+      "won": true,
+      "settledAt": "2026-09-04T05:25:58Z",
+      "forwardTestEligible": true,
+      "auditReason": "Maç öncesi kaydedildi",
+      "auditedKickoffAt": "2026-09-03T18:45:00Z",
+      "displayStatus": "SETTLED"
     }
   ],
   "liveSummary": {
     "E0": {
-      "n": 3,
-      "wins": 3,
-      "hitRate": 1.0
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     },
     "E1": {
-      "n": 7,
-      "wins": 2,
-      "hitRate": 0.2857142857142857
-    },
-    "D1": {
-      "n": 3,
-      "wins": 3,
+      "n": 1,
+      "wins": 1,
       "hitRate": 1.0
     },
+    "D1": {
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
+    },
     "D2": {
-      "n": 2,
-      "wins": 1,
-      "hitRate": 0.5
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     },
     "I1": {
-      "n": 3,
-      "wins": 2,
-      "hitRate": 0.6666666666666666
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     },
     "I2": {
-      "n": 2,
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
+    },
+    "SP1": {
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
+    },
+    "SP2": {
+      "n": 1,
       "wins": 0,
       "hitRate": 0.0
     },
-    "SP1": {
-      "n": 2,
-      "wins": 1,
-      "hitRate": 0.5
-    },
-    "SP2": {
-      "n": 2,
-      "wins": 1,
-      "hitRate": 0.5
-    },
     "F1": {
-      "n": 5,
-      "wins": 4,
-      "hitRate": 0.8
+      "n": 1,
+      "wins": 1,
+      "hitRate": 1.0
     },
     "F2": {
-      "n": 3,
-      "wins": 2,
-      "hitRate": 0.6666666666666666
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     },
     "N1": {
       "n": 0,
@@ -20214,29 +19408,29 @@
       "hitRate": null
     },
     "B1": {
-      "n": 3,
-      "wins": 3,
-      "hitRate": 1.0
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     },
     "P1": {
-      "n": 4,
-      "wins": 2,
+      "n": 2,
+      "wins": 1,
       "hitRate": 0.5
     },
     "T1": {
-      "n": 4,
-      "wins": 1,
-      "hitRate": 0.25
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     },
     "SC0": {
-      "n": 7,
-      "wins": 4,
-      "hitRate": 0.5714285714285714
+      "n": 4,
+      "wins": 3,
+      "hitRate": 0.75
     },
     "SC1": {
-      "n": 2,
-      "wins": 2,
-      "hitRate": 1.0
+      "n": 0,
+      "wins": 0,
+      "hitRate": null
     }
   },
   "log": [
@@ -20244,289 +19438,337 @@
       "ok": true,
       "source": "2627_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
-      "message": "10309 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:02Z",
+      "message": "10309 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
-      "message": "203438 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:02Z",
+      "message": "203438 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
-      "message": "197110 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:03Z",
+      "message": "197110 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E1.csv",
-      "message": "23874 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:04Z",
+      "message": "23874 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E1.csv",
-      "message": "294390 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:04Z",
+      "message": "294390 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E1.csv",
-      "message": "286983 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:06Z",
+      "message": "286983 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
-      "message": "4900 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:06Z",
+      "message": "4900 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
-      "message": "159944 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:07Z",
+      "message": "159944 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D1.csv",
-      "message": "156414 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:07Z",
+      "message": "156414 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D2.csv",
-      "message": "13625 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:08Z",
+      "message": "13625 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D2.csv",
-      "message": "157989 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:09Z",
+      "message": "157989 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D2.csv",
-      "message": "157178 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:10Z",
+      "message": "157178 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
-      "message": "9950 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:10Z",
+      "message": "9950 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
-      "message": "196217 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:11Z",
+      "message": "196217 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I1.csv",
-      "message": "191722 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:11Z",
+      "message": "191722 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I2.csv",
-      "message": "10174 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:12Z",
+      "message": "10174 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I2.csv",
-      "message": "190966 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:13Z",
+      "message": "190966 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I2.csv",
-      "message": "192674 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:13Z",
+      "message": "192674 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
-      "message": "15383 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:14Z",
+      "message": "15383 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
-      "message": "197653 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:15Z",
+      "message": "197653 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP1.csv",
-      "message": "192863 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:15Z",
+      "message": "192863 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP2.csv",
-      "message": "16152 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:16Z",
+      "message": "16152 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP2.csv",
-      "message": "237701 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:16Z",
+      "message": "237701 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP2.csv",
-      "message": "230032 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:17Z",
+      "message": "230032 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
-      "message": "9567 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:17Z",
+      "message": "9567 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
-      "message": "158471 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:18Z",
+      "message": "158471 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F1.csv",
-      "message": "154703 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:19Z",
+      "message": "154703 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F2.csv",
-      "message": "17698 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:19Z",
+      "message": "17698 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F2.csv",
-      "message": "156238 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:20Z",
+      "message": "156238 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F2.csv",
-      "message": "155252 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:20Z",
+      "message": "155252 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
-      "message": "16136 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:21Z",
+      "message": "16136 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
-      "message": "158364 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:22Z",
+      "message": "158364 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/N1.csv",
-      "message": "155460 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:22Z",
+      "message": "155460 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/B1.csv",
-      "message": "17638 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:22Z",
+      "message": "17638 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/B1.csv",
-      "message": "158888 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:23Z",
+      "message": "158888 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/B1.csv",
-      "message": "158659 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:24Z",
+      "message": "158659 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/P1.csv",
-      "message": "16100 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:24Z",
+      "message": "16100 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/P1.csv",
-      "message": "157715 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:25Z",
+      "message": "157715 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/P1.csv",
-      "message": "153596 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:25Z",
+      "message": "153596 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
-      "message": "13248 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:26Z",
+      "message": "13248 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
-      "message": "158392 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:26Z",
+      "message": "158392 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/T1.csv",
-      "message": "173297 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:27Z",
+      "message": "173297 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC0.csv",
-      "message": "12705 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:27Z",
+      "message": "12705 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC0.csv",
-      "message": "118594 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:28Z",
+      "message": "118594 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC0.csv",
-      "message": "118635 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:29Z",
+      "message": "118635 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC1.csv",
-      "message": "10263 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:29Z",
+      "message": "10263 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC1.csv",
-      "message": "94837 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:30Z",
+      "message": "94837 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC1.csv",
-      "message": "93788 bayt güncellendi"
+      "checkedAt": "2026-09-04T07:22:30Z",
+      "message": "93788 bayt kontrol edildi"
     },
     {
       "ok": true,

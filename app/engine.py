@@ -53,6 +53,9 @@ def normalize_match(r):
         'oddsA': safe_num(r.get('oddsA') or r.get('B365A') or r.get('AvgA') or r.get('PSA')),
         'oddsO25': safe_num(r.get('oddsO25') or r.get('B365>2.5') or r.get('Avg>2.5') or r.get('P>2.5')),
         'oddsU25': safe_num(r.get('oddsU25') or r.get('B365<2.5') or r.get('Avg<2.5') or r.get('P<2.5')),
+        # Optional adapter fields; the current Football-Data CSV has no BTTS odds.
+        'oddsBTTSYes': safe_num(r.get('oddsBTTSYes')),
+        'oddsBTTSNo': safe_num(r.get('oddsBTTSNo')),
     }
 
 def calculate_strengths(history, home, away, as_of, half_life=180):
@@ -116,6 +119,8 @@ def market_probabilities(f):
     if one:out.update(HOME=one[0],DRAW=one[1],AWAY=one[2])
     ou=devig([f['oddsO25'],f['oddsU25']])
     if ou:out.update(O25=ou[0],U25=ou[1])
+    btts=devig([f['oddsBTTSYes'],f['oddsBTTSNo']])
+    if btts:out.update(BTTS_YES=btts[0],BTTS_NO=btts[1])
     return out
 def choose_decision(model,market,reliability):
     c=[]
@@ -126,7 +131,12 @@ def choose_decision(model,market,reliability):
             if p>=.78 and (edge is None or edge>=.025): tier='GÜVENLİ'; score=3*p+(edge or 0)
             elif p>=.63 and edge is not None and edge>=.05: tier='DENGELİ'; score=4*edge+2*p
             elif .55<=p<.63 and edge is not None and edge>=.08: tier='AGRESİF'; score=5*edge+p
-        c.append({'market':k,'p':p,'marketP':mp,'edge':edge,'tier':tier,'score':score})
+        if reliability<.55: reason='Takım örneklemi yetersiz'
+        elif tier!='PAS': reason='Karar eşiğini geçti' if edge is not None else 'Yalnız model olasılığı; piyasa oranı yok'
+        elif mp is None: reason='Piyasa oranı yok; dengeli/agresif kıyası yapılamıyor'
+        elif p<.55: reason='Model olasılığı karar eşiğinin altında'
+        else: reason='Olasılık ve piyasa farkı birlikte karar eşiğini geçmiyor'
+        c.append({'market':k,'p':p,'marketP':mp,'edge':edge,'tier':tier,'score':score,'reason':reason})
     active=sorted([x for x in c if x['tier']!='PAS'],key=lambda x:x['score'],reverse=True)
     return {'best':active[0] if active else {'market':None,'tier':'PAS','p':None,'marketP':None,'edge':None,'score':0},'candidates':c}
 def predict(history,fixture):
