@@ -1,42 +1,26 @@
-# OPUS V1.5
+# OPUS V1.6
 
-Maç öncesi futbol olasılıkları, değişmez tahmin kaydı ve ölçülen model kalitesi.
-Canlı site: https://serkanatabeykrtn.github.io/opus-football-engine/
+Maç öncesi olasılık motoru ve değişmez test kaydı. [Canlı site](https://serkanatabeykrtn.github.io/opus-football-engine/).
 
-## Yeni model
+## Dinamik ek veriler
 
-Gol geçmişi, ev/deplasman etkisi ve son sekiz maçın formuna; lig maçları arasındaki dinlenme, son 14 gündeki maç yoğunluğu ve mevcut geçmiş isabetli şut verisi eklenir. Sonuç olasılıkları düzenlileştirilmiş lojistik/çok sınıflı kalibrasyonla ayarlanır. Sonuç ve 2,5 gol gruplarında piyasa olasılıkları da girdi olarak kullanılır; karşılıklı golde piyasa oranı bulunmadığında model tabanlı kalibrasyon kullanılır.
+- Understat: Premier League, Bundesliga, Serie A, La Liga ve Ligue 1 için tamamlanmış maçların gerçek xG verisi. 2024, 2025 ve 2026 başlangıçlı sezonlar; son sekiz lig maçındaki üretilen/verilen xG. Başka bir ligin xG’si doldurulmaz.
+- Premier League / FPL: Premier League oyuncu durumları, sakat/şüpheli/cezalı/kullanılamayan oyuncular ve takım oyuncu listesi. Rapor tarihi ve indirme zamanı ayrı tutulur. Boş veya başarısız kaynak, “eksik oyuncu yok” anlamına gelmez.
+- ESPN: eşleşen fikstürlerde takım oyuncu listeleri; maçın son 90 dakikasında yayımlanmışsa kesin ilk 11. İki takım ve başlama saati birlikte eşleşmelidir. Tam 11 farklı başlangıç oyuncusu olmadan kadro kesinleşmiş sayılmaz.
 
-- İlk eğitim: 1 Ocak 2026 öncesi, 6.797 uygun maç.
-- Yöntem seçimi: Ocak–Mart 2026, 1.728 uygun maç; iki sabit düzenlileştirme seçeneği (30/100), piyasalı/piyasasız modeller aynı maçlarda karşılaştırılır.
-- Katsayılar ilk iki dönemle yeniden kurulur. Son kontrol: Nisan–Haziran 2026, ayrı 1.062 maç.
-- Son kontrol etiketleri katsayı eğitimine ve yöntem seçimine girmez. Bu dönemde lig/pazar aday izinleri denetlenir; buradaki sonuçlar yeni canlı test başarısı sayılmaz.
-- Yeni sezon sonuçları takım formunu günceller; kalibrasyonu sessizce yeniden eğitmez. Yeni kalibrasyon için yeni, açık bir model sürümü ve zaman planı gerekir.
+Bağlantılar anahtar istemeyen genel erişim noktalarını kullanır; ücretli abonelik veya kullanıcı anahtarı eklenmedi. Kaynak kapsamı ve erişimi değişebilir. “Model Kontrolü → Dinamik veri bağlantıları” her ligde kullanılabilir maç sayısını ve kaynakların gerçek son indirme zamanını gösterir. Takım listesi maçın ilk 11’i değildir. Sakatlık kapsamı Premier League ile sınırlıdır; diğer liglerde bilinmiyor olarak kalır.
 
-`Model Kontrolü` ekranı aynı maçlardaki eski/yeni/referans sonuçlarını, olasılık gruplarının gerçekleşme oranlarını ve her lig/pazarın aday durumunu gösterir. Yeni model eski motora göre üç grupta da daha düşük olasılık hatası verdi; maç sonucu ve 2,5 gol gruplarında piyasa referansını genel olarak geçemedi. Kalıcı üstünlük veya kazanç kanıtlanmış değildir.
+## Modelde kullanım
 
-## Karar ve gerçek takip
+xG içeren ve içermeyen modeller aynı Ocak–Mart 2026 yöntem seçimi maçlarında karşılaştırılır. Eğitim 1 Ocak 2026 öncesi, bağımsız değerlendirme Nisan–Haziran 2026'dır. Geçmiş xG yalnız maçtan önceki tamamlanmış maçlardan gelir; maçın kendi xG'si ve gelecekteki sonuçlar özellik olamaz. Takım adları açık eşleme kurallarıyla eşlenir; tarih, iki takım ve gerçek skor uyuşmadığında xG bağlanmaz.
 
-Yeni sürümde GÜVENLİ/DENGELİ/AGRESİF yerine ADAY veya PAS kullanılır. Eski etiketler eski kayıtlarda aynen saklanır.
+Oyuncu durumları ve kadrolar zaman damgalı ek analiz ve ileriye dönük araştırma verisidir. Geçmiş maç öncesi arşivi bulunmadığı için sakat oyuncu sayısından rastgele olasılık indirimi yapılmaz. Bu sayısal etkinin doğrulandığı iddia edilmez. xG eklemek de otomatik başarı artışı sağlamaz; gerçek ölçümler ekranda görünür.
 
-ADAY için lig/pazar bağımsız testinde en az 80 maç ve olasılık ≥%55, referans oran üzerinden beklenen değer ≥%5 koşullarına benzeyen en az 30 karar aranır. Test olasılık hatası referanstan kötü olmamalı ve bu adayların ortalama olasılık–gerçekleşme farkı 8 puanı aşmamalıdır. Güncel maçın ağırlıklı takım örneklemleri en az sekiz olmalıdır. Eksik fiyat veya başarısız kaynak kontrolü aktif adayı engeller. Bunlar deneysel tarama kurallarıdır; çok sayıda lig/pazar karşılaştırması ve küçük örneklem nedeniyle kalıcı avantaj kanıtı değildir.
+ADAY/PAS koşulları korunur: yeterli takım geçmişi, lig/pazar değerlendirmesi, kullanılabilir referans oran ve pozitif hesaplanan değer. Mevcut ilk seçilmiş karar değiştirilmez. Her model sürümünün yedi olasılığı PAS dahil ayrı kilitlenir. `context-ledger.json` ilk ek veri gözlemini korur; son maç öncesi gözlem başlama saatinden sonra değiştirilmez. V1.6, V1.5 ve önceki sürümler başarı ekranında ayrı izlenir.
 
-Görünen oranlar kaynağın referans fiyatlarıdır; bahis sitesinde halen mevcut oldukları doğrulanmış değildir. Beklenen değer `p × oran − 1` ile hesaplanır. Kalibre model olasılığı da hatalı olabilir. Hiçbir stake veya para işlemi otomatik yapılmaz.
+## Güncelleme
 
-`data/ledger.json` ilk seçilmiş kararı korur. `data/forecast-ledger.json`, PAS dahil her modellenebilen maçın yedi olasılığını sürüm başına maç başlamadan bir kez kaydeder. Sonradan model, oran veya karar değişse bile ilk kayıt değişmez. Sonuçlar fikstürden bağımsız işlenir. Başarı Analizi yeni modeli varsayılan olarak gösterir; Önceki motor filtresi eski sonuçları açar.
-
-## Veri kapsamı
-
-Football-Data CSV kaynağı kullanılır. Sakatlık, ceza, kadro ve gerçek xG kaynağı henüz bağlı değildir. Eksiklikler ekranda belirtilir. İsabetli şut xG olarak sunulmaz; dinlenme/yoğunluk yalnız mevcut lig maçlarını kapsar, kupa ve milli maçları kapsamaz. KG piyasa oranı kaynakta yoktur. Kart, korner ve ilk yarı pazarları hesaplanmaz.
-
-Kaynak: https://www.football-data.co.uk/matches.php
-Kalibrasyon yöntemi açıklaması: https://scikit-learn.org/stable/modules/calibration.html
-
-## Güncelleme ve çalıştırma
-
-GitHub görevi yaklaşık iki saatte bir çalışır. Kaynağın fikstür yayımlama zamanı ayrıca beklenir. Yeni tahmin yalnız henüz başlamamış maçlara üretilir; tarihi veya saati doğrulanamayan maçlar alınmaz. İlk yeni model kurulumu birkaç dakika sürebilir; değişmeyen eğitim verisinde kaydedilmiş model yeniden kullanılır.
-
-Python 3.12 ve Node.js ile:
+GitHub görevi yaklaşık 30 dakikada bir çalışır; kuyruk gecikmesi olabilir. Fikstür ve FPL 30 dakika, sonuç CSV'leri 2 saat, takım listeleri 24 saat, güncel sezon xG 6 saat aralıkla yeniden indirilir. Biten sezon xG verisi 30 gün önbellekte tutulur. Her çalışmada en fazla 100 ek kaynak isteği ve 4 dakika indirme süresi ayrılır; kalan kaynaklar sonraki çalışmalarda tamamlanır. 401/403/429 yanıtlarında aynı kaynak grubu o çalışmada tekrar denenmez. Eski önbellek yeni indirilmiş gibi sunulmaz. Kaynak hatası son iyi veriyi silmez.
 
 ```text
 python -m pip install -r requirements.txt
@@ -46,4 +30,6 @@ python app/update.py
 python app/server.py
 ```
 
-Windows: START_OPUS.bat veya UPDATE_ONLY.bat. GitHub Pages üzerinde yerel veri güncelleme düğmesi gizlenir. Ekran beş dakikada bir veriyi yeniden okur; başlamış maçlar otuz saniyede bir listeden çıkarılır. Veri bağlantısı yapılandırılacaksa anahtarlar tarayıcıya veya açık depoya konulmamalıdır.
+Windows: START_OPUS.bat veya UPDATE_ONLY.bat. Ekran beş dakikada bir kayıtlı veriyi yeniden okur. Yalnız başlamamış maçlara yeni analiz kaydedilir. Başarı; maç öncesinde saklanan ilk tahmin ile doğrulanmış sonuçtan hesaplanır. Kart, korner ve ilk yarı pazarları yoktur; KG piyasa oranı mevcut CSV'de bulunmaz.
+
+Kaynaklar: [Football-Data](https://www.football-data.co.uk/matches.php), [Understat](https://understat.com/), [FPL istatistik açıklaması](https://www.premierleague.com/en/news/2176606), [ESPN](https://www.espn.com/soccer/).

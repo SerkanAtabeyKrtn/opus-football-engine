@@ -31,7 +31,7 @@ const OpusPerformance=(()=>{
     const since=options.days?now-Number(options.days)*86400000:-Infinity;
     return records.filter(r=>r.startMs>=since && r.startMs<=now &&
       (!options.tier||r.tier===options.tier) && (!options.market||r.market===options.market) &&
-      (!options.version||(options.version==='legacy'?r.modelVersion!=='1.5':r.modelVersion===options.version)) &&
+      (!options.version||(options.version==='legacy'?Number(r.modelVersion||'1.3')<1.5:r.modelVersion===options.version)) &&
       (!options.league||r.league===options.league) &&
       (!options.team||[teamId(r.league,r.home),teamId(r.league,r.away)].includes(options.team)));
   }

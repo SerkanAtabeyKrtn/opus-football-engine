@@ -17,6 +17,7 @@ def register(records, prediction, now):
     fields = ('id','league','leagueName','date','time','home','away','modelVersion','modelId',
               'model','rawModel','market','context','decision','candidates')
     item = {key:deepcopy(prediction[key]) for key in fields}
+    if 'enrichment' in prediction:item['enrichment']=deepcopy(prediction['enrichment'])
     item.update(createdAt=iso(now),kickoffAt=iso(start),status='PENDING',hg=None,ag=None,
                 outcomes=None,forwardTestEligible=True)
     records.append(item)

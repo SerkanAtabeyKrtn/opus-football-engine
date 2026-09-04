@@ -1,4 +1,5 @@
 function renderQuality(data){
+  renderExternal(data);
   const q=data.quality, audit=data.forecastAudit||{};
   if(!q){$('quality-status').textContent='Model kontrol raporu henüz alınamadı.';return}
   const approved=Object.values(q.gates||{}).filter(g=>g.eligible).length;

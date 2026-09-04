@@ -1,7 +1,7 @@
 name: OPUS automatic data update
 on:
   schedule:
-    - cron: '17 */2 * * *'
+    - cron: '7,37 * * * *'
   workflow_dispatch:
   push:
     branches: [main]
@@ -12,6 +12,7 @@ on:
       - 'performance.js'
       - 'performance-ui.js'
       - 'quality-ui.js'
+      - 'external-ui.js'
       - 'tests/**'
       - '.github/workflows/update.yml'
       - 'requirements.txt'
@@ -39,6 +40,7 @@ jobs:
           python tests/test_update.py
           python -m unittest discover -s tests -p 'test_lifecycle.py' -v
           python -m unittest discover -s tests -p 'test_quality.py' -v
+          python -m unittest discover -s tests -p 'test_external_data.py' -v
       - name: Fetch, predict, settle and backtest
         run: python app/update.py
       - name: Commit generated data

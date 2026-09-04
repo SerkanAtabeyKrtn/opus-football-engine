@@ -1,9 +1,10 @@
-import csv, io, json, urllib.request, time
+import csv, io, json, os, urllib.request, time
 from datetime import datetime, timezone
 from pathlib import Path
 from engine import predict, backtest, normalize_match
 from lifecycle import audit_and_settle, eligibility, kickoff, iso, register_prediction, record_id
 import forecast_audit
+import external_data
 from quality_model import VERSION, ensure_model, predict as calibrated_predict
 
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; RAW=ROOT/'raw'; DATA.mkdir(exist_ok=True); RAW.mkdir(exist_ok=True)
@@ -55,13 +56,30 @@ def load_json(path,default):
     try:return json.loads(path.read_text(encoding='utf-8'))
     except:return default
 
+def recent_download(key,path,seconds):
+    if not path.exists():return None
+    stamp=load_json(RAW/'fetch-times.json',{}).get(key)
+    parsed=external_data.date(stamp)
+    if parsed and 0 <= (datetime.now(timezone.utc)-parsed).total_seconds() < seconds:return stamp
+    return None
+
+def remember_download(key):
+    path=RAW/'fetch-times.json'; stamps=load_json(path,{})
+    stamps[key]=nowiso();atomic_json(path,stamps)
+
 def fetch_cached(url,key,log):
     p=RAW/f'{key}.csv'
+    stamp=recent_download(key,p,7200)
+    if stamp:
+        b=p.read_bytes()
+        if {'Date','HomeTeam','AwayTeam','FTHG','FTAG'}.issubset(csv_headers(b)):
+            log.append({'ok':True,'source':key,'url':url,'checkedAt':stamp,'message':'İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri'})
+            return parse_csv_bytes(b),False
     try:
         b=get(url)
         if not {'Date','HomeTeam','AwayTeam','FTHG','FTAG'}.issubset(csv_headers(b)):
             raise ValueError('Sonuç CSV şeması geçersiz; son iyi önbellek korundu')
-        p.write_bytes(b); log.append({'ok':True,'source':key,'url':url,'checkedAt':nowiso(),'message':f'{len(b)} bayt kontrol edildi'})
+        p.write_bytes(b); remember_download(key);log.append({'ok':True,'source':key,'url':url,'checkedAt':nowiso(),'message':f'{len(b)} bayt kontrol edildi'})
         return parse_csv_bytes(b),False
     except Exception as e:
         if p.exists():
@@ -72,6 +90,12 @@ def fetch_cached(url,key,log):
 
 def fetch_fixtures(log):
     p=RAW/'fixtures.csv'
+    stamp=recent_download('fixtures',p,1800)
+    if stamp:
+        b=p.read_bytes();valid,headers=fixture_payload_is_valid(b)
+        if valid:
+            log.append({'ok':True,'source':'fixtures','url':FIXTURE_URLS[0],'checkedAt':stamp,'message':'30 dakikalık indirme aralığı dolmadı; doğrulanmış fikstür'})
+            return parse_csv_bytes(b),False,FIXTURE_URLS[0],headers
     errors=[]
     for url in FIXTURE_URLS:
         try:
@@ -83,6 +107,7 @@ def fetch_fixtures(log):
                 continue
             rows=parse_csv_bytes(b)
             p.write_bytes(b)
+            remember_download('fixtures')
             recognized=sum(1 for r in rows if (r.get('Div') or '').strip() in LEAGUES)
             log.append({'ok':True,'source':'fixtures','url':url,'message':f'{len(rows)} satır; {recognized} desteklenen lig fikstürü'})
             return rows,False,url,headers
@@ -127,6 +152,14 @@ def main():
     records=ledger.get('predictions',[])
     forecast_path=DATA/'forecast-ledger.json'
     forecasts=load_ledger(forecast_path)['predictions']
+    external=external_data.Client(RAW/'external',budget=100)
+    years=sorted({2000+int(s[:2]) for s in SEASONS})
+    xg=external_data.fetch_xg(external,years)
+    xg_matched=external_data.attach_xg(histories,xg)
+    print('External xG matched:',xg_matched,flush=True)
+    contexts=external_data.collect_context(external,fixtures)
+    context_path=DATA/'context-ledger.json'
+    context_records=load_ledger(context_path)['predictions']
     artifact=ensure_model(histories,DATA/'model.json')
     forecast_audit.settle(forecasts,histories,datetime.now(timezone.utc))
     results=audit_and_settle(records,histories,datetime.now(timezone.utc),fixtures)
@@ -160,6 +193,11 @@ def main():
         rec.update(kickoffAt=iso(kickoff(f)),candidates=pr['decision']['candidates'],calculatedAt=iso(created))
         rec.update(modelVersion=VERSION,modelId=pr['modelId'],context=pr['context'],rawModel=pr['rawModel'],
                    sampleHome=pr['strengths']['nH'],sampleAway=pr['strengths']['nA'])
+        rec['enrichment']=contexts.get(mid,{'home':{},'away':{},'notes':['Ek veri henüz alınamadı.']})
+        for field in ('injuries','suspensions'):
+            rec['context']['availability'][field]=all(rec['enrichment'].get(s,{}).get('availability',{}).get('status') in ('fresh','cached') for s in ('home','away'))
+        rec['context']['availability']['lineups']=all(rec['enrichment'].get(s,{}).get('lineup',{}).get('status')=='confirmed' for s in ('home','away'))
+        external_data.register_context(context_records,code,f,rec['enrichment'],created)
         observed=forecast_audit.register(forecasts,rec,created)
         if observed:
             rec['firstAnalysisAt']=observed['createdAt']
@@ -175,6 +213,24 @@ def main():
     atomic_json(forecast_path,{'updatedAt':nowiso(),'predictions':forecasts})
     atomic_json(DATA/'model.json',artifact)
     atomic_json(DATA/'model-quality.json',artifact['report'])
+    atomic_json(context_path,{'updatedAt':nowiso(),'predictions':context_records})
+    enrichment={'updatedAt':nowiso(),'xgMatchedHistory':xg_matched,'sources':external.log,
+       'coverage':{code:{'fixtures':sum(p['league']==code for p in predictions),
+         'xg':sum(p['league']==code and p['context']['availability']['xg'] for p in predictions),
+         'injuries':sum(p['league']==code and p['context']['availability']['injuries'] for p in predictions),
+         'squads':sum(p['league']==code and all(p['enrichment'].get(s,{}).get('squad',{}).get('status') in ('fresh','cached') for s in ('home','away')) for p in predictions),
+         'lineups':sum(p['league']==code and p['context']['availability']['lineups'] for p in predictions)} for code in LEAGUES}}
+    atomic_json(DATA/'enrichment.json',enrichment)
+    print('External coverage:',json.dumps(enrichment['coverage']),flush=True)
+    summary_path=os.environ.get('GITHUB_STEP_SUMMARY')
+    if summary_path:
+        lines=['## Dynamic source validation','',
+            '| League | Fixtures | xG | Player status | Squads | Confirmed XI |',
+            '|---|---:|---:|---:|---:|---:|']
+        lines += ['| '+code+' | '+' | '.join(str(c[k]) for k in ('fixtures','xg','injuries','squads','lineups'))+' |' for code,c in enrichment['coverage'].items()]
+        lines += ['', '| Source | Status | Download time |','|---|---|---|']
+        lines += ['| '+s['source']+' | '+s['status']+' | '+str(s.get('fetchedAt') or 'unavailable')+' |' for s in external.log]
+        with open(summary_path,'a',encoding='utf-8') as handle:handle.write('\n'.join(lines)+'\n')
     settled=[x for x in ledger['predictions'] if x['status']=='SETTLED' and x.get('forwardTestEligible')]
     live_summary={}
     for code in LEAGUES:
@@ -199,8 +255,8 @@ def main():
     predictions=[p for p in predictions if kickoff(p)>finished]
     health['predictions']=len(predictions)
     health['futureFixtureCount']=sum(bool(kickoff(r) and kickoff(r)>finished) for r in fixtures if (r.get('Div') or '').strip() in LEAGUES)
-    dashboard={'version':VERSION,'updatedAt':iso(finished),'dataMode':'validated cache-first server-side','refreshIntervalMinutes':120,'sourceTimezone':'Europe/London','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'skipped':skipped,'matrix':{},'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log,
-               'quality':artifact['report'],'forecastAudit':forecast_audit.summary(forecasts,VERSION)}
+    dashboard={'version':VERSION,'updatedAt':iso(finished),'dataMode':'validated cache-first server-side','refreshIntervalMinutes':30,'sourceTimezone':'Europe/London','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'skipped':skipped,'matrix':{},'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log,
+               'quality':artifact['report'],'forecastAudit':forecast_audit.summary(forecasts,VERSION),'enrichment':enrichment}
     atomic_json(DATA/'dashboard.json',dashboard)
     ok=sum(1 for x in log if x.get('ok')); fail=sum(1 for x in log if not x.get('ok'))
     print(f'OPUS V{VERSION} update complete. sources_ok={ok} failed={fail} fixture_rows={fixture_rows} recognized={recognized_rows} predictions={len(predictions)} skipped={len(skipped)} ledger={len(ledger["predictions"])} fixture_source={fixture_source}')
