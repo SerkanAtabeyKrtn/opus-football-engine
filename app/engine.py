@@ -1,4 +1,5 @@
 import math
+from functools import lru_cache
 from datetime import datetime, timezone
 
 MARKETS = ['U25','O25','BTTS_NO','BTTS_YES','HOME','DRAW','AWAY']
@@ -12,6 +13,7 @@ def safe_num(v):
         return x if math.isfinite(x) else None
     except: return None
 
+@lru_cache(maxsize=16384)
 def parse_date(s):
     if isinstance(s, datetime): return s
     if not s: return None
