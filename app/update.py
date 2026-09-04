@@ -1,7 +1,8 @@
-import csv, io, json, hashlib, urllib.request, time
+import csv, io, json, urllib.request, time
 from datetime import datetime, timezone
 from pathlib import Path
 from engine import predict, backtest, normalize_match
+from lifecycle import audit_and_settle, eligibility, kickoff, iso, register_prediction, record_id
 
 ROOT=Path(__file__).resolve().parents[1]; DATA=ROOT/'data'; RAW=ROOT/'raw'; DATA.mkdir(exist_ok=True); RAW.mkdir(exist_ok=True)
 LEAGUES={'E0':'Premier League','E1':'Championship','D1':'Bundesliga','D2':'Bundesliga 2','I1':'Serie A','I2':'Serie B','SP1':'La Liga','SP2':'La Liga 2','F1':'Ligue 1','F2':'Ligue 2','N1':'Eredivisie','B1':'Belgium 1','P1':'Portugal 1','T1':'Türkiye Süper Lig','SC0':'Scotland Premiership','SC1':'Scotland Championship'}
@@ -55,7 +56,10 @@ def load_json(path,default):
 def fetch_cached(url,key,log):
     p=RAW/f'{key}.csv'
     try:
-        b=get(url); p.write_bytes(b); log.append({'ok':True,'source':key,'url':url,'message':f'{len(b)} bayt güncellendi'})
+        b=get(url)
+        if not {'Date','HomeTeam','AwayTeam','FTHG','FTAG'}.issubset(csv_headers(b)):
+            raise ValueError('Sonuç CSV şeması geçersiz; son iyi önbellek korundu')
+        p.write_bytes(b); log.append({'ok':True,'source':key,'url':url,'checkedAt':nowiso(),'message':f'{len(b)} bayt kontrol edildi'})
         return parse_csv_bytes(b),False
     except Exception as e:
         if p.exists():
@@ -93,8 +97,14 @@ def fetch_fixtures(log):
     log.append({'ok':False,'source':'fixtures','message':'Doğrulanmış fikstür verisi bulunamadı. ' + ' | '.join(errors)})
     return [],True,None,[]
 
-def match_id(league,date,home,away):
-    s=f'{league}|{date}|{home}|{away}'.lower().strip(); return hashlib.sha1(s.encode()).hexdigest()[:16]
+def load_ledger(path):
+    if not path.exists():
+        return {'predictions':[]}
+    # A corrupt ledger must stop the update rather than silently erase history.
+    ledger=json.loads(path.read_text(encoding='utf-8'))
+    if not isinstance(ledger,dict) or not isinstance(ledger.get('predictions'),list):
+        raise ValueError('Tahmin defteri okunamadı; güncelleme durduruldu')
+    return ledger
 
 def main():
     log=[]; histories={}; stale_sources=0
@@ -109,7 +119,9 @@ def main():
     fixture_rows=len(fixtures)
     recognized_rows=sum(1 for r in fixtures if (r.get('Div') or r.get('League') or '').strip() in LEAGUES)
 
-    ledger_path=DATA/'ledger.json'; ledger=load_json(ledger_path,{'predictions':[]}); existing={x['id']:x for x in ledger.get('predictions',[])}
+    ledger_path=DATA/'ledger.json'; ledger=load_ledger(ledger_path)
+    records=ledger.get('predictions',[])
+    results=audit_and_settle(records,histories,datetime.now(timezone.utc),fixtures)
     predictions=[]; skipped=[]
     for row in fixtures:
         code=(row.get('Div') or row.get('League') or '').strip()
@@ -118,27 +130,28 @@ def main():
         if not f['home'] or not f['away'] or not f['date']:
             skipped.append({'league':code,'date':f.get('date'),'home':f.get('home'),'away':f.get('away'),'reason':'Fikstür satırında tarih/takım alanı eksik'})
             continue
+        reason=eligibility(code,f,results,datetime.now(timezone.utc))
+        if reason:
+            skipped.append({'league':code,'date':f['date'],'home':f['home'],'away':f['away'],'reason':reason})
+            continue
         pr=predict(histories.get(code,[]),f)
         if not pr['ok']:
             skipped.append({'league':code,'date':f['date'],'home':f['home'],'away':f['away'],'reason':pr['reason']}); continue
-        d=pr['decision']['best']; mid=match_id(code,f['date'],f['home'],f['away'])
+        # Recheck after computation in case kickoff occurred while the model ran.
+        created=datetime.now(timezone.utc)
+        if eligibility(code,f,results,created):
+            skipped.append({'league':code,'date':f['date'],'home':f['home'],'away':f['away'],'reason':'Hesaplama sırasında başlama saati geçti'})
+            continue
+        d=pr['decision']['best']; mid=record_id(code,f)
         rec={'id':mid,'league':code,'leagueName':LEAGUES[code],'date':f['date'],'time':f.get('time',''),'home':f['home'],'away':f['away'],'lambdaH':pr['strengths']['lambdaH'],'lambdaA':pr['strengths']['lambdaA'],'reliability':pr['strengths']['reliability'],'topScores':pr['model']['scores'],'model':{k:pr['model'][k] for k in ['HOME','DRAW','AWAY','U25','O25','BTTS_YES','BTTS_NO']},'market':pr['market'],'decision':d}
+        rec.update(kickoffAt=iso(kickoff(f)),candidates=pr['decision']['candidates'],calculatedAt=iso(created))
+        locked=register_prediction(records,rec,created)
+        if locked:
+            rec['lockedPrediction']={k:locked.get(k) for k in ('market','tier','p','marketP','edge','createdAt','forwardTestEligible')}
         predictions.append(rec)
-        if d['tier']!='PAS' and mid not in existing:
-            existing[mid]={'id':mid,'createdAt':nowiso(),'league':code,'leagueName':LEAGUES[code],'date':f['date'],'home':f['home'],'away':f['away'],'market':d['market'],'tier':d['tier'],'p':d['p'],'marketP':d['marketP'],'edge':d['edge'],'status':'PENDING','hg':None,'ag':None,'won':None}
 
-    # settle ledger from latest histories; never change original prediction fields
-    result_index={}
-    for code,rows in histories.items():
-        for r in rows:
-            m=normalize_match(r)
-            if m['hg'] is None or m['ag'] is None:continue
-            result_index[match_id(code,m['date'],m['home'],m['away'])]=(int(m['hg']),int(m['ag']))
-    from engine import outcome
-    for mid,x in existing.items():
-        if x.get('status')=='PENDING' and mid in result_index:
-            hg,ag=result_index[mid]; x['hg']=hg;x['ag']=ag;x['won']=bool(outcome(x['market'],hg,ag));x['status']='SETTLED';x['settledAt']=nowiso()
-    ledger={'updatedAt':nowiso(),'predictions':sorted(existing.values(),key=lambda x:(x['date'],x['league'],x['home']))}
+    audit_and_settle(records,histories,datetime.now(timezone.utc),fixtures)
+    ledger={'updatedAt':nowiso(),'predictions':sorted(records,key=lambda x:(x.get('auditedKickoffAt') or x['createdAt'],x['league'],x['home']))}
     atomic_json(ledger_path,ledger)
 
     matrices={}
@@ -146,7 +159,7 @@ def main():
         if len(rows)>=40:
             try: matrices[code]=backtest(rows)
             except Exception as e: log.append({'ok':False,'source':f'backtest_{code}','message':str(e)})
-    settled=[x for x in ledger['predictions'] if x['status']=='SETTLED']
+    settled=[x for x in ledger['predictions'] if x['status']=='SETTLED' and x.get('forwardTestEligible')]
     live_summary={}
     for code in LEAGUES:
         z=[x for x in settled if x['league']==code]
@@ -161,10 +174,18 @@ def main():
         'predictions':len(predictions),
         'skipped':len(skipped),
         'ledger':len(ledger['predictions']),
+        'excludedFromForwardTest':sum(not x.get('forwardTestEligible',False) for x in records),
+        'awaitingResults':sum(x.get('displayStatus')=='AWAITING_RESULT' for x in records),
+        'fixtureFirstDate':min((iso(kickoff(r)) for r in fixtures if kickoff(r)),default=None),
+        'fixtureLastDate':max((iso(kickoff(r)) for r in fixtures if kickoff(r)),default=None),
     }
-    dashboard={'version':'1.2','updatedAt':nowiso(),'dataMode':'validated cache-first server-side','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'skipped':skipped,'matrix':matrices,'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log}
+    finished=datetime.now(timezone.utc)
+    predictions=[p for p in predictions if kickoff(p)>finished]
+    health['predictions']=len(predictions)
+    health['futureFixtureCount']=sum(bool(kickoff(r) and kickoff(r)>finished) for r in fixtures if (r.get('Div') or '').strip() in LEAGUES)
+    dashboard={'version':'1.4','updatedAt':iso(finished),'dataMode':'validated cache-first server-side','refreshIntervalMinutes':120,'sourceTimezone':'Europe/London','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'skipped':skipped,'matrix':matrices,'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log}
     atomic_json(DATA/'dashboard.json',dashboard)
     ok=sum(1 for x in log if x.get('ok')); fail=sum(1 for x in log if not x.get('ok'))
-    print(f'OPUS V1.2 update complete. sources_ok={ok} failed={fail} fixture_rows={fixture_rows} recognized={recognized_rows} predictions={len(predictions)} skipped={len(skipped)} ledger={len(ledger["predictions"])} fixture_source={fixture_source}')
+    print(f'OPUS V1.4 update complete. sources_ok={ok} failed={fail} fixture_rows={fixture_rows} recognized={recognized_rows} predictions={len(predictions)} skipped={len(skipped)} ledger={len(ledger["predictions"])} fixture_source={fixture_source}')
 
 if __name__=='__main__':main()
