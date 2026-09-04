@@ -1,39 +1,23 @@
-# OPUS Football Probability Engine V1.1 — Test Raporu
+# V1.3 doğrulama — 4 Eylül 2026
 
-## 1. Motor birim testleri — PASS
-- Skor olasılık matrisi toplamı = 1.
-- 2.5 Alt + 2.5 Üst = 1.
-- KG Var + KG Yok = 1.
-- Ev + Beraberlik + Deplasman = 1.
-- De-vig piyasa olasılıkları toplamı = 1.
-- Dengeli karar eşiği doğru sınıflandırılıyor.
-- Gelecekteki bir maç sonucu geçmiş tarihteki tahmini değiştirmiyor (data leakage testi).
+İncelenen üretim sürümü: d929e5cc7275ae4d50942c7459bd33cc161a5db9.
+Veri anı: 2026-09-04 05:27:22 UTC.
 
-## 2. Forward-test defteri — PASS
-- Mevcut bir tahmin yeniden hesaplandığında pazar, olasılık, edge ve tier geriye dönük değiştirilmiyor.
-- Settlement yalnızca sonuç/status alanlarını güncelliyor.
+- Mevcut motor ve fikstür şema testleri geçti.
+- On bir yeni test; saat dilimi, geçmiş/sonuçlanmış maç engeli, kayıt değişmezliği, geç kayıtların denetimi, sonuç eşleştirme, sonuç bekleme, eksik zaman, yedi pazar, KG oranları, bozuk CSV ve defter koruması ile ana güncelleme akışını kapsıyor.
+- JavaScript sözdizimi kontrolü geçti.
+- Üretim CSV'leri ve defteri ağdan yeniden çekilmeden değerlendirildi: 52 kayıt korundu, 43 geç kayıt test dışında, 9 kayıt maç öncesi. Desteklenen 23 fikstürün tamamı geçmiş olduğundan aktif tahmin sıfır. Bu yerel kontrol için değişmeyen geçmiş performans matrisleri yeniden kullanıldı.
+- Tarayıcıda boş aktif liste, Türkiye saati ve TEST DIŞI etiketleri doğrulandı. Ayrı, açıkça etiketlenmiş sınama maçıyla yedi pazarın gerekçeleri ve eksik KG oranı gösterimi kontrol edildi.
 
-## 3. Web sunucusu — PASS
-- `index.html` HTTP 200.
-- `data/dashboard.json` HTTP 200.
-- Dashboard sürümü: 1.1.
-- Veri modu: cache-first server-side.
+Canlı site değiştirilmedi. Yeni zamanlamanın canlı çalışması, değişiklikler gönderilip iş akışı tamamlandığında doğrulanmalıdır. Üretilmiş önizleme verisi ve sınama fikstürleri pakete dahil edilmedi.
 
-## 4. CORS mimarisi — PASS
-- Browser HTML içinde football-data.co.uk çağrısı yok.
-- Browser HTML içinde allorigins/CORS proxy çağrısı yok.
-- Dış veri erişimi yalnızca `app/update.py` sunucu katmanında.
 
-## 5. Hata toleransı — PASS (kod/kontrat)
-- Canlı indirme başarısızsa son başarılı raw cache kullanılır.
-- Cache de yoksa veri eksikliği loglanır; tahmin uydurulmaz.
-- JSON yazımı atomik geçici dosya + replace yöntemiyle yapılır.
+## V1.4 başarı ekranı doğrulaması
 
-## 6. Bulut otomasyonu — hazır
-`.github/workflows/update.yml`:
-- Her gün 05:15 UTC otomatik güncelleme.
-- Cuma/Cumartesi/Pazar 12:15 UTC ek güncelleme.
-- Tahmin/settlement/backtest sonrası `data` ve `raw` değişikliklerini repoya commit eder.
-
-## Çalışma ortamı sınırı
-Bu paket oluşturulurken modelin çalışma konteynerinden Football-Data CSV dosyasına doğrudan ağ indirmesi başarılamadı. Bu nedenle canlı kaynaktan sahte bir başarı sonucu raporlanmadı. Veri indirme katmanı tarayıcıdan çıkarılıp Python sunucu tarafına taşındı. Kullanıcı makinesinde veya GitHub Actions runner'ında ilk gerçek indirme `app/update.py` tarafından yapılacaktır.
+- Yedi yeni başarı analizi testi geçti: geçerli kayıt süzme, aynı maçın yinelenmesi, lig/takım sayımı, birleşik filtreler, küçük örneklemin sıralanması, ilk beş sınırı ve boş/kayıp örneklem.
+- On bir önceki yaşam döngüsü testi tekrar geçti. Yeni arayüz dosyaları ve dashboard.js sözdizimi kontrolünden geçti.
+- Gerçek denetlenmiş veride 9 maç / 6 doğru / 3 yanlış; toplam %66,7.
+- Başarı + maç sayısı sırası: Scotland Premiership 3/4; Championship 1/1; Ligue 1 1/1; Portugal 1 1/2; La Liga 2 0/1. Bu kayıtların tamamı az örneklemlidir.
+- Tarayıcıda lig → takım → maç geçişi doğrulandı. Aberdeen seçimi Celtic–Aberdeen maçını ve 1/1 sonucu gösterdi. Yalnız yanlış filtresi boş liste gösterirken 1/1 özetini değiştirmedi.
+- DENGELİ filtresinde 5 maç / 3 doğru / %60 ve 4 lig gösterildi. En az 20 maç filtresi boş sıralama durumunu doğru gösterdi. Sayfa görünümü kontrol edildi.
+- Canlı siteye gönderim yapılmadı. HTML önizleme 4 Eylül 2026 veri anını içerir; canlı veri çekmez. ZIP kaynak değişikliklerini içerir, data/ veya raw/ içermez.
