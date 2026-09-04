@@ -15,8 +15,8 @@ import numpy as np
 import calibration
 import engine
 
-VERSION = '1.5'
-SPEC = 'quality-2026-09-04-b'
+VERSION = '1.6'
+SPEC = 'quality-xg-2026-09-04-a'
 LEAGUE_CODES = ['E0','E1','D1','D2','I1','I2','SP1','SP2','F1','F2','N1','B1','P1','T1','SC0','SC1']
 FAMILIES = {'result': ['HOME','DRAW','AWAY'], 'goals': ['O25','U25'], 'btts': ['BTTS_YES','BTTS_NO']}
 PLAN = {'fitBefore': '2026-01-01', 'selectBefore': '2026-04-01', 'testBefore': '2026-07-01'}
@@ -57,8 +57,17 @@ def context(history, fixture):
                         'matchesLast14Days': load, 'shotsMatches': len(shots_for),
                         'shotsOnTargetFor': round(sum(shots_for)/len(shots_for),2) if shots_for else None,
                         'shotsOnTargetAgainst': round(sum(shots_against)/len(shots_against),2) if shots_against else None}
+        xg=[]
+        for r in prior[:8]:
+            home=(r.get('HomeTeam') or r.get('home'))==team
+            xf,xa=engine.safe_num(r.get('HxG' if home else 'AxG')),engine.safe_num(r.get('AxG' if home else 'HxG'))
+            if xf is not None and xa is not None and all(math.isfinite(v) and v>=0 for v in (xf,xa)):
+                xg.append((xf,xa))
+        output[side]['xg']={'matches':len(xg),'for':sum(x[0] for x in xg)/len(xg) if xg else None,
+            'against':sum(x[1] for x in xg)/len(xg) if xg else None,'source':'Understat' if xg else None}
     output['scope'] = 'Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.'
     output['availability'] = {'injuries': False, 'suspensions': False, 'lineups': False, 'xg': False}
+    output['availability']['xg']=all(output[s]['xg']['matches']>=3 for s in ('home','away'))
     return values, output
 
 
@@ -108,7 +117,7 @@ def eligible(row, family, use_market):
     return not use_market or all(k in row['market'] for k in FAMILIES[family])
 
 
-def features(row, family, use_market=False):
+def features(row, family, use_market=False, use_xg=False):
     markets = FAMILIES[family]
     raw = [row['raw'][k] for k in markets]
     values = [math.log(max(raw[i],.001)/max(raw[-1],.001)) for i in range(len(raw)-1)]
@@ -116,21 +125,27 @@ def features(row, family, use_market=False):
         market = [row['market'][k] for k in markets]
         values += [math.log(max(market[i],.001)/max(market[-1],.001)) for i in range(len(market)-1)]
     values += row['contextValues']
+    if use_xg:
+        for side in ('home','away'):
+            xg=row.get('context',{}).get(side,{}).get('xg',{})
+            n=xg.get('matches',0)
+            values += [min(xg.get('for') or 0,6)/3,min(xg.get('against') or 0,6)/3,min(n,8)/8]
     values += [min(row['strengths'][n],30)/10 for n in ('nH','nA')]
     values += [float(row['league']==code) for code in LEAGUE_CODES]
     return values
 
 
-def train_model(rows, family, use_market, penalty):
+def train_model(rows, family, use_market, penalty, use_xg=False):
     rows = [r for r in rows if eligible(r,family,use_market)]
-    model = calibration.fit([features(r,family,use_market) for r in rows],
+    model = calibration.fit([features(r,family,use_market,use_xg) for r in rows],
                             [r['labels'][family] for r in rows],len(FAMILIES[family]),penalty)
     model['useMarket'] = use_market
+    model['useXg'] = use_xg
     return model
 
 
 def probabilities(model, rows, family):
-    return calibration.predict(model, [features(r,family,model['useMarket']) for r in rows])
+    return calibration.predict(model, [features(r,family,model['useMarket'],model.get('useXg',False)) for r in rows])
 
 
 def empirical(rows, family):
@@ -169,7 +184,8 @@ def build(histories):
     report = {'version':VERSION, 'plan':PLAN, 'counts':{'fit':len(fit_rows),'selection':len(select_rows),'test':len(test_rows)},
               'families':{}, 'limitations':['Bağımsız test geçmiş maç simülasyonudur; canlı performans değildir.',
               'Geçmiş CSV oranlarının kayıt saati bilinmiyor; getiriler gerçekleşmiş kazanç olarak yorumlanamaz.',
-              'Sakatlık, ceza, kadro ve xG kaynağı bağlı değil.',
+              'Understat xG kapsamı beş büyük ligle sınırlıdır; diğer liglere xG uydurulmaz.',
+              'Oyuncu durumu ve kadro ek bilgi olarak kaydedilir; geçmiş maç öncesi arşivi olmadığından sayısal etkileri eğitilmedi.',
               'Dinlenme ve maç yoğunluğu yalnız kapsanan lig maçlarından hesaplanır.']}
     production_fit = fit_rows + select_rows
     for family, markets in FAMILIES.items():
@@ -180,14 +196,16 @@ def build(histories):
             available_fit = [r for r in fit_rows if eligible(r,family,use_market)]
             if min(len(selected),len(available_fit)) < 100:
                 continue
-            for penalty in PENALTIES:
-                fitted = train_model(available_fit,family,use_market,penalty)
-                predicted = probabilities(fitted, selected, family)
-                score = calibration.metrics(predicted,[r['labels'][family] for r in selected])
-                candidate = {'useMarket':use_market,'penalty':penalty,'score':score,'model':fitted}
-                candidates.append(candidate)
-                if not use_market:
-                    fallback_candidates.append(candidate)
+            xg_available=sum(r.get('context',{}).get('availability',{}).get('xg',False) for r in available_fit)>=100
+            for use_xg in ((False,True) if xg_available else (False,)):
+                for penalty in PENALTIES:
+                    fitted = train_model(available_fit,family,use_market,penalty,use_xg)
+                    predicted = probabilities(fitted, selected, family)
+                    score = calibration.metrics(predicted,[r['labels'][family] for r in selected])
+                    candidate = {'useMarket':use_market,'useXg':use_xg,'penalty':penalty,'score':score,'model':fitted}
+                    candidates.append(candidate)
+                    if not use_market:
+                        fallback_candidates.append(candidate)
         if not candidates:
             raise ValueError('Kalibrasyon adayı üretilemedi: '+family)
         # Compare candidates on exactly the same validation matches.
@@ -196,8 +214,8 @@ def build(histories):
             c['selectionLogLoss'] = calibration.metrics(probabilities(c['model'],common,family),[r['labels'][family] for r in common])['logLoss']
         chosen = min(candidates,key=lambda c:(c['selectionLogLoss'],not c['useMarket'], -c['penalty']))
         fallback = min(fallback_candidates,key=lambda c:c['selectionLogLoss'])
-        fitted = train_model(production_fit,family,chosen['useMarket'],chosen['penalty'])
-        fallback_model = train_model(production_fit,family,False,fallback['penalty'])
+        fitted = train_model(production_fit,family,chosen['useMarket'],chosen['penalty'],chosen['useXg'])
+        fallback_model = train_model(production_fit,family,False,fallback['penalty'],fallback['useXg'])
         prior = empirical(production_fit,family)
         artifact['families'][family] = {'model':fitted,'fallback':fallback_model,'prior':prior}
         test = [r for r in test_rows if eligible(r,family,chosen['useMarket'])]
@@ -206,7 +224,10 @@ def build(histories):
         base = benchmark(test,family,prior)
         labels = [r['labels'][family] for r in test]
         report['families'][family] = {'name':{'result':'Maç sonucu','goals':'2,5 gol','btts':'Karşılıklı gol'}[family],
-            'method':'Model + piyasa + maç bağlamı' if chosen['useMarket'] else 'Kalibre model + maç bağlamı',
+            'method':('Model + piyasa + maç bağlamı' if chosen['useMarket'] else 'Kalibre model + maç bağlamı')+(' + geçmiş xG' if chosen['useXg'] else ''),
+            'usesXg':chosen['useXg'],
+            'xgTestMatches':sum(r.get('context',{}).get('availability',{}).get('xg',False) for r in test),
+            'selectionCandidates':[{k:c[k] for k in ('useMarket','useXg','penalty','selectionLogLoss')} for c in candidates],
             'selectedPenalty':chosen['penalty'], 'selectionLogLoss':chosen['selectionLogLoss'],
             'old':calibration.metrics(raw,labels),'new':calibration.metrics(predicted,labels),
             'reference':calibration.metrics(base,labels),
