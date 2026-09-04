@@ -27,7 +27,7 @@ ALIASES = {
  'nottmforest':'nottinghamforest','nottforest':'nottinghamforest','nottm':'nottinghamforest',
  'wolves':'wolverhamptonwanderers','wolverhampton':'wolverhamptonwanderers',
  'newcastle':'newcastleunited','westham':'westhamunited','brighton':'brightonhovealbion',
- 'tottenham':'tottenhamhotspur','leeds':'leedsunited','ipswich':'ipswichtown',
+ 'tottenham':'tottenhamhotspur','spurs':'tottenhamhotspur','leeds':'leedsunited','ipswich':'ipswichtown',
  'leicester':'leicestercity','coventry':'coventrycity','bournemouth':'afcbournemouth',
  'parissg':'parissaintgermain','psg':'parissaintgermain','stetienne':'saintetienne',
  'bayernmunich':'bayernmunchen','bayern':'bayernmunchen','dortmund':'borussiadortmund',
@@ -204,15 +204,19 @@ def normalize_lineups(payload):
 
 def usable(record):return record and record.get('status') in ('fresh','cached')
 
-def context_for_fixture(league,fixture,fpl,events,rosters,lineups,now):
-    f=engine.normalize_match(fixture); start=kickoff(fixture)
-    out={'home':{},'away':{},'observedAt':iso(now),'notes':[]}
+def match_event(fixture,events):
+    f=engine.normalize_match(fixture);start=kickoff(fixture)
     matches=[]
     for e in events or []:
         t=date(e.get('date'))
         if start and t and abs((start-t).total_seconds())<=900 and all(canonical(e[s]['name'])==canonical(f[s]) for s in ('home','away')):
             matches.append(e)
-    event=matches[0] if len(matches)==1 else None
+    return matches[0] if len(matches)==1 else None
+
+def context_for_fixture(league,fixture,fpl,events,rosters,lineups,now):
+    f=engine.normalize_match(fixture); start=kickoff(fixture)
+    out={'home':{},'away':{},'observedAt':iso(now),'notes':[]}
+    event=match_event(fixture,events)
     for side in ('home','away'):
         team=out[side];team['squad']={'status':'unavailable','players':[]}
         team['availability']={'status':'unsupported','players':[],'source':None}
@@ -246,15 +250,22 @@ def collect_context(client,fixtures):
         r=client.get(f'events_{code}',f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/scoreboard?dates={today}-{end}&limit=100',1800,normalize_scoreboard,group='espn_events_'+code)
         # Old scoreboard schedules cannot confirm a match's current lineup.
         events[code]=(r.get('data') or []) if usable(r) else []
-        names={canonical(engine.normalize_match(f)[s]) for f in upcoming if (f.get('Div') or f.get('league'))==code for s in ('home','away')}
-        for event in events[code]:
-            for side in ('home','away'):
-                t=event[side];key=code+'|'+t['id']
-                if canonical(t['name']) not in names or key in rosters:continue
-                rosters[key]=client.get('roster_'+code+'_'+t['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/teams/{t["id"]}/roster',86400,normalize_roster,group='espn_rosters_'+code)
-            start=date(event['date'])
-            if start and client.now<start<=client.now+timedelta(minutes=90):
-                lineups[event['id']]=client.get('lineup_'+event['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={event["id"]}',900,normalize_lineups,group='espn_lineups')
+    # Check every league before spending the remaining budget on team rosters.
+    # Request only exact fixture matches and prioritize the nearest kickoffs.
+    matched=[]
+    for f in sorted(upcoming,key=kickoff):
+        code=f.get('Div') or f.get('league');event=match_event(f,events.get(code))
+        if event:matched.append((code,event))
+    for code,event in matched:
+        league=ESPN_LEAGUES[code];start=date(event['date'])
+        if start and client.now<start<=client.now+timedelta(minutes=90) and event.get('status')=='pre':
+            lineups[event['id']]=client.get('lineup_'+event['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/summary?event={event["id"]}',900,normalize_lineups,group='espn_lineups')
+    for code,event in matched:
+        league=ESPN_LEAGUES[code]
+        for side in ('home','away'):
+            t=event[side];key=code+'|'+t['id']
+            if key in rosters:continue
+            rosters[key]=client.get('roster_'+code+'_'+t['id'],f'https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/teams/{t["id"]}/roster',86400,normalize_roster,group='espn_rosters_'+code)
     return {record_id(f.get('Div') or f.get('league'),f):context_for_fixture(f.get('Div') or f.get('league'),f,fpl,events.get(f.get('Div') or f.get('league')),rosters,lineups,client.now) for f in upcoming}
 
 def register_context(records,league,fixture,context,now):
