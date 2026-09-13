@@ -1,6 +1,6 @@
 {
   "version": "1.6",
-  "updatedAt": "2026-09-13T18:23:53Z",
+  "updatedAt": "2026-09-13T18:49:14Z",
   "dataMode": "validated cache-first server-side",
   "refreshIntervalMinutes": 30,
   "sourceTimezone": "Europe/London",
@@ -106,14 +106,14 @@
       "Time"
     ],
     "evaluatedFixtures": 139,
-    "predictions": 14,
-    "skipped": 125,
+    "predictions": 12,
+    "skipped": 127,
     "ledger": 55,
     "excludedFromForwardTest": 43,
     "awaitingResults": 0,
     "fixtureFirstDate": "2026-09-11T16:30:00Z",
     "fixtureLastDate": "2026-09-14T19:45:00Z",
-    "futureFixtureCount": 16
+    "futureFixtureCount": 14
   },
   "leagues": {
     "E0": "Premier League",
@@ -171,7 +171,7 @@
         "HOME": 0.3325874814124448,
         "DRAW": 0.26352441972857965,
         "AWAY": 0.40388809885897553,
-        "U25": 0.4706658617073704,
+        "U25": 0.47066586170737046,
         "O25": 0.5293341382926297,
         "BTTS_YES": 0.5143688523868769,
         "BTTS_NO": 0.48563114761312304
@@ -196,14 +196,14 @@
       "candidates": [
         {
           "market": "U25",
-          "p": 0.4706658617073704,
+          "p": 0.47066586170737046,
           "marketP": 0.47368421052631576,
-          "edge": -0.00301834881894536,
+          "edge": -0.0030183488189453045,
           "tier": "PAS",
           "score": 0,
-          "expectedValue": -0.058668276585259194,
+          "expectedValue": -0.05866827658525908,
           "referenceOdds": 2.0,
-          "minimumOdds": 2.2308820023425073,
+          "minimumOdds": 2.230882002342507,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
           "evidence": {
             "eligible": false,
@@ -342,7 +342,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -419,9 +419,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams/357/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "164148",
@@ -600,7 +600,7 @@
             ]
           },
           "availability": {
-            "status": "fresh",
+            "status": "cached",
             "source": "FPL",
             "url": "https://fantasy.premierleague.com/statistics",
             "fetchedAt": "2026-09-13T18:23:50Z",
@@ -713,9 +713,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams/361/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "141705",
@@ -876,7 +876,7 @@
             ]
           },
           "availability": {
-            "status": "fresh",
+            "status": "cached",
             "source": "FPL",
             "url": "https://fantasy.premierleague.com/statistics",
             "fetchedAt": "2026-09-13T18:23:50Z",
@@ -996,770 +996,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
-        "notes": [
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-09-11T07:23:17Z"
-    },
-    {
-      "id": "da36c164cf2fd91b",
-      "league": "F1",
-      "leagueName": "Ligue 1",
-      "date": "13/09/2026",
-      "time": "19:45",
-      "home": "Brest",
-      "away": "Paris SG",
-      "lambdaH": 1.3745279877032488,
-      "lambdaA": 2.053046218228218,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-2",
-          "p": 0.0940524980557086
-        },
-        {
-          "score": "1-1",
-          "p": 0.09162238747540333
-        },
-        {
-          "score": "0-2",
-          "p": 0.06842530592109988
-        },
-        {
-          "score": "0-1",
-          "p": 0.06665734586350522
-        },
-        {
-          "score": "2-2",
-          "p": 0.06463889544548844
-        }
-      ],
-      "model": {
-        "HOME": 0.06891786523009381,
-        "DRAW": 0.12983608582367895,
-        "AWAY": 0.8012460489462272,
-        "U25": 0.31562209360685445,
-        "O25": 0.6843779063931456,
-        "BTTS_YES": 0.5708667216884327,
-        "BTTS_NO": 0.4291332783115674
-      },
-      "market": {
-        "HOME": 0.08639711319471147,
-        "DRAW": 0.1652814339377089,
-        "AWAY": 0.7483214528675796,
-        "O25": 0.6818181818181818,
-        "U25": 0.3181818181818181
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-09-13T18:45:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.31562209360685445,
-          "marketP": 0.3181818181818181,
-          "edge": -0.0025597245749636732,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.053133719179436656,
-          "referenceOdds": 3.0,
-          "minimumOdds": 3.3267633073491436,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 0,
-            "brier": 0.22450706704302953,
-            "referenceBrier": 0.22547645266269079,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.6843779063931456,
-          "marketP": 0.6818181818181818,
-          "edge": 0.0025597245749637842,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.04187093104959627,
-          "referenceOdds": 1.4,
-          "minimumOdds": 1.5342400597555532,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 0,
-            "brier": 0.22450706704302953,
-            "referenceBrier": 0.22547645266269079,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.4291332783115674,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.4467922975613634,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 0,
-            "brier": 0.2501501758096303,
-            "referenceBrier": 0.24317387537127252,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5708667216884327,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 1.83930847623146,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Karşılaştırılabilir piyasa oranı yok",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 0,
-            "brier": 0.2501501758096303,
-            "referenceBrier": 0.24317387537127252,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.06891786523009381,
-          "marketP": 0.08639711319471147,
-          "edge": -0.017479247964617653,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.2419034824689681,
-          "referenceOdds": 11.0,
-          "minimumOdds": 15.235527050851031,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 6,
-            "brier": 0.23269939310132548,
-            "referenceBrier": 0.23003564045718972,
-            "calibrationGap": 0.43299088593172114,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.12983608582367895,
-          "marketP": 0.1652814339377089,
-          "edge": -0.03544534811402994,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.25344250651384603,
-          "referenceOdds": 5.75,
-          "minimumOdds": 8.0871199508119,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 0,
-            "brier": 0.23576004716276888,
-            "referenceBrier": 0.22214482462405086,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.8012460489462272,
-          "marketP": 0.7483214528675796,
-          "edge": 0.052924596078647634,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.017582482161708546,
-          "referenceOdds": 1.27,
-          "minimumOdds": 1.3104588801166956,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 64,
-            "candidateN": 6,
-            "brier": 0.19313483422067979,
-            "referenceBrier": 0.18383252904090466,
-            "calibrationGap": 0.6219991341742107,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        }
-      ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 8.0,
-          "matchesLast14Days": 1,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 5.0,
-          "shotsOnTargetAgainst": 4.88,
-          "xg": {
-            "matches": 8,
-            "for": 1.935914125,
-            "against": 1.7698095,
-            "source": "Understat"
-          }
-        },
-        "away": {
-          "restDays": 9.0,
-          "matchesLast14Days": 1,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 5.75,
-          "shotsOnTargetAgainst": 4.25,
-          "xg": {
-            "matches": 6,
-            "for": 1.7872816666666667,
-            "against": 1.3720664999999999,
-            "source": "Understat"
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": true,
-          "xg": true
-        }
-      },
-      "rawModel": {
-        "HOME": 0.25529969637983196,
-        "DRAW": 0.2130081915654119,
-        "AWAY": 0.531692112054756,
-        "U25": 0.3344710015248098,
-        "O25": 0.6655289984751902,
-        "BTTS_YES": 0.6511573405383126,
-        "BTTS_NO": 0.34884265946168735,
-        "scores": [
-          {
-            "score": "1-2",
-            "p": 0.0940524980557086
-          },
-          {
-            "score": "1-1",
-            "p": 0.09162238747540333
-          },
-          {
-            "score": "0-2",
-            "p": 0.06842530592109988
-          },
-          {
-            "score": "0-1",
-            "p": 0.06665734586350522
-          },
-          {
-            "score": "2-2",
-            "p": 0.06463889544548844
-          }
-        ]
-      },
-      "sampleHome": 21.665523030288625,
-      "sampleAway": 21.521067430738512,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "source": "ESPN",
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/teams/6997/roster",
-            "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
-            "status": "cached",
-            "ageMinutes": 570,
-            "players": [
-              {
-                "id": "251556",
-                "name": "Romain Cagnon",
-                "position": "Goalkeeper",
-                "jersey": "49"
-              },
-              {
-                "id": "286433",
-                "name": "Egil Selvik",
-                "position": "Goalkeeper",
-                "jersey": "1"
-              },
-              {
-                "id": "365781",
-                "name": "Mathieu Patouillet",
-                "position": "Goalkeeper",
-                "jersey": "30"
-              },
-              {
-                "id": "3100741",
-                "name": "Noé Poillion",
-                "position": "Goalkeeper",
-                "jersey": "16"
-              },
-              {
-                "id": "164187",
-                "name": "Kenny Lala",
-                "position": "Defender",
-                "jersey": "70"
-              },
-              {
-                "id": "180174",
-                "name": "Gautier Lloris",
-                "position": "Defender",
-                "jersey": "4"
-              },
-              {
-                "id": "186408",
-                "name": "Brendan Chardonnet",
-                "position": "Defender",
-                "jersey": "5"
-              },
-              {
-                "id": "324572",
-                "name": "Bradley Locko",
-                "position": "Defender",
-                "jersey": "2"
-              },
-              {
-                "id": "363150",
-                "name": "Luc Zogbe",
-                "position": "Defender",
-                "jersey": "20"
-              },
-              {
-                "id": "397594",
-                "name": "Raphaël Le Guen",
-                "position": "Defender",
-                "jersey": "71"
-              },
-              {
-                "id": "399248",
-                "name": "Justin Bourgault",
-                "position": "Defender",
-                "jersey": "18"
-              },
-              {
-                "id": "3131925",
-                "name": "Evan Mailly",
-                "position": "Defender",
-                "jersey": "34"
-              },
-              {
-                "id": "215574",
-                "name": "Lucas Tousart",
-                "position": "Midfielder",
-                "jersey": "29"
-              },
-              {
-                "id": "250377",
-                "name": "Hugo Magnetti",
-                "position": "Midfielder",
-                "jersey": "8"
-              },
-              {
-                "id": "291850",
-                "name": "Joris Chotard",
-                "position": "Midfielder",
-                "jersey": "13"
-              },
-              {
-                "id": "321098",
-                "name": "Mamady Diambou",
-                "position": "Midfielder",
-                "jersey": "6"
-              },
-              {
-                "id": "330412",
-                "name": "Kamory Doumbia",
-                "position": "Midfielder",
-                "jersey": "23"
-              },
-              {
-                "id": "355998",
-                "name": "Joseph Nonge",
-                "position": "Midfielder",
-                "jersey": "7"
-              },
-              {
-                "id": "416403",
-                "name": "Mathis Lainé",
-                "position": "Midfielder",
-                "jersey": "32"
-              },
-              {
-                "id": "192015",
-                "name": "Ludovic Ajorque",
-                "position": "Forward",
-                "jersey": "19"
-              },
-              {
-                "id": "259960",
-                "name": "Mama Baldé",
-                "position": "Forward",
-                "jersey": "17"
-              },
-              {
-                "id": "359402",
-                "name": "Giovani Versini",
-                "position": "Forward",
-                "jersey": "10"
-              },
-              {
-                "id": "365783",
-                "name": "Pathé Mboup",
-                "position": "Forward",
-                "jersey": "9"
-              },
-              {
-                "id": "367360",
-                "name": "Noah Edjouma",
-                "position": "Forward",
-                "jersey": "11"
-              },
-              {
-                "id": "398380",
-                "name": "Djylian N'Guessan",
-                "position": "Forward",
-                "jersey": null
-              }
-            ]
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "confirmed",
-            "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
-            "players": [
-              {
-                "id": "286433",
-                "name": "Egil Selvik",
-                "position": "Goalkeeper",
-                "jersey": "1"
-              },
-              {
-                "id": "180174",
-                "name": "Gautier Lloris",
-                "position": "Center Left Defender",
-                "jersey": "4"
-              },
-              {
-                "id": "397594",
-                "name": "Raphaël Le Guen",
-                "position": "Center Right Defender",
-                "jersey": "71"
-              },
-              {
-                "id": "324572",
-                "name": "Bradley Locko",
-                "position": "Left Back",
-                "jersey": "2"
-              },
-              {
-                "id": "164187",
-                "name": "Kenny Lala",
-                "position": "Right Back",
-                "jersey": "70"
-              },
-              {
-                "id": "330412",
-                "name": "Kamory Doumbia",
-                "position": "Attacking Midfielder",
-                "jersey": "23"
-              },
-              {
-                "id": "250377",
-                "name": "Hugo Magnetti",
-                "position": "Left Midfielder",
-                "jersey": "8"
-              },
-              {
-                "id": "291850",
-                "name": "Joris Chotard",
-                "position": "Right Midfielder",
-                "jersey": "13"
-              },
-              {
-                "id": "192015",
-                "name": "Ludovic Ajorque",
-                "position": "Forward",
-                "jersey": "19"
-              },
-              {
-                "id": "365783",
-                "name": "Pathé Mboup",
-                "position": "Attacking Midfielder Left",
-                "jersey": "9"
-              },
-              {
-                "id": "359402",
-                "name": "Giovani Versini",
-                "position": "Attacking Midfielder Right",
-                "jersey": "10"
-              }
-            ],
-            "formation": "4-2-3-1"
-          }
-        },
-        "away": {
-          "squad": {
-            "source": "ESPN",
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/teams/160/roster",
-            "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
-            "status": "cached",
-            "ageMinutes": 570,
-            "players": [
-              {
-                "id": "248699",
-                "name": "Matvei Safonov",
-                "position": "Goalkeeper",
-                "jersey": "39"
-              },
-              {
-                "id": "288925",
-                "name": "Lucas Chevalier",
-                "position": "Goalkeeper",
-                "jersey": "30"
-              },
-              {
-                "id": "387725",
-                "name": "Alessandro Longoni",
-                "position": "Goalkeeper",
-                "jersey": "16"
-              },
-              {
-                "id": "159047",
-                "name": "Marquinhos",
-                "position": "Defender",
-                "jersey": "5"
-              },
-              {
-                "id": "160115",
-                "name": "Lucas Digne",
-                "position": "Defender",
-                "jersey": "12"
-              },
-              {
-                "id": "196200",
-                "name": "Lucas Hernández",
-                "position": "Defender",
-                "jersey": "21"
-              },
-              {
-                "id": "240233",
-                "name": "Achraf Hakimi",
-                "position": "Defender",
-                "jersey": "2"
-              },
-              {
-                "id": "287005",
-                "name": "Willian Pacho",
-                "position": "Defender",
-                "jersey": "51"
-              },
-              {
-                "id": "290591",
-                "name": "Nuno Mendes",
-                "position": "Defender",
-                "jersey": "25"
-              },
-              {
-                "id": "304503",
-                "name": "Illia Zabarnyi",
-                "position": "Defender",
-                "jersey": "6"
-              },
-              {
-                "id": "316128",
-                "name": "Lucas Beraldo",
-                "position": "Defender",
-                "jersey": "4"
-              },
-              {
-                "id": "214596",
-                "name": "Fabián Ruiz",
-                "position": "Midfielder",
-                "jersey": "8"
-              },
-              {
-                "id": "288897",
-                "name": "Vitinha",
-                "position": "Midfielder",
-                "jersey": "17"
-              },
-              {
-                "id": "329690",
-                "name": "Maghnes Akliouche",
-                "position": "Midfielder",
-                "jersey": "11"
-              },
-              {
-                "id": "345581",
-                "name": "Warren Zaïre-Emery",
-                "position": "Midfielder",
-                "jersey": "33"
-              },
-              {
-                "id": "355061",
-                "name": "João Neves",
-                "position": "Midfielder",
-                "jersey": "87"
-              },
-              {
-                "id": "379088",
-                "name": "Senny Mayulu",
-                "position": "Midfielder",
-                "jersey": "24"
-              },
-              {
-                "id": "403578",
-                "name": "Dro Fernández",
-                "position": "Midfielder",
-                "jersey": "27"
-              },
-              {
-                "id": "229744",
-                "name": "Ousmane Dembélé",
-                "position": "Forward",
-                "jersey": "10"
-              },
-              {
-                "id": "265869",
-                "name": "Ferran Torres",
-                "position": "Forward",
-                "jersey": "9"
-              },
-              {
-                "id": "274745",
-                "name": "Khvicha Kvaratskhelia",
-                "position": "Forward",
-                "jersey": "7"
-              },
-              {
-                "id": "336388",
-                "name": "Désiré Doué",
-                "position": "Forward",
-                "jersey": "14"
-              },
-              {
-                "id": "353363",
-                "name": "Mika Godts",
-                "position": "Forward",
-                "jersey": "22"
-              },
-              {
-                "id": "403419",
-                "name": "Quentin Ndjantou",
-                "position": "Forward",
-                "jersey": "47"
-              }
-            ]
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "confirmed",
-            "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
-            "players": [
-              {
-                "id": "248699",
-                "name": "Matvei Safonov",
-                "position": "Goalkeeper",
-                "jersey": "39"
-              },
-              {
-                "id": "287005",
-                "name": "Willian Pacho",
-                "position": "Center Left Defender",
-                "jersey": "51"
-              },
-              {
-                "id": "159047",
-                "name": "Marquinhos",
-                "position": "Center Right Defender",
-                "jersey": "5"
-              },
-              {
-                "id": "290591",
-                "name": "Nuno Mendes",
-                "position": "Left Back",
-                "jersey": "25"
-              },
-              {
-                "id": "240233",
-                "name": "Achraf Hakimi",
-                "position": "Right Back",
-                "jersey": "2"
-              },
-              {
-                "id": "288897",
-                "name": "Vitinha",
-                "position": "Center Midfielder",
-                "jersey": "17"
-              },
-              {
-                "id": "355061",
-                "name": "João Neves",
-                "position": "Left Midfielder",
-                "jersey": "87"
-              },
-              {
-                "id": "345581",
-                "name": "Warren Zaïre-Emery",
-                "position": "Right Midfielder",
-                "jersey": "33"
-              },
-              {
-                "id": "265869",
-                "name": "Ferran Torres",
-                "position": "Forward",
-                "jersey": "9"
-              },
-              {
-                "id": "274745",
-                "name": "Khvicha Kvaratskhelia",
-                "position": "Left Forward",
-                "jersey": "7"
-              },
-              {
-                "id": "229744",
-                "name": "Ousmane Dembélé",
-                "position": "Right Forward",
-                "jersey": "10"
-              }
-            ],
-            "formation": "4-3-3"
-          }
-        },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -1974,7 +1211,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -2051,9 +1288,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/teams/11884/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "259711",
@@ -2228,9 +1465,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/teams/177/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "297350",
@@ -2448,872 +1685,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
-        "notes": [
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-09-11T07:23:17Z"
-    },
-    {
-      "id": "cc6da8a073a0296c",
-      "league": "I1",
-      "leagueName": "Serie A",
-      "date": "13/09/2026",
-      "time": "19:45",
-      "home": "Sassuolo",
-      "away": "Juventus",
-      "lambdaH": 1.0496265951773829,
-      "lambdaA": 1.436485485697359,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12549678719477195
-        },
-        {
-          "score": "0-1",
-          "p": 0.11956326923439231
-        },
-        {
-          "score": "1-2",
-          "p": 0.09013715665347005
-        },
-        {
-          "score": "1-0",
-          "p": 0.08736376973126743
-        },
-        {
-          "score": "0-2",
-          "p": 0.08587545043886508
-        }
-      ],
-      "model": {
-        "HOME": 0.13213078650983845,
-        "DRAW": 0.21467216614704263,
-        "AWAY": 0.6531970473431189,
-        "U25": 0.4476788730401828,
-        "O25": 0.5523211269598173,
-        "BTTS_YES": 0.5183758243313836,
-        "BTTS_NO": 0.48162417566861637
-      },
-      "market": {
-        "HOME": 0.18007503126302626,
-        "DRAW": 0.236348478532722,
-        "AWAY": 0.5835764902042518,
-        "O25": 0.5259067357512953,
-        "U25": 0.47409326424870474
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-09-13T18:45:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.4476788730401828,
-          "marketP": 0.47409326424870474,
-          "edge": -0.02641439120852196,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.09121188772842903,
-          "referenceOdds": 2.03,
-          "minimumOdds": 2.3454312080207416,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.5523211269598173,
-          "marketP": 0.5259067357512953,
-          "edge": 0.02641439120852196,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.010747662336465735,
-          "referenceOdds": 1.83,
-          "minimumOdds": 1.9010679634501653,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.48162417566861637,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.1801231189076713,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5183758243313836,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.0255574251641093,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.13213078650983845,
-          "marketP": 0.18007503126302626,
-          "edge": -0.047944244753187815,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.3063133708233481,
-          "referenceOdds": 5.25,
-          "minimumOdds": 7.946671837314895,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.1989412740081117,
-            "referenceBrier": 0.1994736011854195,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.21467216614704263,
-          "marketP": 0.236348478532722,
-          "edge": -0.02167631238567938,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.1413113354118295,
-          "referenceOdds": 4.0,
-          "minimumOdds": 4.891179042190259,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.18808269719087942,
-            "referenceBrier": 0.1879248393921465,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.6531970473431189,
-          "marketP": 0.5835764902042518,
-          "edge": 0.06962055713886706,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.058179216695852576,
-          "referenceOdds": 1.62,
-          "minimumOdds": 1.6074781787071428,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 17,
-            "brier": 0.20750834627375583,
-            "referenceBrier": 0.2104568304700969,
-            "calibrationGap": 0.09106929080095802,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        }
-      ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 7.0,
-          "matchesLast14Days": 1,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 5.0,
-          "shotsOnTargetAgainst": 4.38,
-          "xg": {
-            "matches": 8,
-            "for": 1.900680125,
-            "against": 1.723376625,
-            "source": "Understat"
-          }
-        },
-        "away": {
-          "restDays": 7.0,
-          "matchesLast14Days": 1,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 5.88,
-          "shotsOnTargetAgainst": 2.75,
-          "xg": {
-            "matches": 8,
-            "for": 1.9651771249999999,
-            "against": 0.4433146,
-            "source": "Understat"
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": true,
-          "xg": true
-        }
-      },
-      "rawModel": {
-        "HOME": 0.2758085879042376,
-        "DRAW": 0.2647540214460907,
-        "AWAY": 0.45943739064967193,
-        "U25": 0.5473821345920107,
-        "O25": 0.4526178654079893,
-        "BTTS_YES": 0.49540210861405415,
-        "BTTS_NO": 0.5045978913859459,
-        "scores": [
-          {
-            "score": "1-1",
-            "p": 0.12549678719477195
-          },
-          {
-            "score": "0-1",
-            "p": 0.11956326923439231
-          },
-          {
-            "score": "1-2",
-            "p": 0.09013715665347005
-          },
-          {
-            "score": "1-0",
-            "p": 0.08736376973126743
-          },
-          {
-            "score": "0-2",
-            "p": 0.08587545043886508
-          }
-        ]
-      },
-      "sampleHome": 17.469819167994025,
-      "sampleAway": 24.972417314374088,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "source": "ESPN",
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/3997/roster",
-            "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
-            "status": "cached",
-            "ageMinutes": 570,
-            "players": [
-              {
-                "id": "234305",
-                "name": "Giacomo Satalino",
-                "position": "Goalkeeper",
-                "jersey": "12"
-              },
-              {
-                "id": "259838",
-                "name": "Arijanet Muric",
-                "position": "Goalkeeper",
-                "jersey": "49"
-              },
-              {
-                "id": "261399",
-                "name": "Stefano Turati",
-                "position": "Goalkeeper",
-                "jersey": "80"
-              },
-              {
-                "id": "413868",
-                "name": "Lorenzo Nyarko",
-                "position": "Goalkeeper",
-                "jersey": "22"
-              },
-              {
-                "id": "194766",
-                "name": "Duje Caleta-Car",
-                "position": "Defender",
-                "jersey": "15"
-              },
-              {
-                "id": "272873",
-                "name": "Jay Idzes",
-                "position": "Defender",
-                "jersey": "21"
-              },
-              {
-                "id": "287677",
-                "name": "Fali Candé",
-                "position": "Defender",
-                "jersey": "5"
-              },
-              {
-                "id": "288483",
-                "name": "Sebastian Walukiewicz",
-                "position": "Defender",
-                "jersey": "6"
-              },
-              {
-                "id": "290418",
-                "name": "Josh Doig",
-                "position": "Defender",
-                "jersey": "3"
-              },
-              {
-                "id": "291729",
-                "name": "Cas Odenthal",
-                "position": "Defender",
-                "jersey": "26"
-              },
-              {
-                "id": "292199",
-                "name": "Ignace van der Brempt",
-                "position": "Defender",
-                "jersey": "20"
-              },
-              {
-                "id": "304217",
-                "name": "Rafael Obrador",
-                "position": "Defender",
-                "jersey": "33"
-              },
-              {
-                "id": "310140",
-                "name": "Fedde Leysen",
-                "position": "Defender",
-                "jersey": "16"
-              },
-              {
-                "id": "333924",
-                "name": "Yeferson Paz",
-                "position": "Defender",
-                "jersey": "27"
-              },
-              {
-                "id": "333925",
-                "name": "Edoardo Pieragnolo",
-                "position": "Defender",
-                "jersey": "15"
-              },
-              {
-                "id": "423015",
-                "name": "Giorgio Vezzosi",
-                "position": "Defender",
-                "jersey": "36"
-              },
-              {
-                "id": "135743",
-                "name": "Nemanja Matic",
-                "position": "Midfielder",
-                "jersey": "18"
-              },
-              {
-                "id": "284212",
-                "name": "Kristian Thorstvedt",
-                "position": "Midfielder",
-                "jersey": "42"
-              },
-              {
-                "id": "288788",
-                "name": "Andrea Ghion",
-                "position": "Midfielder",
-                "jersey": "8"
-              },
-              {
-                "id": "307061",
-                "name": "Daniel Boloca",
-                "position": "Midfielder",
-                "jersey": "11"
-              },
-              {
-                "id": "325001",
-                "name": "Ismaël Koné",
-                "position": "Midfielder",
-                "jersey": "90"
-              },
-              {
-                "id": "330259",
-                "name": "Cristian Volpato",
-                "position": "Midfielder",
-                "jersey": "7"
-              },
-              {
-                "id": "344917",
-                "name": "Vasilije Adzic",
-                "position": "Midfielder",
-                "jersey": "17"
-              },
-              {
-                "id": "347018",
-                "name": "Sulemana",
-                "position": "Midfielder",
-                "jersey": "55"
-              },
-              {
-                "id": "347408",
-                "name": "Luca Lipani",
-                "position": "Midfielder",
-                "jersey": "35"
-              },
-              {
-                "id": "384170",
-                "name": "Darryl Bakola",
-                "position": "Midfielder",
-                "jersey": "50"
-              },
-              {
-                "id": "412248",
-                "name": "Simone Cinquegrano",
-                "position": "Midfielder",
-                "jersey": "46"
-              },
-              {
-                "id": "173817",
-                "name": "Domenico Berardi",
-                "position": "Forward",
-                "jersey": "10"
-              },
-              {
-                "id": "233088",
-                "name": "Nicholas Pierini",
-                "position": "Forward",
-                "jersey": "77"
-              },
-              {
-                "id": "272719",
-                "name": "Armand Laurienté",
-                "position": "Forward",
-                "jersey": "45"
-              },
-              {
-                "id": "283375",
-                "name": "Kieron Bowie",
-                "position": "Forward",
-                "jersey": "9"
-              },
-              {
-                "id": "286929",
-                "name": "Sebastiano Esposito",
-                "position": "Forward",
-                "jersey": "94"
-              },
-              {
-                "id": "303980",
-                "name": "Laurs Skjellerup",
-                "position": "Forward",
-                "jersey": "19"
-              },
-              {
-                "id": "331231",
-                "name": "Benjamín Domínguez",
-                "position": "Forward",
-                "jersey": "25"
-              },
-              {
-                "id": "3129533",
-                "name": "Gabriel Kulla",
-                "position": "Forward",
-                "jersey": "14"
-              }
-            ]
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "confirmed",
-            "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
-            "players": [
-              {
-                "id": "259838",
-                "name": "Arijanet Muric",
-                "position": "Goalkeeper",
-                "jersey": "49"
-              },
-              {
-                "id": "310140",
-                "name": "Fedde Leysen",
-                "position": "Center Left Defender",
-                "jersey": "16"
-              },
-              {
-                "id": "272873",
-                "name": "Jay Idzes",
-                "position": "Center Right Defender",
-                "jersey": "21"
-              },
-              {
-                "id": "290418",
-                "name": "Josh Doig",
-                "position": "Left Back",
-                "jersey": "3"
-              },
-              {
-                "id": "412248",
-                "name": "Simone Cinquegrano",
-                "position": "Right Back",
-                "jersey": "46"
-              },
-              {
-                "id": "135743",
-                "name": "Nemanja Matic",
-                "position": "Center Midfielder",
-                "jersey": "18"
-              },
-              {
-                "id": "347408",
-                "name": "Luca Lipani",
-                "position": "Left Midfielder",
-                "jersey": "35"
-              },
-              {
-                "id": "284212",
-                "name": "Kristian Thorstvedt",
-                "position": "Right Midfielder",
-                "jersey": "42"
-              },
-              {
-                "id": "286929",
-                "name": "Sebastiano Esposito",
-                "position": "Forward",
-                "jersey": "94"
-              },
-              {
-                "id": "272719",
-                "name": "Armand Laurienté",
-                "position": "Left Forward",
-                "jersey": "45"
-              },
-              {
-                "id": "173817",
-                "name": "Domenico Berardi",
-                "position": "Right Forward",
-                "jersey": "10"
-              }
-            ],
-            "formation": "4-3-3"
-          }
-        },
-        "away": {
-          "squad": {
-            "source": "ESPN",
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/111/roster",
-            "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
-            "status": "cached",
-            "ageMinutes": 570,
-            "players": [
-              {
-                "id": "121036",
-                "name": "Carlo Pinsoglio",
-                "position": "Goalkeeper",
-                "jersey": "23"
-              },
-              {
-                "id": "204082",
-                "name": "Guglielmo Vicario",
-                "position": "Goalkeeper",
-                "jersey": "25"
-              },
-              {
-                "id": "259474",
-                "name": "Kamil Grabara",
-                "position": "Goalkeeper",
-                "jersey": "1"
-              },
-              {
-                "id": "421739",
-                "name": "Riccardo Radu",
-                "position": "Goalkeeper",
-                "jersey": "40"
-              },
-              {
-                "id": "24412",
-                "name": "Juan Cabal",
-                "position": "Defender",
-                "jersey": "32"
-              },
-              {
-                "id": "181673",
-                "name": "Daniele Rugani",
-                "position": "Defender",
-                "jersey": "24"
-              },
-              {
-                "id": "227697",
-                "name": "Jhon Lucumí",
-                "position": "Defender",
-                "jersey": "26"
-              },
-              {
-                "id": "243787",
-                "name": "Lloyd Kelly",
-                "position": "Defender",
-                "jersey": "6"
-              },
-              {
-                "id": "258307",
-                "name": "Bremer",
-                "position": "Defender",
-                "jersey": "3"
-              },
-              {
-                "id": "271873",
-                "name": "Zeki Çelik",
-                "position": "Defender",
-                "jersey": "2"
-              },
-              {
-                "id": "290129",
-                "name": "Pierre Kalulu",
-                "position": "Defender",
-                "jersey": "15"
-              },
-              {
-                "id": "308029",
-                "name": "Andrea Cambiaso",
-                "position": "Defender",
-                "jersey": "20"
-              },
-              {
-                "id": "323147",
-                "name": "Federico Gatti",
-                "position": "Defender",
-                "jersey": "4"
-              },
-              {
-                "id": "217538",
-                "name": "Manuel Locatelli",
-                "position": "Midfielder",
-                "jersey": "5"
-              },
-              {
-                "id": "256715",
-                "name": "Weston McKennie",
-                "position": "Midfielder",
-                "jersey": "22"
-              },
-              {
-                "id": "258968",
-                "name": "Teun Koopmeiners",
-                "position": "Midfielder",
-                "jersey": "8"
-              },
-              {
-                "id": "283139",
-                "name": "Khéphren Thuram",
-                "position": "Midfielder",
-                "jersey": "19"
-              },
-              {
-                "id": "297337",
-                "name": "Pape Matar Sarr",
-                "position": "Midfielder",
-                "jersey": null
-              },
-              {
-                "id": "320074",
-                "name": "Douglas Luiz",
-                "position": "Midfielder",
-                "jersey": "12"
-              },
-              {
-                "id": "387434",
-                "name": "Filippo Pagnucco",
-                "position": "Midfielder",
-                "jersey": "43"
-              },
-              {
-                "id": "397258",
-                "name": "Augusto Owusu",
-                "position": "Midfielder",
-                "jersey": "41"
-              },
-              {
-                "id": "76017",
-                "name": "Nico González",
-                "position": "Forward",
-                "jersey": "31"
-              },
-              {
-                "id": "179359",
-                "name": "Arkadiusz Milik",
-                "position": "Forward",
-                "jersey": "14"
-              },
-              {
-                "id": "206153",
-                "name": "Jérémie Boga",
-                "position": "Forward",
-                "jersey": "13"
-              },
-              {
-                "id": "252971",
-                "name": "Randal Kolo Muani",
-                "position": "Forward",
-                "jersey": "9"
-              },
-              {
-                "id": "260300",
-                "name": "Edon Zhegrova",
-                "position": "Forward",
-                "jersey": "11"
-              },
-              {
-                "id": "298349",
-                "name": "Nick Woltemade",
-                "position": "Forward",
-                "jersey": "27"
-              },
-              {
-                "id": "312659",
-                "name": "Francisco Conceição",
-                "position": "Forward",
-                "jersey": "7"
-              },
-              {
-                "id": "366509",
-                "name": "Kenan Yildiz",
-                "position": "Forward",
-                "jersey": "10"
-              },
-              {
-                "id": "388606",
-                "name": "Jeff Ekhator",
-                "position": "Forward",
-                "jersey": "18"
-              },
-              {
-                "id": "391034",
-                "name": "Kerim Alajbegovic",
-                "position": "Forward",
-                "jersey": "17"
-              }
-            ]
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "confirmed",
-            "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
-            "players": [
-              {
-                "id": "204082",
-                "name": "Guglielmo Vicario",
-                "position": "Goalkeeper",
-                "jersey": "25"
-              },
-              {
-                "id": "227697",
-                "name": "Jhon Lucumí",
-                "position": "Center Left Defender",
-                "jersey": "26"
-              },
-              {
-                "id": "258307",
-                "name": "Bremer",
-                "position": "Center Right Defender",
-                "jersey": "3"
-              },
-              {
-                "id": "271873",
-                "name": "Zeki Çelik",
-                "position": "Left Back",
-                "jersey": "2"
-              },
-              {
-                "id": "290129",
-                "name": "Pierre Kalulu",
-                "position": "Right Back",
-                "jersey": "15"
-              },
-              {
-                "id": "76017",
-                "name": "Nico González",
-                "position": "Attacking Midfielder",
-                "jersey": "31"
-              },
-              {
-                "id": "258968",
-                "name": "Teun Koopmeiners",
-                "position": "Left Midfielder",
-                "jersey": "8"
-              },
-              {
-                "id": "320074",
-                "name": "Douglas Luiz",
-                "position": "Right Midfielder",
-                "jersey": "12"
-              },
-              {
-                "id": "252971",
-                "name": "Randal Kolo Muani",
-                "position": "Forward",
-                "jersey": "9"
-              },
-              {
-                "id": "391034",
-                "name": "Kerim Alajbegovic",
-                "position": "Attacking Midfielder Left",
-                "jersey": "17"
-              },
-              {
-                "id": "312659",
-                "name": "Francisco Conceição",
-                "position": "Attacking Midfielder Right",
-                "jersey": "7"
-              }
-            ],
-            "formation": "4-2-3-1"
-          }
-        },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -3528,7 +1900,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -3605,9 +1977,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/2572/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "108662",
@@ -3794,9 +2166,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/115/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "252927",
@@ -3996,7 +2368,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -4040,7 +2412,7 @@
         "HOME": 0.11324072412611999,
         "DRAW": 0.23355680393597728,
         "AWAY": 0.6532024719379027,
-        "U25": 0.48033094602068593,
+        "U25": 0.4803309460206859,
         "O25": 0.5196690539793141,
         "BTTS_YES": 0.5337966879574021,
         "BTTS_NO": 0.46620331204259796
@@ -4065,12 +2437,12 @@
       "candidates": [
         {
           "market": "U25",
-          "p": 0.48033094602068593,
+          "p": 0.4803309460206859,
           "marketP": 0.47368421052631576,
-          "edge": 0.006646735494370171,
+          "edge": 0.006646735494370115,
           "tier": "PAS",
           "score": 0,
-          "expectedValue": -0.03933810795862813,
+          "expectedValue": -0.03933810795862824,
           "referenceOdds": 2.0,
           "minimumOdds": 2.185992821613415,
           "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
@@ -4211,7 +2583,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -4288,9 +2660,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/239/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "252406",
@@ -4507,9 +2879,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/104/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "206587",
@@ -4679,7 +3051,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -4894,7 +3266,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -4971,9 +3343,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/110/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "181322",
@@ -5160,9 +3532,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/118/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "93816",
@@ -5338,7 +3710,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -5382,7 +3754,7 @@
         "HOME": 0.11596082532096934,
         "DRAW": 0.20980559285503256,
         "AWAY": 0.674233581823998,
-        "U25": 0.3802783254069894,
+        "U25": 0.38027832540698947,
         "O25": 0.6197216745930105,
         "BTTS_YES": 0.5336175640497371,
         "BTTS_NO": 0.46638243595026285
@@ -5407,14 +3779,14 @@
       "candidates": [
         {
           "market": "U25",
-          "p": 0.3802783254069894,
+          "p": 0.38027832540698947,
           "marketP": 0.46052631578947373,
-          "edge": -0.08024799038248431,
+          "edge": -0.08024799038248426,
           "tier": "PAS",
           "score": 0,
-          "expectedValue": -0.22042943291567174,
+          "expectedValue": -0.22042943291567163,
           "referenceOdds": 2.05,
-          "minimumOdds": 2.761135541648994,
+          "minimumOdds": 2.7611355416489936,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
           "evidence": {
             "eligible": false,
@@ -5553,7 +3925,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -5587,7 +3959,7 @@
         "availability": {
           "injuries": false,
           "suspensions": false,
-          "lineups": false,
+          "lineups": true,
           "xg": false
         }
       },
@@ -5630,9 +4002,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/12698/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "240259",
@@ -5798,8 +4170,78 @@
             "source": null
           },
           "lineup": {
-            "status": "not_published",
-            "players": []
+            "status": "confirmed",
+            "source": "ESPN",
+            "fetchedAt": "2026-09-13T18:49:11Z",
+            "players": [
+              {
+                "id": "366785",
+                "name": "Rodrigo Pinheiro",
+                "position": "Substitute",
+                "jersey": "17"
+              },
+              {
+                "id": "362592",
+                "name": "Víctor Rofino",
+                "position": "Substitute",
+                "jersey": "15"
+              },
+              {
+                "id": "368008",
+                "name": "Mathias De Amorim",
+                "position": "Substitute",
+                "jersey": "14"
+              },
+              {
+                "id": "314606",
+                "name": "Sorriso",
+                "position": "Substitute",
+                "jersey": "7"
+              },
+              {
+                "id": "340623",
+                "name": "Finn Van Breemen",
+                "position": "Substitute",
+                "jersey": "4"
+              },
+              {
+                "id": "313915",
+                "name": "Pedro Bondo",
+                "position": "Substitute",
+                "jersey": "28"
+              },
+              {
+                "id": "229573",
+                "name": "Gil Dias",
+                "position": "Substitute",
+                "jersey": "23"
+              },
+              {
+                "id": "338888",
+                "name": "Marcos Peña",
+                "position": "Substitute",
+                "jersey": "8"
+              },
+              {
+                "id": "343966",
+                "name": "Tamás Szücs",
+                "position": "Substitute",
+                "jersey": "21"
+              },
+              {
+                "id": "330458",
+                "name": "Lazar Carevic",
+                "position": "Substitute",
+                "jersey": "25"
+              },
+              {
+                "id": "304317",
+                "name": "Georgios Koutsias",
+                "position": "Substitute",
+                "jersey": "70"
+              }
+            ],
+            "formation": "4-2-3-1"
           }
         },
         "away": {
@@ -5807,9 +4249,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/2250/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "177898",
@@ -6005,11 +4447,81 @@
             "source": null
           },
           "lineup": {
-            "status": "not_published",
-            "players": []
+            "status": "confirmed",
+            "source": "ESPN",
+            "fetchedAt": "2026-09-13T18:49:11Z",
+            "players": [
+              {
+                "id": "177898",
+                "name": "Rui Silva",
+                "position": "Goalkeeper",
+                "jersey": "1"
+              },
+              {
+                "id": "304106",
+                "name": "Gonçalo Inácio",
+                "position": "Defender",
+                "jersey": "25"
+              },
+              {
+                "id": "314473",
+                "name": "Zeno Debast",
+                "position": "Defender",
+                "jersey": "6"
+              },
+              {
+                "id": "287025",
+                "name": "Maxi Araújo",
+                "position": "Defender",
+                "jersey": "20"
+              },
+              {
+                "id": "333209",
+                "name": "Iván Fresneda",
+                "position": "Defender",
+                "jersey": "22"
+              },
+              {
+                "id": "386592",
+                "name": "Issa Doumbia",
+                "position": "Midfielder",
+                "jersey": "77"
+              },
+              {
+                "id": "361429",
+                "name": "Luis Guilherme",
+                "position": "Midfielder",
+                "jersey": "31"
+              },
+              {
+                "id": "296969",
+                "name": "Geny Catamo",
+                "position": "Midfielder",
+                "jersey": "10"
+              },
+              {
+                "id": "414123",
+                "name": "Flávio Gonçalves",
+                "position": "Midfielder",
+                "jersey": "58"
+              },
+              {
+                "id": "331426",
+                "name": "Sergi Altimira",
+                "position": "Midfielder",
+                "jersey": "5"
+              },
+              {
+                "id": "272722",
+                "name": "Luis Suárez",
+                "position": "Forward",
+                "jersey": "97"
+              }
+            ],
+            "formation": "4-2-3-1"
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -6224,7 +4736,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -6301,9 +4813,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/3822/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "265901",
@@ -6532,9 +5044,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/21610/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "310822",
@@ -6734,7 +5246,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -6779,9 +5291,9 @@
         "DRAW": 0.22249805906854708,
         "AWAY": 0.1300702498178399,
         "U25": 0.3860626240428317,
-        "O25": 0.6139373759571682,
-        "BTTS_YES": 0.5393629786521453,
-        "BTTS_NO": 0.46063702134785467
+        "O25": 0.6139373759571684,
+        "BTTS_YES": 0.5393629786521454,
+        "BTTS_NO": 0.4606370213478546
       },
       "market": {
         "HOME": 0.6326259317286237,
@@ -6824,14 +5336,14 @@
         },
         {
           "market": "O25",
-          "p": 0.6139373759571682,
+          "p": 0.6139373759571684,
           "marketP": 0.5526315789473685,
-          "edge": 0.06130579700979977,
+          "edge": 0.06130579700979988,
           "tier": "PAS",
           "score": 0,
-          "expectedValue": 0.04369353912718599,
+          "expectedValue": 0.04369353912718621,
           "referenceOdds": 1.7,
-          "minimumOdds": 1.7102721566071488,
+          "minimumOdds": 1.7102721566071486,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Referans oranda yeterli beklenen değer yok",
           "evidence": {
             "eligible": false,
@@ -6845,7 +5357,7 @@
         },
         {
           "market": "BTTS_NO",
-          "p": 0.46063702134785467,
+          "p": 0.4606370213478546,
           "marketP": null,
           "edge": null,
           "tier": "PAS",
@@ -6866,14 +5378,14 @@
         },
         {
           "market": "BTTS_YES",
-          "p": 0.5393629786521453,
+          "p": 0.5393629786521454,
           "marketP": null,
           "edge": null,
           "tier": "PAS",
           "score": 0,
           "expectedValue": null,
           "referenceOdds": null,
-          "minimumOdds": 1.9467409547164767,
+          "minimumOdds": 1.9467409547164762,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
           "evidence": {
             "eligible": false,
@@ -6949,7 +5461,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -7026,9 +5538,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/2994/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "151272",
@@ -7221,9 +5733,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/12216/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "141624",
@@ -7423,7 +5935,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -7638,7 +6150,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -7715,9 +6227,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/89/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "217319",
@@ -7915,7 +6427,7 @@
           "lineup": {
             "status": "confirmed",
             "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
+            "fetchedAt": "2026-09-13T18:49:11Z",
             "players": [
               {
                 "id": "217319",
@@ -7992,9 +6504,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/1068/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "149622",
@@ -8174,7 +6686,7 @@
           "lineup": {
             "status": "confirmed",
             "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
+            "fetchedAt": "2026-09-13T18:49:11Z",
             "players": [
               {
                 "id": "149622",
@@ -8246,7 +6758,7 @@
             "formation": "4-4-2"
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -8461,7 +6973,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -8538,9 +7050,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/102/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "119620",
@@ -8721,9 +7233,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/244/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "279660",
@@ -8905,7 +7417,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -9120,7 +7632,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -9154,7 +7666,7 @@
         "availability": {
           "injuries": false,
           "suspensions": false,
-          "lineups": false,
+          "lineups": true,
           "xg": false
         }
       },
@@ -9197,9 +7709,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/teams/245/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "264077",
@@ -9377,8 +7889,78 @@
             "source": null
           },
           "lineup": {
-            "status": "not_published",
-            "players": []
+            "status": "confirmed",
+            "source": "ESPN",
+            "fetchedAt": "2026-09-13T18:49:11Z",
+            "players": [
+              {
+                "id": "264077",
+                "name": "Dani Martín",
+                "position": "Goalkeeper",
+                "jersey": "1"
+              },
+              {
+                "id": "204899",
+                "name": "José León",
+                "position": "Center Left Defender",
+                "jersey": "4"
+              },
+              {
+                "id": "235018",
+                "name": "Anthony Landázuri",
+                "position": "Center Right Defender",
+                "jersey": "12"
+              },
+              {
+                "id": "308453",
+                "name": "David Rodríguez Ramos",
+                "position": "Left Back",
+                "jersey": "2"
+              },
+              {
+                "id": "377597",
+                "name": "César Álvarez",
+                "position": "Right Back",
+                "jersey": "19"
+              },
+              {
+                "id": "412263",
+                "name": "Fabricio",
+                "position": "Center Left Midfielder",
+                "jersey": "15"
+              },
+              {
+                "id": "185866",
+                "name": "Juanjo",
+                "position": "Center Right Midfielder",
+                "jersey": "6"
+              },
+              {
+                "id": "231574",
+                "name": "Nacho Gil",
+                "position": "Left Midfielder",
+                "jersey": "10"
+              },
+              {
+                "id": "384650",
+                "name": "Daniel Fernández",
+                "position": "Right Midfielder",
+                "jersey": "29"
+              },
+              {
+                "id": "195785",
+                "name": "Víctor Moreno",
+                "position": "Center Left Forward",
+                "jersey": "8"
+              },
+              {
+                "id": "276634",
+                "name": "Enric Gallego",
+                "position": "Center Right Forward",
+                "jersey": "18"
+              }
+            ],
+            "formation": "4-4-2"
           }
         },
         "away": {
@@ -9386,9 +7968,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/teams/17534/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "113097",
@@ -9562,79 +8144,79 @@
           "lineup": {
             "status": "confirmed",
             "source": "ESPN",
-            "fetchedAt": "2026-09-13T18:23:50Z",
+            "fetchedAt": "2026-09-13T18:49:11Z",
             "players": [
-              {
-                "id": "154446",
-                "name": "Álvaro Morata",
-                "position": "Substitute",
-                "jersey": "21"
-              },
-              {
-                "id": "306400",
-                "name": "Zico Buurmeester",
-                "position": "Substitute",
-                "jersey": "10"
-              },
               {
                 "id": "225561",
                 "name": "Luca Zidane",
-                "position": "Substitute",
+                "position": "Goalkeeper",
                 "jersey": "13"
-              },
-              {
-                "id": "354342",
-                "name": "Álex Sancris",
-                "position": "Substitute",
-                "jersey": "22"
-              },
-              {
-                "id": "325005",
-                "name": "Naim García",
-                "position": "Substitute",
-                "jersey": "11"
-              },
-              {
-                "id": "319290",
-                "name": "Yassine Kechta",
-                "position": "Substitute",
-                "jersey": "8"
-              },
-              {
-                "id": "264124",
-                "name": "Miguel Atienza",
-                "position": "Substitute",
-                "jersey": "20"
-              },
-              {
-                "id": "356366",
-                "name": "Marvel",
-                "position": "Substitute",
-                "jersey": "2"
-              },
-              {
-                "id": "123864",
-                "name": "Gonzalo Aguilar",
-                "position": "Substitute",
-                "jersey": "6"
-              },
-              {
-                "id": "317473",
-                "name": "Ismaël Gharbi",
-                "position": "Substitute",
-                "jersey": "17"
               },
               {
                 "id": "153442",
                 "name": "Ignasi Miquel",
-                "position": "Substitute",
+                "position": "Center Left Defender",
                 "jersey": "5"
+              },
+              {
+                "id": "123864",
+                "name": "Gonzalo Aguilar",
+                "position": "Center Right Defender",
+                "jersey": "6"
+              },
+              {
+                "id": "356366",
+                "name": "Marvel",
+                "position": "Left Back",
+                "jersey": "2"
+              },
+              {
+                "id": "325005",
+                "name": "Naim García",
+                "position": "Right Back",
+                "jersey": "11"
+              },
+              {
+                "id": "264124",
+                "name": "Miguel Atienza",
+                "position": "Center Left Midfielder",
+                "jersey": "20"
+              },
+              {
+                "id": "306400",
+                "name": "Zico Buurmeester",
+                "position": "Center Right Midfielder",
+                "jersey": "10"
+              },
+              {
+                "id": "319290",
+                "name": "Yassine Kechta",
+                "position": "Left Midfielder",
+                "jersey": "8"
+              },
+              {
+                "id": "354342",
+                "name": "Álex Sancris",
+                "position": "Right Midfielder",
+                "jersey": "22"
+              },
+              {
+                "id": "154446",
+                "name": "Álvaro Morata",
+                "position": "Center Left Forward",
+                "jersey": "21"
+              },
+              {
+                "id": "317473",
+                "name": "Ismaël Gharbi",
+                "position": "Center Right Forward",
+                "jersey": "17"
               }
             ],
             "formation": "4-4-2"
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -9849,7 +8431,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-13T18:23:52Z",
+      "calculatedAt": "2026-09-13T18:49:13Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -9926,9 +8508,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/teams/20070/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "259520",
@@ -10145,9 +8727,9 @@
             "source": "ESPN",
             "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/teams/436/roster",
             "fetchedAt": "2026-09-13T08:54:14Z",
-            "checkedAt": "2026-09-13T18:23:50Z",
+            "checkedAt": "2026-09-13T18:49:11Z",
             "status": "cached",
-            "ageMinutes": 570,
+            "ageMinutes": 595,
             "players": [
               {
                 "id": "124880",
@@ -10341,7 +8923,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-13T18:23:50Z",
+        "observedAt": "2026-09-13T18:49:11Z",
         "notes": [
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
         ]
@@ -10743,6 +9325,13 @@
       "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
     },
     {
+      "league": "F1",
+      "date": "13/09/2026",
+      "home": "Brest",
+      "away": "Paris SG",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
       "league": "F2",
       "date": "11/09/2026",
       "home": "Clermont",
@@ -10838,6 +9427,13 @@
       "date": "13/09/2026",
       "home": "Napoli",
       "away": "Bologna",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I1",
+      "date": "13/09/2026",
+      "home": "Sassuolo",
+      "away": "Juventus",
       "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
     },
     {
@@ -12603,342 +11199,343 @@
       "source": "2627_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
       "checkedAt": "2026-09-13T18:23:19Z",
-      "message": "15154 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
       "checkedAt": "2026-09-13T18:23:21Z",
-      "message": "203438 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
       "checkedAt": "2026-09-13T18:23:22Z",
-      "message": "197110 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E1.csv",
       "checkedAt": "2026-09-13T18:23:24Z",
-      "message": "34076 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E1.csv",
       "checkedAt": "2026-09-13T18:23:25Z",
-      "message": "294390 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E1.csv",
       "checkedAt": "2026-09-13T18:23:27Z",
-      "message": "286983 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
       "checkedAt": "2026-09-13T18:23:28Z",
-      "message": "9158 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
       "checkedAt": "2026-09-13T18:23:30Z",
-      "message": "159944 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D1.csv",
       "checkedAt": "2026-09-13T18:23:31Z",
-      "message": "156414 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D2.csv",
       "checkedAt": "2026-09-13T18:23:33Z",
-      "message": "17939 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D2.csv",
       "checkedAt": "2026-09-13T18:23:34Z",
-      "message": "157989 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D2.csv",
       "checkedAt": "2026-09-13T18:23:36Z",
-      "message": "157178 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
       "checkedAt": "2026-09-13T18:23:37Z",
-      "message": "14620 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
       "checkedAt": "2026-09-13T18:23:38Z",
-      "message": "196217 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I1.csv",
       "checkedAt": "2026-09-13T18:23:40Z",
-      "message": "191722 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I2.csv",
       "checkedAt": "2026-09-13T18:23:41Z",
-      "message": "14856 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I2.csv",
       "checkedAt": "2026-09-13T18:23:43Z",
-      "message": "190966 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I2.csv",
       "checkedAt": "2026-09-13T18:23:44Z",
-      "message": "192674 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
       "checkedAt": "2026-09-13T18:23:45Z",
-      "message": "20074 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2526_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
       "checkedAt": "2026-09-13T18:23:47Z",
-      "message": "197653 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2425_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP1.csv",
       "checkedAt": "2026-09-13T18:23:49Z",
-      "message": "192863 bayt kontrol edildi"
+      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
     },
     {
       "ok": true,
       "source": "2627_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP2.csv",
-      "checkedAt": "2026-09-13T16:23:57Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:47Z",
+      "message": "21283 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP2.csv",
-      "checkedAt": "2026-09-13T16:24:01Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:48Z",
+      "message": "237701 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP2.csv",
-      "checkedAt": "2026-09-13T16:24:07Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:49Z",
+      "message": "230032 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
-      "checkedAt": "2026-09-13T16:24:13Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:50Z",
+      "message": "13337 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
-      "checkedAt": "2026-09-13T16:24:18Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:51Z",
+      "message": "158471 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F1.csv",
-      "checkedAt": "2026-09-13T16:24:21Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:52Z",
+      "message": "154703 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F2.csv",
-      "checkedAt": "2026-09-13T16:24:24Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:53Z",
+      "message": "21875 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F2.csv",
-      "checkedAt": "2026-09-13T16:24:26Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:54Z",
+      "message": "156238 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F2.csv",
-      "checkedAt": "2026-09-13T16:24:45Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:55Z",
+      "message": "155252 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
-      "checkedAt": "2026-09-13T16:24:49Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:55Z",
+      "message": "21269 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
-      "checkedAt": "2026-09-13T16:24:53Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:56Z",
+      "message": "158364 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/N1.csv",
-      "checkedAt": "2026-09-13T16:24:56Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:57Z",
+      "message": "155460 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/B1.csv",
-      "checkedAt": "2026-09-13T16:25:06Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:58Z",
+      "message": "21901 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/B1.csv",
-      "checkedAt": "2026-09-13T16:25:10Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:48:59Z",
+      "message": "158888 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/B1.csv",
-      "checkedAt": "2026-09-13T16:25:13Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:00Z",
+      "message": "158659 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/P1.csv",
-      "checkedAt": "2026-09-13T16:25:15Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:01Z",
+      "message": "21177 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/P1.csv",
-      "checkedAt": "2026-09-13T16:25:19Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:02Z",
+      "message": "157715 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/P1.csv",
-      "checkedAt": "2026-09-13T16:25:56Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:03Z",
+      "message": "153596 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
-      "checkedAt": "2026-09-13T16:26:00Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:04Z",
+      "message": "17450 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
-      "checkedAt": "2026-09-13T16:26:01Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:05Z",
+      "message": "158392 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/T1.csv",
-      "checkedAt": "2026-09-13T16:26:20Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:06Z",
+      "message": "173297 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC0.csv",
-      "checkedAt": "2026-09-13T16:26:23Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:06Z",
+      "message": "16562 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC0.csv",
-      "checkedAt": "2026-09-13T16:26:26Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:07Z",
+      "message": "118594 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC0.csv",
-      "checkedAt": "2026-09-13T16:26:29Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:08Z",
+      "message": "118635 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC1.csv",
-      "checkedAt": "2026-09-13T16:26:32Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:09Z",
+      "message": "12683 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC1.csv",
-      "checkedAt": "2026-09-13T16:26:38Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:10Z",
+      "message": "94837 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC1.csv",
-      "checkedAt": "2026-09-13T16:26:41Z",
-      "message": "İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri"
+      "checkedAt": "2026-09-13T18:49:11Z",
+      "message": "93788 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "fixtures",
       "url": "https://www.football-data.co.uk/fixtures.csv",
-      "message": "190 satır; 139 desteklenen lig fikstürü"
+      "checkedAt": "2026-09-13T18:23:50Z",
+      "message": "30 dakikalık indirme aralığı dolmadı; doğrulanmış fikstür"
     }
   ],
   "quality": {
@@ -14301,7 +12898,7 @@
     }
   },
   "enrichment": {
-    "updatedAt": "2026-09-13T18:23:53Z",
+    "updatedAt": "2026-09-13T18:49:14Z",
     "xgMatchedHistory": {
       "E0": 790,
       "E1": 0,
@@ -14326,472 +12923,416 @@
         "url": "https://understat.com/getLeagueData/EPL/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_E0_2025",
         "url": "https://understat.com/getLeagueData/EPL/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_E0_2026",
         "url": "https://understat.com/getLeagueData/EPL/2026",
         "status": "cached",
         "fetchedAt": "2026-09-13T16:26:45Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 117
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 142
       },
       {
         "source": "xg_D1_2024",
         "url": "https://understat.com/getLeagueData/Bundesliga/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_D1_2025",
         "url": "https://understat.com/getLeagueData/Bundesliga/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_D1_2026",
         "url": "https://understat.com/getLeagueData/Bundesliga/2026",
         "status": "cached",
         "fetchedAt": "2026-09-13T16:26:45Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 117
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 142
       },
       {
         "source": "xg_I1_2024",
         "url": "https://understat.com/getLeagueData/Serie_A/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_I1_2025",
         "url": "https://understat.com/getLeagueData/Serie_A/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_I1_2026",
         "url": "https://understat.com/getLeagueData/Serie_A/2026",
         "status": "cached",
         "fetchedAt": "2026-09-13T16:26:45Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 117
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 142
       },
       {
         "source": "xg_SP1_2024",
         "url": "https://understat.com/getLeagueData/La_liga/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_SP1_2025",
         "url": "https://understat.com/getLeagueData/La_liga/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_SP1_2026",
         "url": "https://understat.com/getLeagueData/La_liga/2026",
         "status": "cached",
         "fetchedAt": "2026-09-13T16:26:45Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 117
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 142
       },
       {
         "source": "xg_F1_2024",
         "url": "https://understat.com/getLeagueData/Ligue_1/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_F1_2025",
         "url": "https://understat.com/getLeagueData/Ligue_1/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 13296
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 13322
       },
       {
         "source": "xg_F1_2026",
         "url": "https://understat.com/getLeagueData/Ligue_1/2026",
         "status": "cached",
         "fetchedAt": "2026-09-13T16:26:45Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 117
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 142
       },
       {
         "source": "fpl",
         "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_E0",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
-      },
-      {
-        "source": "events_F1",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
-        "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_F2",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_I1",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_P1",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_SP1",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_SP2",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "events_T1",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/scoreboard?dates=20260913-20260914&limit=100",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
-      },
-      {
-        "source": "lineup_401876465",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/summary?event=401876465",
-        "status": "fresh",
-        "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
-      },
-      {
-        "source": "lineup_401874750",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/summary?event=401874750",
-        "status": "fresh",
-        "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 25
       },
       {
         "source": "lineup_401882879",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/summary?event=401882879",
         "status": "fresh",
-        "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
+        "fetchedAt": "2026-09-13T18:49:11Z",
+        "checkedAt": "2026-09-13T18:49:11Z",
         "ageMinutes": 0
       },
       {
         "source": "lineup_401883209",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/summary?event=401883209",
         "status": "fresh",
-        "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
+        "fetchedAt": "2026-09-13T18:49:11Z",
+        "checkedAt": "2026-09-13T18:49:11Z",
         "ageMinutes": 0
       },
       {
         "source": "lineup_401885443",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/summary?event=401885443",
         "status": "fresh",
-        "fetchedAt": "2026-09-13T18:23:50Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
+        "fetchedAt": "2026-09-13T18:49:11Z",
+        "checkedAt": "2026-09-13T18:49:11Z",
         "ageMinutes": 0
-      },
-      {
-        "source": "roster_F1_6997",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/teams/6997/roster",
-        "status": "cached",
-        "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
-      },
-      {
-        "source": "roster_F1_160",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/teams/160/roster",
-        "status": "cached",
-        "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
-      },
-      {
-        "source": "roster_I1_3997",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/3997/roster",
-        "status": "cached",
-        "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
-      },
-      {
-        "source": "roster_I1_111",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/111/roster",
-        "status": "cached",
-        "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
       },
       {
         "source": "roster_SP1_89",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/89/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_SP1_1068",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/1068/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_SP2_245",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/teams/245/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_SP2_17534",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/teams/17534/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_12698",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/12698/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_2250",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/2250/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_I1_2572",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/2572/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_I1_115",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/115/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_I1_239",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/239/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_I1_104",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/104/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_T1_20070",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/teams/20070/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_T1_436",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/teams/436/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_3822",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/3822/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_21610",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/21610/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_F2_11884",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/teams/11884/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_F2_177",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/teams/177/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_I1_110",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/110/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_I1_118",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/teams/118/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_E0_357",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams/357/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_E0_361",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams/361/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_SP1_102",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/102/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_SP1_244",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/teams/244/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_3696",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/3696/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_552",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/552/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_2994",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/2994/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       },
       {
         "source": "roster_P1_12216",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/teams/12216/roster",
         "status": "cached",
         "fetchedAt": "2026-09-13T08:54:14Z",
-        "checkedAt": "2026-09-13T18:23:50Z",
-        "ageMinutes": 570
+        "checkedAt": "2026-09-13T18:49:11Z",
+        "ageMinutes": 595
       }
     ],
     "coverage": {
@@ -14824,11 +13365,11 @@
         "lineups": 0
       },
       "I1": {
-        "fixtures": 4,
-        "xg": 4,
+        "fixtures": 3,
+        "xg": 3,
         "injuries": 0,
-        "squads": 4,
-        "lineups": 1
+        "squads": 3,
+        "lineups": 0
       },
       "I2": {
         "fixtures": 0,
@@ -14849,14 +13390,14 @@
         "xg": 0,
         "injuries": 0,
         "squads": 1,
-        "lineups": 0
+        "lineups": 1
       },
       "F1": {
-        "fixtures": 1,
-        "xg": 1,
+        "fixtures": 0,
+        "xg": 0,
         "injuries": 0,
-        "squads": 1,
-        "lineups": 1
+        "squads": 0,
+        "lineups": 0
       },
       "F2": {
         "fixtures": 1,
@@ -14884,7 +13425,7 @@
         "xg": 0,
         "injuries": 0,
         "squads": 3,
-        "lineups": 0
+        "lineups": 1
       },
       "T1": {
         "fixtures": 1,
