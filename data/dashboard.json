@@ -1,6 +1,6 @@
 {
   "version": "1.6",
-  "updatedAt": "2026-09-27T17:17:03Z",
+  "updatedAt": "2026-09-27T20:22:50Z",
   "dataMode": "validated cache-first server-side",
   "refreshIntervalMinutes": 30,
   "sourceTimezone": "Europe/London",
@@ -106,14 +106,14 @@
       "Time"
     ],
     "evaluatedFixtures": 15,
-    "predictions": 2,
-    "skipped": 13,
+    "predictions": 1,
+    "skipped": 14,
     "ledger": 58,
     "excludedFromForwardTest": 43,
     "awaitingResults": 1,
     "fixtureFirstDate": "2026-09-25T18:30:00Z",
     "fixtureLastDate": "2026-09-28T18:30:00Z",
-    "futureFixtureCount": 2
+    "futureFixtureCount": 1
   },
   "leagues": {
     "E0": "Premier League",
@@ -134,324 +134,6 @@
     "SC1": "Scotland Championship"
   },
   "predictions": [
-    {
-      "id": "8bf8ea0964831d08",
-      "league": "SP2",
-      "leagueName": "La Liga 2",
-      "date": "27/09/2026",
-      "time": "20:00",
-      "home": "Oviedo",
-      "away": "Sp Gijon",
-      "lambdaH": 0.9525812491377111,
-      "lambdaA": 0.9239170523682688,
-      "reliability": 0.6466187651143487,
-      "topScores": [
-        {
-          "score": "0-0",
-          "p": 0.15312538615302473
-        },
-        {
-          "score": "1-0",
-          "p": 0.1458643716163427
-        },
-        {
-          "score": "0-1",
-          "p": 0.14147515541725553
-        },
-        {
-          "score": "1-1",
-          "p": 0.13476658026932112
-        },
-        {
-          "score": "2-0",
-          "p": 0.0694738326594915
-        }
-      ],
-      "model": {
-        "HOME": 0.5040326804308517,
-        "DRAW": 0.23699732042626329,
-        "AWAY": 0.25896999914288504,
-        "U25": 0.5392819042595216,
-        "O25": 0.4607180957404784,
-        "BTTS_YES": 0.5121937497997685,
-        "BTTS_NO": 0.4878062502002315
-      },
-      "market": {
-        "HOME": 0.4665246159022093,
-        "DRAW": 0.29303577436357514,
-        "AWAY": 0.24043960973421555,
-        "O25": 0.4005102040816326,
-        "U25": 0.5994897959183673
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-09-27T19:00:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.5392819042595216,
-          "marketP": 0.5994897959183673,
-          "edge": -0.06020789165884566,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.15332741031255104,
-          "referenceOdds": 1.57,
-          "minimumOdds": 1.9470336232433691,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 107,
-            "candidateN": 0,
-            "brier": 0.23785835602810204,
-            "referenceBrier": 0.23933535858085614,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.4607180957404784,
-          "marketP": 0.4005102040816326,
-          "edge": 0.06020789165884577,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.08268752499012422,
-          "referenceOdds": 2.35,
-          "minimumOdds": 2.2790509200911937,
-          "reason": "Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": true,
-            "n": 107,
-            "candidateN": 31,
-            "brier": 0.237858356028102,
-            "referenceBrier": 0.23933535858085614,
-            "calibrationGap": 0.07898015949043506,
-            "reason": "Bağımsız test koşulları sağlandı"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.4878062502002315,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.152493945227235,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 107,
-            "candidateN": 0,
-            "brier": 0.23693852685969038,
-            "referenceBrier": 0.24331702634635005,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5121937497997685,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.050005491887544,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 107,
-            "candidateN": 0,
-            "brier": 0.23693852685969038,
-            "referenceBrier": 0.24331702634635005,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.5040326804308517,
-          "marketP": 0.4665246159022093,
-          "edge": 0.037508064528642415,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.013105687666011834,
-          "referenceOdds": 2.01,
-          "minimumOdds": 2.083198254332339,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 107,
-            "candidateN": 0,
-            "brier": 0.21236301365540475,
-            "referenceBrier": 0.21474694396651592,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.23699732042626329,
-          "marketP": 0.29303577436357514,
-          "edge": -0.056038453937311855,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.24160857463595742,
-          "referenceOdds": 3.2,
-          "minimumOdds": 4.43042983824235,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 107,
-            "candidateN": 0,
-            "brier": 0.16846148871795055,
-            "referenceBrier": 0.16973915551789517,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.25896999914288504,
-          "marketP": 0.24043960973421555,
-          "edge": 0.018530389408669495,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.009982996657251553,
-          "referenceOdds": 3.9,
-          "minimumOdds": 4.0545237034219905,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 107,
-            "candidateN": 3,
-            "brier": 0.1824389301865004,
-            "referenceBrier": 0.18567911419409283,
-            "calibrationGap": 0.011406388302117487,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        }
-      ],
-      "calculatedAt": "2026-09-27T17:17:02Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 7.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 4.0,
-          "shotsOnTargetAgainst": 3.0,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "away": {
-          "restDays": 8.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 4.12,
-          "shotsOnTargetAgainst": 3.25,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": false
-        }
-      },
-      "rawModel": {
-        "HOME": 0.3473993722503343,
-        "DRAW": 0.3206091215209307,
-        "AWAY": 0.3319915062287349,
-        "U25": 0.7100609804036623,
-        "O25": 0.2899390195963377,
-        "BTTS_YES": 0.37042022683038095,
-        "BTTS_NO": 0.6295797731696191,
-        "scores": [
-          {
-            "score": "0-0",
-            "p": 0.15312538615302473
-          },
-          {
-            "score": "1-0",
-            "p": 0.1458643716163427
-          },
-          {
-            "score": "0-1",
-            "p": 0.14147515541725553
-          },
-          {
-            "score": "1-1",
-            "p": 0.13476658026932112
-          },
-          {
-            "score": "2-0",
-            "p": 0.0694738326594915
-          }
-        ]
-      },
-      "sampleHome": 8.466187651143487,
-      "sampleAway": 26.618013755293006,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-09-27T17:17:00Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-09-25T10:10:04Z"
-    },
     {
       "id": "e271026cee9df011",
       "league": "SP2",
@@ -672,7 +354,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-09-27T17:17:02Z",
+      "calculatedAt": "2026-09-27T20:22:49Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -774,7 +456,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-09-27T17:17:00Z",
+        "observedAt": "2026-09-27T20:22:43Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -883,6 +565,13 @@
       "date": "27/09/2026",
       "home": "Eibar",
       "away": "Las Palmas",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "SP2",
+      "date": "27/09/2026",
+      "home": "Oviedo",
+      "away": "Sp Gijon",
       "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
     }
   ],
@@ -2350,336 +2039,336 @@
       "ok": true,
       "source": "2627_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
-      "checkedAt": "2026-09-27T17:15:53Z",
+      "checkedAt": "2026-09-27T20:21:59Z",
       "message": "24803 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
-      "checkedAt": "2026-09-27T17:15:55Z",
+      "checkedAt": "2026-09-27T20:22:00Z",
       "message": "203438 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
-      "checkedAt": "2026-09-27T17:15:56Z",
+      "checkedAt": "2026-09-27T20:22:01Z",
       "message": "197110 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E1.csv",
-      "checkedAt": "2026-09-27T17:15:57Z",
+      "checkedAt": "2026-09-27T20:22:02Z",
       "message": "46722 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E1.csv",
-      "checkedAt": "2026-09-27T17:15:59Z",
+      "checkedAt": "2026-09-27T20:22:03Z",
       "message": "294390 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E1.csv",
-      "checkedAt": "2026-09-27T17:16:01Z",
+      "checkedAt": "2026-09-27T20:22:04Z",
       "message": "286983 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
-      "checkedAt": "2026-09-27T17:16:02Z",
+      "checkedAt": "2026-09-27T20:22:05Z",
       "message": "17760 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
-      "checkedAt": "2026-09-27T17:16:04Z",
+      "checkedAt": "2026-09-27T20:22:06Z",
       "message": "159944 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D1.csv",
-      "checkedAt": "2026-09-27T17:16:05Z",
+      "checkedAt": "2026-09-27T20:22:07Z",
       "message": "156414 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D2.csv",
-      "checkedAt": "2026-09-27T17:16:06Z",
+      "checkedAt": "2026-09-27T20:22:07Z",
       "message": "26477 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D2.csv",
-      "checkedAt": "2026-09-27T17:16:08Z",
+      "checkedAt": "2026-09-27T20:22:08Z",
       "message": "157989 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D2.csv",
-      "checkedAt": "2026-09-27T17:16:09Z",
+      "checkedAt": "2026-09-27T20:22:09Z",
       "message": "157178 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
-      "checkedAt": "2026-09-27T17:16:10Z",
+      "checkedAt": "2026-09-27T20:22:10Z",
       "message": "24049 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
-      "checkedAt": "2026-09-27T17:16:12Z",
+      "checkedAt": "2026-09-27T20:22:11Z",
       "message": "196217 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I1.csv",
-      "checkedAt": "2026-09-27T17:16:13Z",
+      "checkedAt": "2026-09-27T20:22:12Z",
       "message": "191722 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I2.csv",
-      "checkedAt": "2026-09-27T17:16:15Z",
+      "checkedAt": "2026-09-27T20:22:13Z",
       "message": "24290 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I2.csv",
-      "checkedAt": "2026-09-27T17:16:16Z",
+      "checkedAt": "2026-09-27T20:22:14Z",
       "message": "190966 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I2.csv",
-      "checkedAt": "2026-09-27T17:16:18Z",
+      "checkedAt": "2026-09-27T20:22:15Z",
       "message": "192674 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
-      "checkedAt": "2026-09-27T17:16:19Z",
+      "checkedAt": "2026-09-27T20:22:16Z",
       "message": "33311 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
-      "checkedAt": "2026-09-27T17:16:21Z",
+      "checkedAt": "2026-09-27T20:22:17Z",
       "message": "197653 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP1.csv",
-      "checkedAt": "2026-09-27T17:16:22Z",
+      "checkedAt": "2026-09-27T20:22:18Z",
       "message": "192863 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP2.csv",
-      "checkedAt": "2026-09-27T17:16:23Z",
+      "checkedAt": "2026-09-27T20:22:19Z",
       "message": "31577 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP2.csv",
-      "checkedAt": "2026-09-27T17:16:25Z",
+      "checkedAt": "2026-09-27T20:22:20Z",
       "message": "237701 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP2.csv",
-      "checkedAt": "2026-09-27T17:16:27Z",
+      "checkedAt": "2026-09-27T20:22:21Z",
       "message": "230032 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
-      "checkedAt": "2026-09-27T17:16:28Z",
+      "checkedAt": "2026-09-27T20:22:22Z",
       "message": "21896 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
-      "checkedAt": "2026-09-27T17:16:29Z",
+      "checkedAt": "2026-09-27T20:22:23Z",
       "message": "158471 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F1.csv",
-      "checkedAt": "2026-09-27T17:16:31Z",
+      "checkedAt": "2026-09-27T20:22:24Z",
       "message": "154703 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F2.csv",
-      "checkedAt": "2026-09-27T17:16:32Z",
+      "checkedAt": "2026-09-27T20:22:24Z",
       "message": "30346 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F2.csv",
-      "checkedAt": "2026-09-27T17:16:33Z",
+      "checkedAt": "2026-09-27T20:22:25Z",
       "message": "156238 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F2.csv",
-      "checkedAt": "2026-09-27T17:16:35Z",
+      "checkedAt": "2026-09-27T20:22:26Z",
       "message": "155252 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
-      "checkedAt": "2026-09-27T17:16:36Z",
+      "checkedAt": "2026-09-27T20:22:27Z",
       "message": "30164 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
-      "checkedAt": "2026-09-27T17:16:38Z",
+      "checkedAt": "2026-09-27T20:22:28Z",
       "message": "158364 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/N1.csv",
-      "checkedAt": "2026-09-27T17:16:39Z",
+      "checkedAt": "2026-09-27T20:22:29Z",
       "message": "155460 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/B1.csv",
-      "checkedAt": "2026-09-27T17:16:40Z",
+      "checkedAt": "2026-09-27T20:22:30Z",
       "message": "30495 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/B1.csv",
-      "checkedAt": "2026-09-27T17:16:42Z",
+      "checkedAt": "2026-09-27T20:22:31Z",
       "message": "158888 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/B1.csv",
-      "checkedAt": "2026-09-27T17:16:43Z",
+      "checkedAt": "2026-09-27T20:22:32Z",
       "message": "158659 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/P1.csv",
-      "checkedAt": "2026-09-27T17:16:44Z",
+      "checkedAt": "2026-09-27T20:22:33Z",
       "message": "29676 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/P1.csv",
-      "checkedAt": "2026-09-27T17:16:46Z",
+      "checkedAt": "2026-09-27T20:22:34Z",
       "message": "157715 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/P1.csv",
-      "checkedAt": "2026-09-27T17:16:47Z",
+      "checkedAt": "2026-09-27T20:22:35Z",
       "message": "153596 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
-      "checkedAt": "2026-09-27T17:16:48Z",
+      "checkedAt": "2026-09-27T20:22:35Z",
       "message": "26084 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
-      "checkedAt": "2026-09-27T17:16:50Z",
+      "checkedAt": "2026-09-27T20:22:36Z",
       "message": "158392 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/T1.csv",
-      "checkedAt": "2026-09-27T17:16:51Z",
+      "checkedAt": "2026-09-27T20:22:37Z",
       "message": "173297 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC0.csv",
-      "checkedAt": "2026-09-27T17:16:53Z",
+      "checkedAt": "2026-09-27T20:22:38Z",
       "message": "20966 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC0.csv",
-      "checkedAt": "2026-09-27T17:16:54Z",
+      "checkedAt": "2026-09-27T20:22:39Z",
       "message": "118594 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC0.csv",
-      "checkedAt": "2026-09-27T17:16:55Z",
+      "checkedAt": "2026-09-27T20:22:40Z",
       "message": "118635 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC1.csv",
-      "checkedAt": "2026-09-27T17:16:56Z",
+      "checkedAt": "2026-09-27T20:22:41Z",
       "message": "17501 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC1.csv",
-      "checkedAt": "2026-09-27T17:16:58Z",
+      "checkedAt": "2026-09-27T20:22:42Z",
       "message": "94837 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC1.csv",
-      "checkedAt": "2026-09-27T17:16:59Z",
+      "checkedAt": "2026-09-27T20:22:43Z",
       "message": "93788 bayt kontrol edildi"
     },
     {
@@ -4049,7 +3738,7 @@
     }
   },
   "enrichment": {
-    "updatedAt": "2026-09-27T17:17:03Z",
+    "updatedAt": "2026-09-27T20:22:50Z",
     "xgMatchedHistory": {
       "E0": 810,
       "E1": 0,
@@ -4074,136 +3763,136 @@
         "url": "https://understat.com/getLeagueData/EPL/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_E0_2025",
         "url": "https://understat.com/getLeagueData/EPL/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_E0_2026",
         "url": "https://understat.com/getLeagueData/EPL/2026",
-        "status": "cached",
-        "fetchedAt": "2026-09-27T12:26:40Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 290
+        "status": "fresh",
+        "fetchedAt": "2026-09-27T20:22:43Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 0
       },
       {
         "source": "xg_D1_2024",
         "url": "https://understat.com/getLeagueData/Bundesliga/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_D1_2025",
         "url": "https://understat.com/getLeagueData/Bundesliga/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_D1_2026",
         "url": "https://understat.com/getLeagueData/Bundesliga/2026",
-        "status": "cached",
-        "fetchedAt": "2026-09-27T12:26:40Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 290
+        "status": "fresh",
+        "fetchedAt": "2026-09-27T20:22:43Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 0
       },
       {
         "source": "xg_I1_2024",
         "url": "https://understat.com/getLeagueData/Serie_A/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_I1_2025",
         "url": "https://understat.com/getLeagueData/Serie_A/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_I1_2026",
         "url": "https://understat.com/getLeagueData/Serie_A/2026",
-        "status": "cached",
-        "fetchedAt": "2026-09-27T12:26:40Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 290
+        "status": "fresh",
+        "fetchedAt": "2026-09-27T20:22:43Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 0
       },
       {
         "source": "xg_SP1_2024",
         "url": "https://understat.com/getLeagueData/La_liga/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_SP1_2025",
         "url": "https://understat.com/getLeagueData/La_liga/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_SP1_2026",
         "url": "https://understat.com/getLeagueData/La_liga/2026",
-        "status": "cached",
-        "fetchedAt": "2026-09-27T12:26:40Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 290
+        "status": "fresh",
+        "fetchedAt": "2026-09-27T20:22:43Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 0
       },
       {
         "source": "xg_F1_2024",
         "url": "https://understat.com/getLeagueData/Ligue_1/2024",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_F1_2025",
         "url": "https://understat.com/getLeagueData/Ligue_1/2025",
         "status": "cached",
         "fetchedAt": "2026-09-04T12:47:34Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 33389
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 33575
       },
       {
         "source": "xg_F1_2026",
         "url": "https://understat.com/getLeagueData/Ligue_1/2026",
-        "status": "cached",
-        "fetchedAt": "2026-09-27T12:26:40Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
-        "ageMinutes": 290
+        "status": "fresh",
+        "fetchedAt": "2026-09-27T20:22:43Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
+        "ageMinutes": 0
       },
       {
         "source": "fpl",
         "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
         "status": "fresh",
-        "fetchedAt": "2026-09-27T17:17:00Z",
-        "checkedAt": "2026-09-27T17:17:00Z",
+        "fetchedAt": "2026-09-27T20:22:43Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
         "ageMinutes": 0
       },
       {
         "source": "events_SP2",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20260927-20260928&limit=100",
         "status": "stale",
-        "checkedAt": "2026-09-27T17:17:00Z",
+        "checkedAt": "2026-09-27T20:22:43Z",
         "fetchedAt": "2026-09-14T18:25:41Z",
-        "ageMinutes": 18651,
+        "ageMinutes": 18837,
         "message": "HTTPError: HTTP Error 400: Bad Request"
       }
     ],
@@ -4258,7 +3947,7 @@
         "lineups": 0
       },
       "SP2": {
-        "fixtures": 2,
+        "fixtures": 1,
         "xg": 0,
         "injuries": 0,
         "squads": 0,
