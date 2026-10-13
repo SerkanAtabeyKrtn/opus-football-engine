@@ -1,6 +1,6 @@
 {
   "version": "1.6",
-  "updatedAt": "2026-10-12T19:02:15Z",
+  "updatedAt": "2026-10-13T01:19:12Z",
   "dataMode": "validated cache-first server-side",
   "refreshIntervalMinutes": 30,
   "sourceTimezone": "Europe/London",
@@ -106,14 +106,14 @@
       "Time"
     ],
     "evaluatedFixtures": 146,
-    "predictions": 1,
-    "skipped": 145,
+    "predictions": 0,
+    "skipped": 146,
     "ledger": 60,
     "excludedFromForwardTest": 43,
-    "awaitingResults": 1,
+    "awaitingResults": 0,
     "fixtureFirstDate": "2026-10-09T16:30:00Z",
     "fixtureLastDate": "2026-10-12T19:15:00Z",
-    "futureFixtureCount": 1
+    "futureFixtureCount": 0
   },
   "leagues": {
     "E0": "Premier League",
@@ -133,1138 +133,826 @@
     "SC0": "Scotland Premiership",
     "SC1": "Scotland Championship"
   },
-  "predictions": [
-    {
-      "id": "a59aeaf758e22f21",
-      "league": "P1",
-      "leagueName": "Portugal 1",
-      "date": "12/10/2026",
-      "time": "20:15",
-      "home": "Famalicao",
-      "away": "Alverca",
-      "lambdaH": 1.5661906156945917,
-      "lambdaA": 0.7738749569675694,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-0",
-          "p": 0.15085844922763983
-        },
-        {
-          "score": "2-0",
-          "p": 0.11813654373928426
-        },
-        {
-          "score": "1-1",
-          "p": 0.11674557590423403
-        },
-        {
-          "score": "0-0",
-          "p": 0.09632189576154204
-        },
-        {
-          "score": "2-1",
-          "p": 0.09142291270253598
-        }
-      ],
-      "model": {
-        "HOME": 0.4970009542157296,
-        "DRAW": 0.2817679451251917,
-        "AWAY": 0.22123110065907872,
-        "U25": 0.4813952553531832,
-        "O25": 0.5186047446468167,
-        "BTTS_YES": 0.45649239906057065,
-        "BTTS_NO": 0.5435076009394293
-      },
-      "market": {
-        "HOME": 0.5210324253353055,
-        "DRAW": 0.28262061859096876,
-        "AWAY": 0.19634695607372565,
-        "O25": 0.4540682414698162,
-        "U25": 0.5459317585301837
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-12T19:15:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.4813952553531832,
-          "marketP": 0.5459317585301837,
-          "edge": -0.06453650317700049,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.167186208238993,
-          "referenceOdds": 1.73,
-          "minimumOdds": 2.1811598438577278,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 0,
-            "brier": 0.2635871808926185,
-            "referenceBrier": 0.2545817821524158,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.5186047446468167,
-          "marketP": 0.4540682414698162,
-          "edge": 0.06453650317700049,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.07869786886537877,
-          "referenceOdds": 2.08,
-          "minimumOdds": 2.0246633121628634,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 23,
-            "brier": 0.2635871808926185,
-            "referenceBrier": 0.2545817821524158,
-            "calibrationGap": 0.029350715778903923,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.5435076009394293,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 1.9318957052028722,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 0,
-            "brier": 0.2512591782537934,
-            "referenceBrier": 0.2485212842805291,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.45649239906057065,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.300147827566957,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 0,
-            "brier": 0.2512591782537934,
-            "referenceBrier": 0.2485212842805291,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.4970009542157296,
-          "marketP": 0.5210324253353055,
-          "edge": -0.024031471119575876,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.11036829195384401,
-          "referenceOdds": 1.79,
-          "minimumOdds": 2.112672000110958,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 0,
-            "brier": 0.20999562497884114,
-            "referenceBrier": 0.209353891012538,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.2817679451251917,
-          "marketP": 0.28262061859096876,
-          "edge": -0.000852673465777054,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.07016578108686744,
-          "referenceOdds": 3.3,
-          "minimumOdds": 3.7264707294276387,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 0,
-            "brier": 0.22281289892386588,
-            "referenceBrier": 0.22095365017027566,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.22123110065907872,
-          "marketP": 0.19634695607372565,
-          "edge": 0.02488414458535307,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.05084772813062388,
-          "referenceOdds": 4.75,
-          "minimumOdds": 4.746168133105615,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 65,
-            "candidateN": 0,
-            "brier": 0.18367216364095404,
-            "referenceBrier": 0.1792172950321194,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-12T19:02:14Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 23.0,
-          "matchesLast14Days": 0,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 3.25,
-          "shotsOnTargetAgainst": 2.88,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "away": {
-          "restDays": 23.0,
-          "matchesLast14Days": 0,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 3.62,
-          "shotsOnTargetAgainst": 4.38,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": false
-        }
-      },
-      "rawModel": {
-        "HOME": 0.5620610849050978,
-        "DRAW": 0.25358537113020413,
-        "AWAY": 0.18435354396469794,
-        "U25": 0.5854463139842339,
-        "O25": 0.41455368601576614,
-        "BTTS_YES": 0.4262590469636537,
-        "BTTS_NO": 0.5737409530363463,
-        "scores": [
-          {
-            "score": "1-0",
-            "p": 0.15085844922763983
-          },
-          {
-            "score": "2-0",
-            "p": 0.11813654373928426
-          },
-          {
-            "score": "1-1",
-            "p": 0.11674557590423403
-          },
-          {
-            "score": "0-0",
-            "p": 0.09632189576154204
-          },
-          {
-            "score": "2-1",
-            "p": 0.09142291270253598
-          }
-        ]
-      },
-      "sampleHome": 21.5806987131927,
-      "sampleAway": 16.512682238963446,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-12T19:02:06Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-09T15:15:48Z"
-    }
-  ],
+  "predictions": [],
   "skipped": [
     {
       "league": "B1",
       "date": "09/10/2026",
       "home": "Beveren",
       "away": "Lommel SK",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "10/10/2026",
       "home": "Cercle Brugge",
       "away": "Anderlecht",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "10/10/2026",
       "home": "RAAL La Louviere",
       "away": "Club Brugge",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "10/10/2026",
       "home": "Genk",
       "away": "Kortrijk",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "10/10/2026",
       "home": "Waregem",
       "away": "Gent",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "11/10/2026",
       "home": "Standard",
       "away": "Charleroi",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "11/10/2026",
       "home": "St. Gilloise",
       "away": "Oud-Heverlee Leuven",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "11/10/2026",
       "home": "Westerlo",
       "away": "Antwerp",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "B1",
       "date": "11/10/2026",
       "home": "Mechelen",
       "away": "St Truiden",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "09/10/2026",
       "home": "Dortmund",
       "away": "Werder Bremen",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "10/10/2026",
       "home": "Augsburg",
       "away": "Bayern Munich",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "10/10/2026",
       "home": "Hoffenheim",
       "away": "Hamburg",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "10/10/2026",
       "home": "Mainz",
       "away": "Leverkusen",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "10/10/2026",
       "home": "Paderborn",
       "away": "Stuttgart",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "10/10/2026",
       "home": "Union Berlin",
       "away": "Elversberg",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "10/10/2026",
       "home": "RB Leipzig",
       "away": "Ein Frankfurt",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "11/10/2026",
       "home": "FC Koln",
       "away": "M'gladbach",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D1",
       "date": "11/10/2026",
       "home": "Freiburg",
       "away": "Schalke 04",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "09/10/2026",
       "home": "Braunschweig",
       "away": "Holstein Kiel",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "09/10/2026",
       "home": "Heidenheim",
       "away": "Kaiserslautern",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "10/10/2026",
       "home": "Darmstadt",
       "away": "Cottbus",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "10/10/2026",
       "home": "Magdeburg",
       "away": "Hannover",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "10/10/2026",
       "home": "Osnabruck",
       "away": "Dresden",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "10/10/2026",
       "home": "Nurnberg",
       "away": "Wolfsburg",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "11/10/2026",
       "home": "Bochum",
       "away": "Bielefeld",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "11/10/2026",
       "home": "Hertha",
       "away": "Greuther Furth",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "D2",
       "date": "11/10/2026",
       "home": "St Pauli",
       "away": "Karlsruhe",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "10/10/2026",
       "home": "Arsenal",
       "away": "Leeds",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "10/10/2026",
       "home": "Aston Villa",
       "away": "Brentford",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "10/10/2026",
       "home": "Chelsea",
       "away": "Bournemouth",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "10/10/2026",
       "home": "Ipswich",
       "away": "Fulham",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "10/10/2026",
       "home": "Sunderland",
       "away": "Brighton",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "10/10/2026",
       "home": "Man United",
       "away": "Tottenham",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "11/10/2026",
       "home": "Crystal Palace",
       "away": "Nott'm Forest",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "11/10/2026",
       "home": "Hull",
       "away": "Everton",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "11/10/2026",
       "home": "Liverpool",
       "away": "Man City",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E0",
       "date": "12/10/2026",
       "home": "Coventry",
       "away": "Newcastle",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "09/10/2026",
       "home": "West Ham",
       "away": "QPR",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Charlton",
       "away": "Bristol City",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Swansea",
       "away": "Norwich",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "West Brom",
       "away": "Birmingham",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Blackburn",
       "away": "Cardiff",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Bolton",
       "away": "Stoke",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Derby",
       "away": "Wrexham",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Middlesbrough",
       "away": "Wolves",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Preston",
       "away": "Millwall",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Sheffield United",
       "away": "Lincoln",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "10/10/2026",
       "home": "Watford",
       "away": "Burnley",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "E1",
       "date": "11/10/2026",
       "home": "Southampton",
       "away": "Portsmouth",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "09/10/2026",
       "home": "Lens",
       "away": "Lyon",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "10/10/2026",
       "home": "Lille",
       "away": "Le Havre",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "10/10/2026",
       "home": "Brest",
       "away": "Angers",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "10/10/2026",
       "home": "Lorient",
       "away": "Paris FC",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "10/10/2026",
       "home": "Monaco",
       "away": "Toulouse",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "10/10/2026",
       "home": "Paris SG",
       "away": "Le Mans",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "11/10/2026",
       "home": "Nice",
       "away": "Strasbourg",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "11/10/2026",
       "home": "Rennes",
       "away": "Auxerre",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F1",
       "date": "11/10/2026",
       "home": "Troyes",
       "away": "Marseille",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "09/10/2026",
       "home": "Dunkerque",
       "away": "Annecy",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "09/10/2026",
       "home": "Montpellier",
       "away": "Grenoble",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "09/10/2026",
       "home": "Nancy",
       "away": "Guingamp",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "09/10/2026",
       "home": "Pau FC",
       "away": "Laval",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "09/10/2026",
       "home": "Sochaux",
       "away": "Boulogne",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "10/10/2026",
       "home": "Clermont",
       "away": "Red Star",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "10/10/2026",
       "home": "Nantes",
       "away": "Reims",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "10/10/2026",
       "home": "St Etienne",
       "away": "Rodez",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "F2",
       "date": "12/10/2026",
       "home": "Dijon",
       "away": "Metz",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "10/10/2026",
       "home": "Genoa",
       "away": "Fiorentina",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "10/10/2026",
       "home": "Inter",
       "away": "Parma",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "10/10/2026",
       "home": "Napoli",
       "away": "Frosinone",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "11/10/2026",
       "home": "Como",
       "away": "Roma",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "11/10/2026",
       "home": "Lazio",
       "away": "Monza",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "11/10/2026",
       "home": "Lecce",
       "away": "Bologna",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "11/10/2026",
       "home": "Sassuolo",
       "away": "Milan",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "11/10/2026",
       "home": "Cagliari",
       "away": "Juventus",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "12/10/2026",
       "home": "Atalanta",
       "away": "Venezia",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I1",
       "date": "12/10/2026",
       "home": "Torino",
       "away": "Udinese",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "09/10/2026",
       "home": "Avellino",
       "away": "Sampdoria",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "10/10/2026",
       "home": "Benevento",
       "away": "Cesena",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "10/10/2026",
       "home": "Empoli",
       "away": "Palermo",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "10/10/2026",
       "home": "Sudtirol",
       "away": "Ascoli",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "10/10/2026",
       "home": "Virtus Entella",
       "away": "Juve Stabia",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "10/10/2026",
       "home": "Vicenza",
       "away": "Pisa",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "10/10/2026",
       "home": "Arezzo",
       "away": "Cremonese",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "11/10/2026",
       "home": "Catanzaro",
       "away": "Mantova",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "11/10/2026",
       "home": "Padova",
       "away": "Carrarese",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "I2",
       "date": "11/10/2026",
       "home": "Modena",
       "away": "Verona",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "09/10/2026",
       "home": "PSV Eindhoven",
       "away": "Heerenveen",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "10/10/2026",
       "home": "Go Ahead Eagles",
       "away": "Sparta Rotterdam",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "10/10/2026",
       "home": "Feyenoord",
       "away": "AZ Alkmaar",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "10/10/2026",
       "home": "For Sittard",
       "away": "Twente",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "10/10/2026",
       "home": "Ajax",
       "away": "Nijmegen",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "11/10/2026",
       "home": "Utrecht",
       "away": "Willem II",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "11/10/2026",
       "home": "Telstar",
       "away": "Den Haag",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "11/10/2026",
       "home": "Zwolle",
       "away": "Cambuur",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "N1",
       "date": "11/10/2026",
       "home": "Excelsior",
       "away": "Groningen",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "09/10/2026",
       "home": "Moreirense",
       "away": "Gil Vicente",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "09/10/2026",
       "home": "Sp Braga",
       "away": "Sp Lisbon",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "10/10/2026",
       "home": "Casa Pia",
       "away": "Santa Clara",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "10/10/2026",
       "home": "Maritimo",
       "away": "Porto",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "10/10/2026",
       "home": "Academico Viseu",
       "away": "Estoril",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "11/10/2026",
       "home": "Rio Ave",
       "away": "Nacional",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "11/10/2026",
       "home": "Benfica",
       "away": "Guimaraes",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "P1",
       "date": "11/10/2026",
       "home": "Arouca",
       "away": "Estrela",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
+    },
+    {
+      "league": "P1",
+      "date": "12/10/2026",
+      "home": "Famalicao",
+      "away": "Alverca",
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC0",
       "date": "10/10/2026",
       "home": "Dundee United",
       "away": "Hibernian",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC0",
       "date": "10/10/2026",
       "home": "Falkirk",
       "away": "Dundee",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC0",
       "date": "10/10/2026",
       "home": "Hearts",
       "away": "St Mirren",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC0",
       "date": "10/10/2026",
       "home": "Rangers",
       "away": "Kilmarnock",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC0",
       "date": "11/10/2026",
       "home": "Motherwell",
       "away": "Celtic",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC0",
       "date": "11/10/2026",
       "home": "Aberdeen",
       "away": "St Johnstone",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC1",
       "date": "10/10/2026",
       "home": "Arbroath",
       "away": "Morton",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC1",
       "date": "10/10/2026",
       "home": "Ayr",
       "away": "Dunfermline",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC1",
       "date": "10/10/2026",
       "home": "Inverness C",
       "away": "Stenhousemuir",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC1",
       "date": "10/10/2026",
       "home": "Livingston",
       "away": "Partick",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SC1",
       "date": "10/10/2026",
       "home": "Raith Rvs",
       "away": "Queens Park",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "09/10/2026",
       "home": "Malaga",
       "away": "Espanol",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
@@ -1278,196 +966,196 @@
       "date": "10/10/2026",
       "home": "Alaves",
       "away": "Ath Madrid",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "10/10/2026",
       "home": "Barcelona",
       "away": "Getafe",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "10/10/2026",
       "home": "Real Madrid",
       "away": "Villarreal",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "11/10/2026",
       "home": "Elche",
       "away": "Celta",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "11/10/2026",
       "home": "Sociedad",
       "away": "La Coruna",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "11/10/2026",
       "home": "Betis",
       "away": "Osasuna",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "11/10/2026",
       "home": "Santander",
       "away": "Valencia",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP1",
       "date": "12/10/2026",
       "home": "Levante",
       "away": "Sevilla",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "10/10/2026",
       "home": "Ceuta",
       "away": "Sabadell",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "10/10/2026",
       "home": "Eldense",
       "away": "Cordoba",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "10/10/2026",
       "home": "Celta B",
       "away": "Sociedad B",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "11/10/2026",
       "home": "Andorra",
       "away": "Castellon",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "11/10/2026",
       "home": "Almeria",
       "away": "Leganes",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "11/10/2026",
       "home": "Mallorca",
       "away": "Las Palmas",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "11/10/2026",
       "home": "Cadiz",
       "away": "Sp Gijon",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "12/10/2026",
       "home": "Valladolid",
       "away": "Albacete",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "12/10/2026",
       "home": "Burgos",
       "away": "Granada",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "12/10/2026",
       "home": "Oviedo",
       "away": "Eibar",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "SP2",
       "date": "12/10/2026",
       "home": "Tenerife",
       "away": "Girona",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "09/10/2026",
       "home": "Galatasaray",
       "away": "Kasimpasa",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "10/10/2026",
       "home": "Genclerbirligi",
       "away": "Amedspor",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "10/10/2026",
       "home": "Alanyaspor",
       "away": "Erzurumspor",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "10/10/2026",
       "home": "Samsunspor",
       "away": "Trabzonspor",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "10/10/2026",
       "home": "Rizespor",
       "away": "Fenerbahce",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "11/10/2026",
       "home": "Konyaspor",
       "away": "Buyuksehyr",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "11/10/2026",
       "home": "Gaziantep",
       "away": "Corum",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "11/10/2026",
       "home": "Besiktas",
       "away": "Kocaelispor",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     },
     {
       "league": "T1",
       "date": "12/10/2026",
       "home": "Eyupspor",
       "away": "Goztep",
-      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+      "reason": "Sonucu mevcut; yeni tahmin üretilmez"
     }
   ],
   "matrix": {},
@@ -2893,19 +2581,20 @@
       "p": 0.5620293466297612,
       "marketP": 0.48684210526315796,
       "edge": 0.07518724136660326,
-      "status": "PENDING",
-      "hg": null,
-      "ag": null,
-      "won": null,
+      "status": "SETTLED",
+      "hg": 5,
+      "ag": 0,
+      "won": true,
       "modelVersion": "1.6",
       "forwardTestEligible": true,
       "auditReason": "Maç öncesi kaydedildi",
-      "displayStatus": "AWAITING_RESULT",
+      "displayStatus": "SETTLED",
       "modelId": "fd8989c85bd0aee9",
       "referenceOdds": 1.95,
       "expectedValue": 0.09595722592803435,
       "minimumOdds": 1.8682298465309342,
-      "auditedKickoffAt": "2026-10-12T12:00:00Z"
+      "auditedKickoffAt": "2026-10-12T12:00:00Z",
+      "settledAt": "2026-10-13T01:19:11Z"
     }
   ],
   "liveSummary": {
@@ -2945,9 +2634,9 @@
       "hitRate": null
     },
     "SP2": {
-      "n": 8,
-      "wins": 4,
-      "hitRate": 0.5
+      "n": 9,
+      "wins": 5,
+      "hitRate": 0.5555555555555556
     },
     "F1": {
       "n": 1,
@@ -2995,336 +2684,336 @@
       "ok": true,
       "source": "2627_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
-      "checkedAt": "2026-10-12T19:01:02Z",
-      "message": "24803 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:17:59Z",
+      "message": "29659 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
-      "checkedAt": "2026-10-12T19:01:04Z",
+      "checkedAt": "2026-10-13T01:18:01Z",
       "message": "203438 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
-      "checkedAt": "2026-10-12T19:01:05Z",
+      "checkedAt": "2026-10-13T01:18:03Z",
       "message": "197110 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E1.csv",
-      "checkedAt": "2026-10-12T19:01:06Z",
-      "message": "46722 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:04Z",
+      "message": "52552 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E1.csv",
-      "checkedAt": "2026-10-12T19:01:08Z",
+      "checkedAt": "2026-10-13T01:18:06Z",
       "message": "294390 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E1.csv",
-      "checkedAt": "2026-10-12T19:01:09Z",
+      "checkedAt": "2026-10-13T01:18:07Z",
       "message": "286983 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
-      "checkedAt": "2026-10-12T19:01:12Z",
-      "message": "17760 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:09Z",
+      "message": "22029 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
-      "checkedAt": "2026-10-12T19:01:13Z",
+      "checkedAt": "2026-10-13T01:18:11Z",
       "message": "159944 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D1.csv",
-      "checkedAt": "2026-10-12T19:01:15Z",
+      "checkedAt": "2026-10-13T01:18:13Z",
       "message": "156414 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D2.csv",
-      "checkedAt": "2026-10-12T19:01:16Z",
-      "message": "26477 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:14Z",
+      "message": "30780 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D2.csv",
-      "checkedAt": "2026-10-12T19:01:17Z",
+      "checkedAt": "2026-10-13T01:18:15Z",
       "message": "157989 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D2.csv",
-      "checkedAt": "2026-10-12T19:01:19Z",
+      "checkedAt": "2026-10-13T01:18:16Z",
       "message": "157178 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
-      "checkedAt": "2026-10-12T19:01:20Z",
-      "message": "24049 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:18Z",
+      "message": "28711 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
-      "checkedAt": "2026-10-12T19:01:21Z",
+      "checkedAt": "2026-10-13T01:18:19Z",
       "message": "196217 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I1.csv",
-      "checkedAt": "2026-10-12T19:01:23Z",
+      "checkedAt": "2026-10-13T01:18:21Z",
       "message": "191722 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I2.csv",
-      "checkedAt": "2026-10-12T19:01:24Z",
-      "message": "24290 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:22Z",
+      "message": "29032 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I2.csv",
-      "checkedAt": "2026-10-12T19:01:25Z",
+      "checkedAt": "2026-10-13T01:18:23Z",
       "message": "190966 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I2.csv",
-      "checkedAt": "2026-10-12T19:01:26Z",
+      "checkedAt": "2026-10-13T01:18:24Z",
       "message": "192674 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
-      "checkedAt": "2026-10-12T19:01:28Z",
-      "message": "33311 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:26Z",
+      "message": "37529 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
-      "checkedAt": "2026-10-12T19:01:29Z",
+      "checkedAt": "2026-10-13T01:18:27Z",
       "message": "197653 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP1.csv",
-      "checkedAt": "2026-10-12T19:01:31Z",
+      "checkedAt": "2026-10-13T01:18:28Z",
       "message": "192863 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP2.csv",
-      "checkedAt": "2026-10-12T19:01:32Z",
-      "message": "42003 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:30Z",
+      "message": "47144 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP2.csv",
-      "checkedAt": "2026-10-12T19:01:33Z",
+      "checkedAt": "2026-10-13T01:18:32Z",
       "message": "237701 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP2.csv",
-      "checkedAt": "2026-10-12T19:01:35Z",
+      "checkedAt": "2026-10-13T01:18:33Z",
       "message": "230032 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
-      "checkedAt": "2026-10-12T19:01:36Z",
-      "message": "21896 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:34Z",
+      "message": "26136 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
-      "checkedAt": "2026-10-12T19:01:37Z",
+      "checkedAt": "2026-10-13T01:18:35Z",
       "message": "158471 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F1.csv",
-      "checkedAt": "2026-10-12T19:01:38Z",
+      "checkedAt": "2026-10-13T01:18:37Z",
       "message": "154703 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F2.csv",
-      "checkedAt": "2026-10-12T19:01:40Z",
-      "message": "30346 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:38Z",
+      "message": "34535 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F2.csv",
-      "checkedAt": "2026-10-12T19:01:41Z",
+      "checkedAt": "2026-10-13T01:18:39Z",
       "message": "156238 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F2.csv",
-      "checkedAt": "2026-10-12T19:01:42Z",
+      "checkedAt": "2026-10-13T01:18:40Z",
       "message": "155252 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
-      "checkedAt": "2026-10-12T19:01:43Z",
-      "message": "30164 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:42Z",
+      "message": "34375 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
-      "checkedAt": "2026-10-12T19:01:45Z",
+      "checkedAt": "2026-10-13T01:18:43Z",
       "message": "158364 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/N1.csv",
-      "checkedAt": "2026-10-12T19:01:46Z",
+      "checkedAt": "2026-10-13T01:18:44Z",
       "message": "155460 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/B1.csv",
-      "checkedAt": "2026-10-12T19:01:47Z",
-      "message": "30495 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:46Z",
+      "message": "34786 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/B1.csv",
-      "checkedAt": "2026-10-12T19:01:49Z",
+      "checkedAt": "2026-10-13T01:18:47Z",
       "message": "158888 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/B1.csv",
-      "checkedAt": "2026-10-12T19:01:50Z",
+      "checkedAt": "2026-10-13T01:18:48Z",
       "message": "158659 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/P1.csv",
-      "checkedAt": "2026-10-12T19:01:51Z",
-      "message": "29676 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:49Z",
+      "message": "33928 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/P1.csv",
-      "checkedAt": "2026-10-12T19:01:52Z",
+      "checkedAt": "2026-10-13T01:18:51Z",
       "message": "157715 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/P1.csv",
-      "checkedAt": "2026-10-12T19:01:54Z",
+      "checkedAt": "2026-10-13T01:18:52Z",
       "message": "153596 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
-      "checkedAt": "2026-10-12T19:01:55Z",
-      "message": "26084 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:53Z",
+      "message": "30336 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
-      "checkedAt": "2026-10-12T19:01:56Z",
+      "checkedAt": "2026-10-13T01:18:54Z",
       "message": "158392 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/T1.csv",
-      "checkedAt": "2026-10-12T19:01:57Z",
+      "checkedAt": "2026-10-13T01:18:56Z",
       "message": "173297 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC0.csv",
-      "checkedAt": "2026-10-12T19:01:58Z",
-      "message": "20966 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:18:57Z",
+      "message": "23875 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC0.csv",
-      "checkedAt": "2026-10-12T19:02:00Z",
+      "checkedAt": "2026-10-13T01:18:58Z",
       "message": "118594 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC0.csv",
-      "checkedAt": "2026-10-12T19:02:01Z",
+      "checkedAt": "2026-10-13T01:18:59Z",
       "message": "118635 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC1.csv",
-      "checkedAt": "2026-10-12T19:02:02Z",
-      "message": "20805 bayt kontrol edildi"
+      "checkedAt": "2026-10-13T01:19:02Z",
+      "message": "23175 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC1.csv",
-      "checkedAt": "2026-10-12T19:02:03Z",
+      "checkedAt": "2026-10-13T01:19:03Z",
       "message": "94837 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC1.csv",
-      "checkedAt": "2026-10-12T19:02:05Z",
+      "checkedAt": "2026-10-13T01:19:04Z",
       "message": "93788 bayt kontrol edildi"
     },
     {
@@ -4646,65 +4335,65 @@
   "forecastAudit": {
     "version": "1.6",
     "total": 509,
-    "settled": 373,
-    "pending": 136,
+    "settled": 505,
+    "pending": 4,
     "markets": {
       "U25": {
-        "n": 373,
-        "brier": 0.23397485782643854,
-        "predicted": 0.43885870319588505,
-        "observed": 0.4101876675603217
+        "n": 505,
+        "brier": 0.235869895126974,
+        "predicted": 0.4328476418377321,
+        "observed": 0.41188118811881186
       },
       "O25": {
-        "n": 373,
-        "brier": 0.23397485782643854,
-        "predicted": 0.561141296804115,
-        "observed": 0.5898123324396782
+        "n": 505,
+        "brier": 0.235869895126974,
+        "predicted": 0.5671523581622679,
+        "observed": 0.5881188118811881
       },
       "BTTS_NO": {
-        "n": 373,
-        "brier": 0.24465457118305423,
-        "predicted": 0.44601341520864535,
-        "observed": 0.4101876675603217
+        "n": 505,
+        "brier": 0.2464961846305842,
+        "predicted": 0.45279530599518675,
+        "observed": 0.41188118811881186
       },
       "BTTS_YES": {
-        "n": 373,
-        "brier": 0.24465457118305423,
-        "predicted": 0.5539865847913547,
-        "observed": 0.5898123324396782
+        "n": 505,
+        "brier": 0.2464961846305842,
+        "predicted": 0.5472046940048133,
+        "observed": 0.5881188118811881
       },
       "HOME": {
-        "n": 373,
-        "brier": 0.21744048948849315,
-        "predicted": 0.43535107066816403,
-        "observed": 0.4101876675603217
+        "n": 505,
+        "brier": 0.2141017667468014,
+        "predicted": 0.4317411567502903,
+        "observed": 0.42574257425742573
       },
       "DRAW": {
-        "n": 373,
-        "brier": 0.1932390515636869,
-        "predicted": 0.24837858615456404,
-        "observed": 0.2680965147453083
+        "n": 505,
+        "brier": 0.1895501769521857,
+        "predicted": 0.24373134883453168,
+        "observed": 0.25742574257425743
       },
       "AWAY": {
-        "n": 373,
-        "brier": 0.1923812571639636,
-        "predicted": 0.316270343177272,
-        "observed": 0.32171581769436997
+        "n": 505,
+        "brier": 0.19020286024987065,
+        "predicted": 0.3245274944151781,
+        "observed": 0.31683168316831684
       }
     }
   },
   "enrichment": {
-    "updatedAt": "2026-10-12T19:02:15Z",
+    "updatedAt": "2026-10-13T01:19:12Z",
     "xgMatchedHistory": {
-      "E0": 810,
+      "E0": 820,
       "E1": 0,
-      "D1": 646,
+      "D1": 655,
       "D2": 0,
-      "I1": 809,
+      "I1": 819,
       "I2": 0,
-      "SP1": 828,
+      "SP1": 837,
       "SP2": 0,
-      "F1": 648,
+      "F1": 657,
       "F2": 0,
       "N1": 0,
       "B1": 0,
@@ -4719,23 +4408,23 @@
         "url": "https://understat.com/getLeagueData/EPL/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_E0_2025",
         "url": "https://understat.com/getLeagueData/EPL/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_E0_2026",
         "url": "https://understat.com/getLeagueData/EPL/2026",
         "status": "fresh",
-        "fetchedAt": "2026-10-12T19:02:06Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
+        "fetchedAt": "2026-10-13T01:19:05Z",
+        "checkedAt": "2026-10-13T01:19:05Z",
         "ageMinutes": 0
       },
       {
@@ -4743,23 +4432,23 @@
         "url": "https://understat.com/getLeagueData/Bundesliga/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_D1_2025",
         "url": "https://understat.com/getLeagueData/Bundesliga/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_D1_2026",
         "url": "https://understat.com/getLeagueData/Bundesliga/2026",
         "status": "fresh",
-        "fetchedAt": "2026-10-12T19:02:06Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
+        "fetchedAt": "2026-10-13T01:19:05Z",
+        "checkedAt": "2026-10-13T01:19:05Z",
         "ageMinutes": 0
       },
       {
@@ -4767,23 +4456,23 @@
         "url": "https://understat.com/getLeagueData/Serie_A/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_I1_2025",
         "url": "https://understat.com/getLeagueData/Serie_A/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_I1_2026",
         "url": "https://understat.com/getLeagueData/Serie_A/2026",
         "status": "fresh",
-        "fetchedAt": "2026-10-12T19:02:06Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
+        "fetchedAt": "2026-10-13T01:19:05Z",
+        "checkedAt": "2026-10-13T01:19:05Z",
         "ageMinutes": 0
       },
       {
@@ -4791,23 +4480,23 @@
         "url": "https://understat.com/getLeagueData/La_liga/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_SP1_2025",
         "url": "https://understat.com/getLeagueData/La_liga/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_SP1_2026",
         "url": "https://understat.com/getLeagueData/La_liga/2026",
         "status": "fresh",
-        "fetchedAt": "2026-10-12T19:02:06Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
+        "fetchedAt": "2026-10-13T01:19:05Z",
+        "checkedAt": "2026-10-13T01:19:05Z",
         "ageMinutes": 0
       },
       {
@@ -4815,41 +4504,32 @@
         "url": "https://understat.com/getLeagueData/Ligue_1/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_F1_2025",
         "url": "https://understat.com/getLeagueData/Ligue_1/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "ageMinutes": 11742
+        "checkedAt": "2026-10-13T01:19:05Z",
+        "ageMinutes": 12119
       },
       {
         "source": "xg_F1_2026",
         "url": "https://understat.com/getLeagueData/Ligue_1/2026",
         "status": "fresh",
-        "fetchedAt": "2026-10-12T19:02:06Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
+        "fetchedAt": "2026-10-13T01:19:05Z",
+        "checkedAt": "2026-10-13T01:19:05Z",
         "ageMinutes": 0
       },
       {
         "source": "fpl",
         "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
         "status": "fresh",
-        "fetchedAt": "2026-10-12T19:02:06Z",
-        "checkedAt": "2026-10-12T19:02:06Z",
+        "fetchedAt": "2026-10-13T01:19:05Z",
+        "checkedAt": "2026-10-13T01:19:05Z",
         "ageMinutes": 0
-      },
-      {
-        "source": "events_P1",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard?dates=20261012-20261012&limit=100",
-        "status": "stale",
-        "checkedAt": "2026-10-12T19:02:06Z",
-        "fetchedAt": "2026-09-14T19:23:01Z",
-        "ageMinutes": 40299,
-        "message": "HTTPError: HTTP Error 400: Bad Request"
       }
     ],
     "coverage": {
@@ -4938,7 +4618,7 @@
         "lineups": 0
       },
       "P1": {
-        "fixtures": 1,
+        "fixtures": 0,
         "xg": 0,
         "injuries": 0,
         "squads": 0,
