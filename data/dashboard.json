@@ -1,6 +1,6 @@
 {
   "version": "1.6",
-  "updatedAt": "2026-10-28T13:30:54Z",
+  "updatedAt": "2026-10-28T19:06:11Z",
   "dataMode": "validated cache-first server-side",
   "refreshIntervalMinutes": 30,
   "sourceTimezone": "Europe/London",
@@ -106,14 +106,14 @@
       "Time"
     ],
     "evaluatedFixtures": 27,
-    "predictions": 16,
-    "skipped": 11,
+    "predictions": 10,
+    "skipped": 17,
     "ledger": 63,
     "excludedFromForwardTest": 43,
     "awaitingResults": 0,
     "fixtureFirstDate": "2026-10-27T17:30:00Z",
     "fixtureLastDate": "2026-10-29T19:45:00Z",
-    "futureFixtureCount": 16
+    "futureFixtureCount": 10
   },
   "leagues": {
     "E0": "Premier League",
@@ -134,960 +134,6 @@
     "SC1": "Scotland Championship"
   },
   "predictions": [
-    {
-      "id": "715c85129b5bfebb",
-      "league": "I1",
-      "leagueName": "Serie A",
-      "date": "28/10/2026",
-      "time": "17:30",
-      "home": "Milan",
-      "away": "Bologna",
-      "lambdaH": 1.4097925695836682,
-      "lambdaA": 1.125945383177399,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12572357463370376
-        },
-        {
-          "score": "1-0",
-          "p": 0.11166045574867403
-        },
-        {
-          "score": "0-1",
-          "p": 0.08917877519444703
-        },
-        {
-          "score": "2-1",
-          "p": 0.08862208067004666
-        },
-        {
-          "score": "0-0",
-          "p": 0.0792034645080084
-        }
-      ],
-      "model": {
-        "HOME": 0.6326954962191468,
-        "DRAW": 0.21722381034697424,
-        "AWAY": 0.15008069343387884,
-        "U25": 0.45812422227313143,
-        "O25": 0.5418757777268686,
-        "BTTS_YES": 0.5338402714602652,
-        "BTTS_NO": 0.46615972853973475
-      },
-      "market": {
-        "HOME": 0.5835193829916785,
-        "DRAW": 0.25208037345240514,
-        "AWAY": 0.1644002435559164,
-        "O25": 0.5194805194805195,
-        "U25": 0.4805194805194806
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-28T17:30:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.45812422227313143,
-          "marketP": 0.4805194805194806,
-          "edge": -0.022395258246349192,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.08375155545373714,
-          "referenceOdds": 2.0,
-          "minimumOdds": 2.291954777658526,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.5418757777268686,
-          "marketP": 0.5194805194805195,
-          "edge": 0.022395258246349026,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.002470188794706951,
-          "referenceOdds": 1.85,
-          "minimumOdds": 1.937713481869733,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.46615972853973475,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.2524468239441657,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5338402714602652,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 1.9668804624421325,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.6326954962191468,
-          "marketP": 0.5835193829916785,
-          "edge": 0.04917611322746829,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.02496670387501787,
-          "referenceOdds": 1.62,
-          "minimumOdds": 1.6595661045077386,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.1989412740081117,
-            "referenceBrier": 0.1994736011854195,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.21722381034697424,
-          "marketP": 0.25208037345240514,
-          "edge": -0.03485656310543089,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.18541071119884656,
-          "referenceOdds": 3.75,
-          "minimumOdds": 4.833724251143658,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.18808269719087942,
-            "referenceBrier": 0.1879248393921465,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.15008069343387884,
-          "marketP": 0.1644002435559164,
-          "edge": -0.014319550122037561,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.13703601275519672,
-          "referenceOdds": 5.75,
-          "minimumOdds": 6.996236331108101,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 17,
-            "brier": 0.20750834627375583,
-            "referenceBrier": 0.2104568304700969,
-            "calibrationGap": 0.09106929080095802,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 5.0,
-          "shotsOnTargetAgainst": 3.75,
-          "xg": {
-            "matches": 8,
-            "for": 2.1783949750000002,
-            "against": 1.24603425,
-            "source": "Understat"
-          }
-        },
-        "away": {
-          "restDays": 4.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 3.75,
-          "shotsOnTargetAgainst": 3.88,
-          "xg": {
-            "matches": 8,
-            "for": 1.589599875,
-            "against": 1.384788875,
-            "source": "Understat"
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": true
-        }
-      },
-      "rawModel": {
-        "HOME": 0.4347207672458837,
-        "DRAW": 0.26454932732983777,
-        "AWAY": 0.30072990542427847,
-        "U25": 0.5346805256040379,
-        "O25": 0.4653194743959621,
-        "BTTS_YES": 0.5106631527480028,
-        "BTTS_NO": 0.4893368472519972,
-        "scores": [
-          {
-            "score": "1-1",
-            "p": 0.12572357463370376
-          },
-          {
-            "score": "1-0",
-            "p": 0.11166045574867403
-          },
-          {
-            "score": "0-1",
-            "p": 0.08917877519444703
-          },
-          {
-            "score": "2-1",
-            "p": 0.08862208067004666
-          },
-          {
-            "score": "0-0",
-            "p": 0.0792034645080084
-          }
-        ]
-      },
-      "sampleHome": 23.4517425919932,
-      "sampleAway": 23.42757983862213,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-28T13:30:45Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-27T16:32:42Z"
-    },
-    {
-      "id": "cbe5ef905e80ddca",
-      "league": "I1",
-      "leagueName": "Serie A",
-      "date": "28/10/2026",
-      "time": "17:30",
-      "home": "Parma",
-      "away": "Udinese",
-      "lambdaH": 1.2485341713071596,
-      "lambdaA": 1.6613420939750931,
-      "reliability": 1,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.1130110552321152
-        },
-        {
-          "score": "1-2",
-          "p": 0.09387501157082859
-        },
-        {
-          "score": "0-1",
-          "p": 0.09051498775864314
-        },
-        {
-          "score": "0-2",
-          "p": 0.07518817964953704
-        },
-        {
-          "score": "2-1",
-          "p": 0.0705490820963883
-        }
-      ],
-      "model": {
-        "HOME": 0.23978014180308074,
-        "DRAW": 0.2814953175135464,
-        "AWAY": 0.4787245406833729,
-        "U25": 0.5706257184600729,
-        "O25": 0.429374281539927,
-        "BTTS_YES": 0.5111778632990384,
-        "BTTS_NO": 0.4888221367009616
-      },
-      "market": {
-        "HOME": 0.32613126783530366,
-        "DRAW": 0.29555646147574394,
-        "AWAY": 0.3783122706889523,
-        "O25": 0.43152454780361754,
-        "U25": 0.5684754521963824
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-28T17:30:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.5706257184600729,
-          "marketP": 0.5684754521963824,
-          "edge": 0.0021502662636905256,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.047055050171678214,
-          "referenceOdds": 1.67,
-          "minimumOdds": 1.840085306413453,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.429374281539927,
-          "marketP": 0.43152454780361754,
-          "edge": -0.0021502662636905256,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.05537658061216044,
-          "referenceOdds": 2.2,
-          "minimumOdds": 2.445418939006392,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.4888221367009616,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.1480205603747864,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5111778632990384,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.0540795589689913,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.23978014180308074,
-          "marketP": 0.32613126783530366,
-          "edge": -0.08635112603222292,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.30463758877106584,
-          "referenceOdds": 2.9,
-          "minimumOdds": 4.379011506558837,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.1989412740081117,
-            "referenceBrier": 0.1994736011854195,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.2814953175135464,
-          "marketP": 0.29555646147574394,
-          "edge": -0.014061143962197542,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.09921498395665151,
-          "referenceOdds": 3.2,
-          "minimumOdds": 3.7300798083416464,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.18808269719087942,
-            "referenceBrier": 0.1879248393921465,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.4787245406833729,
-          "marketP": 0.3783122706889523,
-          "edge": 0.1004122699944206,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.19681135170843223,
-          "referenceOdds": 2.5,
-          "minimumOdds": 2.1933281266532503,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 17,
-            "brier": 0.20750834627375583,
-            "referenceBrier": 0.2104568304700969,
-            "calibrationGap": 0.09106929080095802,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 4.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 3.5,
-          "shotsOnTargetAgainst": 5.25,
-          "xg": {
-            "matches": 8,
-            "for": 0.861462625,
-            "against": 1.96456875,
-            "source": "Understat"
-          }
-        },
-        "away": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 4.0,
-          "shotsOnTargetAgainst": 6.62,
-          "xg": {
-            "matches": 8,
-            "for": 1.129869625,
-            "against": 2.572793875,
-            "source": "Understat"
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": true
-        }
-      },
-      "rawModel": {
-        "HOME": 0.2878430093114183,
-        "DRAW": 0.24150849600962926,
-        "AWAY": 0.4706484946789527,
-        "U25": 0.44368634131536433,
-        "O25": 0.5563136586846357,
-        "BTTS_YES": 0.5776719081669736,
-        "BTTS_NO": 0.42232809183302644,
-        "scores": [
-          {
-            "score": "1-1",
-            "p": 0.1130110552321152
-          },
-          {
-            "score": "1-2",
-            "p": 0.09387501157082859
-          },
-          {
-            "score": "0-1",
-            "p": 0.09051498775864314
-          },
-          {
-            "score": "0-2",
-            "p": 0.07518817964953704
-          },
-          {
-            "score": "2-1",
-            "p": 0.0705490820963883
-          }
-        ]
-      },
-      "sampleHome": 23.82814818059819,
-      "sampleAway": 23.671267687622493,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-28T13:30:45Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-27T16:32:42Z"
-    },
-    {
-      "id": "6ed3155aecc778ff",
-      "league": "I1",
-      "leagueName": "Serie A",
-      "date": "28/10/2026",
-      "time": "17:30",
-      "home": "Venezia",
-      "away": "Inter",
-      "lambdaH": 0.8121146091454678,
-      "lambdaA": 2.5339404164826154,
-      "reliability": 0.6230933622318805,
-      "topScores": [
-        {
-          "score": "0-2",
-          "p": 0.1131158182973381
-        },
-        {
-          "score": "0-3",
-          "p": 0.0955429145757096
-        },
-        {
-          "score": "1-2",
-          "p": 0.0918630085647125
-        },
-        {
-          "score": "0-1",
-          "p": 0.08928056678961312
-        },
-        {
-          "score": "1-3",
-          "p": 0.07759179672727122
-        }
-      ],
-      "model": {
-        "HOME": 0.07853969894521429,
-        "DRAW": 0.181191474325274,
-        "AWAY": 0.7402688267295118,
-        "U25": 0.2975632845470417,
-        "O25": 0.7024367154529584,
-        "BTTS_YES": 0.5191896769180836,
-        "BTTS_NO": 0.48081032308191646
-      },
-      "market": {
-        "HOME": 0.11173184357541899,
-        "DRAW": 0.18994413407821228,
-        "AWAY": 0.6983240223463686,
-        "O25": 0.7017543859649122,
-        "U25": 0.2982456140350877
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-28T17:30:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.2975632845470417,
-          "marketP": 0.2982456140350877,
-          "edge": -0.0006823294880460296,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.0477974894494666,
-          "referenceOdds": 3.2,
-          "minimumOdds": 3.528661143791098,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.7024367154529584,
-          "marketP": 0.7017543859649122,
-          "edge": 0.0006823294880461406,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.04468606698397648,
-          "referenceOdds": 1.36,
-          "minimumOdds": 1.4947965801060377,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.24973964201337595,
-            "referenceBrier": 0.2453372180173036,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.48081032308191646,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.1838133450830877,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5191896769180836,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.022382275072981,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.2508698234990322,
-            "referenceBrier": 0.2589623267609758,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.07853969894521429,
-          "marketP": 0.11173184357541899,
-          "edge": -0.0331921446302047,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.33241255896567856,
-          "referenceOdds": 8.5,
-          "minimumOdds": 13.369035202597761,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.1989412740081117,
-            "referenceBrier": 0.1994736011854195,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.181191474325274,
-          "marketP": 0.18994413407821228,
-          "edge": -0.008752659752938291,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.09404262837362998,
-          "referenceOdds": 5.0,
-          "minimumOdds": 5.7949746471792905,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 0,
-            "brier": 0.18808269719087942,
-            "referenceBrier": 0.1879248393921465,
-            "calibrationGap": null,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.7402688267295118,
-          "marketP": 0.6983240223463686,
-          "edge": 0.041944804383143186,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.006765604352136023,
-          "referenceOdds": 1.36,
-          "minimumOdds": 1.418403642145614,
-          "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 80,
-            "candidateN": 17,
-            "brier": 0.20750834627375583,
-            "referenceBrier": 0.2104568304700969,
-            "calibrationGap": 0.09106929080095802,
-            "reason": "Benzer aday kararlarda en az 30 sonuç yok; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 4.38,
-          "shotsOnTargetAgainst": 6.88,
-          "xg": {
-            "matches": 8,
-            "for": 1.758558125,
-            "against": 2.32788025,
-            "source": "Understat"
-          }
-        },
-        "away": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 7.75,
-          "shotsOnTargetAgainst": 3.38,
-          "xg": {
-            "matches": 8,
-            "for": 3.10155625,
-            "against": 1.24047325,
-            "source": "Understat"
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": true
-        }
-      },
-      "rawModel": {
-        "HOME": 0.09827650456364953,
-        "DRAW": 0.15476325175862918,
-        "AWAY": 0.7469602436777215,
-        "U25": 0.35036918127731376,
-        "O25": 0.6496308187226862,
-        "BTTS_YES": 0.5119453279343016,
-        "BTTS_NO": 0.4880546720656984,
-        "scores": [
-          {
-            "score": "0-2",
-            "p": 0.1131158182973381
-          },
-          {
-            "score": "0-3",
-            "p": 0.0955429145757096
-          },
-          {
-            "score": "1-2",
-            "p": 0.0918630085647125
-          },
-          {
-            "score": "0-1",
-            "p": 0.08928056678961312
-          },
-          {
-            "score": "1-3",
-            "p": 0.07759179672727122
-          }
-        ]
-      },
-      "sampleHome": 8.230933622318805,
-      "sampleAway": 23.820391372812967,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-28T13:30:45Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-27T16:32:42Z"
-    },
     {
       "id": "8861ba2ac5b46195",
       "league": "I1",
@@ -1296,7 +342,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -1398,7 +444,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -1446,7 +492,7 @@
         "U25": 0.4238480077679727,
         "O25": 0.5761519922320274,
         "BTTS_YES": 0.5339352151981505,
-        "BTTS_NO": 0.4660647848018496
+        "BTTS_NO": 0.46606478480184954
       },
       "market": {
         "HOME": 0.21162790697674416,
@@ -1510,14 +556,14 @@
         },
         {
           "market": "BTTS_NO",
-          "p": 0.4660647848018496,
+          "p": 0.46606478480184954,
           "marketP": null,
           "edge": null,
           "tier": "PAS",
           "score": 0,
           "expectedValue": null,
           "referenceOdds": null,
-          "minimumOdds": 2.2529056780087218,
+          "minimumOdds": 2.252905678008722,
           "reason": "Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
           "evidence": {
             "eligible": false,
@@ -1614,7 +660,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -1716,7 +762,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -1932,7 +978,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -2034,7 +1080,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -2250,7 +1296,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -2352,961 +1398,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-27T16:32:42Z"
-    },
-    {
-      "id": "e9dde7217320ac03",
-      "league": "I2",
-      "leagueName": "Serie B",
-      "date": "28/10/2026",
-      "time": "18:00",
-      "home": "Pisa",
-      "away": "Palermo",
-      "lambdaH": 1.4026675694144255,
-      "lambdaA": 1.836350546455132,
-      "reliability": 0.6013458346084782,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.1009795887258252
-        },
-        {
-          "score": "1-2",
-          "p": 0.0927169614687418
-        },
-        {
-          "score": "0-1",
-          "p": 0.07199110532510661
-        },
-        {
-          "score": "2-1",
-          "p": 0.07082039713926078
-        },
-        {
-          "score": "0-2",
-          "p": 0.06610045280183424
-        }
-      ],
-      "model": {
-        "HOME": 0.41734205234947086,
-        "DRAW": 0.2902696182387398,
-        "AWAY": 0.29238832941178927,
-        "U25": 0.389551983753076,
-        "O25": 0.6104480162469241,
-        "BTTS_YES": 0.6144385649119629,
-        "BTTS_NO": 0.3855614350880371
-      },
-      "market": {
-        "HOME": 0.40464666021297196,
-        "DRAW": 0.27589545014520817,
-        "AWAY": 0.3194578896418199,
-        "O25": 0.5526315789473685,
-        "U25": 0.4473684210526316
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-28T18:00:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.389551983753076,
-          "marketP": 0.4473684210526316,
-          "edge": -0.0578164372995556,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.18194083411854045,
-          "referenceOdds": 2.1,
-          "minimumOdds": 2.695404063621866,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2545899806632853,
-            "referenceBrier": 0.24036082175842097,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.6104480162469241,
-          "marketP": 0.5526315789473685,
-          "edge": 0.057816437299555656,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.03776162761977098,
-          "referenceOdds": 1.7,
-          "minimumOdds": 1.720048181097338,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 12,
-            "brier": 0.2545899806632853,
-            "referenceBrier": 0.240360821758421,
-            "calibrationGap": 0.08261906955728317,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.3855614350880371,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.7233014104749573,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2492048063326358,
-            "referenceBrier": 0.25203966835863956,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.6144385649119629,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 1.708877111498437,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2492048063326358,
-            "referenceBrier": 0.25203966835863956,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.41734205234947086,
-          "marketP": 0.40464666021297196,
-          "edge": 0.012695392136498895,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.06098038221369051,
-          "referenceOdds": 2.25,
-          "minimumOdds": 2.5159218777233563,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.22953938230911078,
-            "referenceBrier": 0.22526623374540292,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.2902696182387398,
-          "marketP": 0.27589545014520817,
-          "edge": 0.014374168093531647,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.04211025981215866,
-          "referenceOdds": 3.3,
-          "minimumOdds": 3.6173265613227223,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.20530851322727905,
-            "referenceBrier": 0.2070663185047178,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.29238832941178927,
-          "marketP": 0.3194578896418199,
-          "edge": -0.027069560230030654,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.1666932611764006,
-          "referenceOdds": 2.85,
-          "minimumOdds": 3.591114604718773,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.15824716056127575,
-            "referenceBrier": 0.15744239168118868,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 6.5,
-          "shotsOnTargetAgainst": 3.12,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "away": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 6.5,
-          "shotsOnTargetAgainst": 4.25,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": false
-        }
-      },
-      "rawModel": {
-        "HOME": 0.29493545389896636,
-        "DRAW": 0.22714669532069698,
-        "AWAY": 0.47791785078033655,
-        "U25": 0.3718296180830025,
-        "O25": 0.6281703819169975,
-        "BTTS_YES": 0.6338610328033822,
-        "BTTS_NO": 0.36613896719661776,
-        "scores": [
-          {
-            "score": "1-1",
-            "p": 0.1009795887258252
-          },
-          {
-            "score": "1-2",
-            "p": 0.0927169614687418
-          },
-          {
-            "score": "0-1",
-            "p": 0.07199110532510661
-          },
-          {
-            "score": "2-1",
-            "p": 0.07082039713926078
-          },
-          {
-            "score": "0-2",
-            "p": 0.06610045280183424
-          }
-        ]
-      },
-      "sampleHome": 8.013458346084782,
-      "sampleAway": 23.48195968225406,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-28T13:30:45Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-27T16:32:42Z"
-    },
-    {
-      "id": "a3cbd88bed139a13",
-      "league": "I2",
-      "leagueName": "Serie B",
-      "date": "28/10/2026",
-      "time": "19:00",
-      "home": "Carrarese",
-      "away": "Arezzo",
-      "lambdaH": 1.3785984287562887,
-      "lambdaA": 1.026925432561855,
-      "reliability": 0.19726123467335172,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.12772380988916257
-        },
-        {
-          "score": "1-0",
-          "p": 0.12437496028366145
-        },
-        {
-          "score": "0-1",
-          "p": 0.09264758121361666
-        },
-        {
-          "score": "0-0",
-          "p": 0.0902184114600124
-        },
-        {
-          "score": "2-1",
-          "p": 0.08803992181398322
-        }
-      ],
-      "model": {
-        "HOME": 0.4262724202793182,
-        "DRAW": 0.3555473613910659,
-        "AWAY": 0.21818021832961587,
-        "U25": 0.5051851393506533,
-        "O25": 0.49481486064934666,
-        "BTTS_YES": 0.5405459754835228,
-        "BTTS_NO": 0.4594540245164772
-      },
-      "market": {
-        "HOME": 0.42642767819924965,
-        "DRAW": 0.29574822842851184,
-        "AWAY": 0.2778240933722384,
-        "O25": 0.46052631578947373,
-        "U25": 0.5394736842105263
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-28T19:00:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.5051851393506533,
-          "marketP": 0.5394736842105263,
-          "edge": -0.03428854485987298,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.11592600613635662,
-          "referenceOdds": 1.75,
-          "minimumOdds": 2.078445936374201,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2545899806632853,
-            "referenceBrier": 0.24036082175842097,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.49481486064934666,
-          "marketP": 0.46052631578947373,
-          "edge": 0.03428854485987293,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.014370464331160626,
-          "referenceOdds": 2.05,
-          "minimumOdds": 2.122005791463261,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 12,
-            "brier": 0.2545899806632853,
-            "referenceBrier": 0.240360821758421,
-            "calibrationGap": 0.08261906955728317,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.4594540245164772,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.2853211506962094,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2492048063326358,
-            "referenceBrier": 0.25203966835863956,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5405459754835228,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 1.9424804690494022,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2492048063326358,
-            "referenceBrier": 0.25203966835863956,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.4262724202793182,
-          "marketP": 0.42642767819924965,
-          "edge": -0.00015525791993142857,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.08351429639946584,
-          "referenceOdds": 2.15,
-          "minimumOdds": 2.463213546191845,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.22953938230911078,
-            "referenceBrier": 0.22526623374540292,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.3555473613910659,
-          "marketP": 0.29574822842851184,
-          "edge": 0.05979913296255407,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.10219682031230426,
-          "referenceOdds": 3.1,
-          "minimumOdds": 2.95319305954603,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.20530851322727905,
-            "referenceBrier": 0.2070663185047178,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.21818021832961587,
-          "marketP": 0.2778240933722384,
-          "edge": -0.05964387504262253,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.2800052795122676,
-          "referenceOdds": 3.3,
-          "minimumOdds": 4.812535288665409,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.15824716056127575,
-            "referenceBrier": 0.15744239168118868,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 3.5,
-          "shotsOnTargetAgainst": 3.75,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "away": {
-          "restDays": 4.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 3.0,
-          "shotsOnTargetAgainst": 4.88,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": false
-        }
-      },
-      "rawModel": {
-        "HOME": 0.44928408884664817,
-        "DRAW": 0.2709245679483914,
-        "AWAY": 0.27979134320496024,
-        "U25": 0.5682674039650953,
-        "O25": 0.43173259603490466,
-        "BTTS_YES": 0.48018016843572126,
-        "BTTS_NO": 0.5198198315642788,
-        "scores": [
-          {
-            "score": "1-1",
-            "p": 0.12772380988916257
-          },
-          {
-            "score": "1-0",
-            "p": 0.12437496028366145
-          },
-          {
-            "score": "0-1",
-            "p": 0.09264758121361666
-          },
-          {
-            "score": "0-0",
-            "p": 0.0902184114600124
-          },
-          {
-            "score": "2-1",
-            "p": 0.08803992181398322
-          }
-        ]
-      },
-      "sampleHome": 23.829802738307894,
-      "sampleAway": 3.9726123467335173,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-28T13:30:45Z",
-        "notes": [
-          "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
-          "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
-        ]
-      },
-      "firstAnalysisAt": "2026-10-27T16:32:42Z"
-    },
-    {
-      "id": "8662c5dfa32450f7",
-      "league": "I2",
-      "leagueName": "Serie B",
-      "date": "28/10/2026",
-      "time": "19:00",
-      "home": "Juve Stabia",
-      "away": "Verona",
-      "lambdaH": 1.6669389251242344,
-      "lambdaA": 1.0590006943844033,
-      "reliability": 0.09852364291718371,
-      "topScores": [
-        {
-          "score": "1-1",
-          "p": 0.11560054474084441
-        },
-        {
-          "score": "1-0",
-          "p": 0.10916002732938998
-        },
-        {
-          "score": "2-1",
-          "p": 0.09634952389703956
-        },
-        {
-          "score": "2-0",
-          "p": 0.09098154931149269
-        },
-        {
-          "score": "0-1",
-          "p": 0.06934899833371454
-        }
-      ],
-      "model": {
-        "HOME": 0.3020076480270707,
-        "DRAW": 0.38974155529587323,
-        "AWAY": 0.30825079667705607,
-        "U25": 0.45005402327038085,
-        "O25": 0.5499459767296192,
-        "BTTS_YES": 0.5839257511277601,
-        "BTTS_NO": 0.41607424887223987
-      },
-      "market": {
-        "HOME": 0.3347732181425486,
-        "DRAW": 0.296976241900648,
-        "AWAY": 0.3682505399568035,
-        "O25": 0.513157894736842,
-        "U25": 0.48684210526315796
-      },
-      "decision": {
-        "market": null,
-        "tier": "PAS",
-        "p": null,
-        "marketP": null,
-        "edge": null,
-        "score": 0,
-        "reason": "Bağımsız test ve veri koşullarını karşılayan aday yok"
-      },
-      "kickoffAt": "2026-10-28T19:00:00Z",
-      "candidates": [
-        {
-          "market": "U25",
-          "p": 0.45005402327038085,
-          "marketP": 0.48684210526315796,
-          "edge": -0.03678808199277711,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.12239465462275734,
-          "referenceOdds": 1.95,
-          "minimumOdds": 2.3330532462970277,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2545899806632853,
-            "referenceBrier": 0.24036082175842097,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "O25",
-          "p": 0.5499459767296192,
-          "marketP": 0.513157894736842,
-          "edge": 0.036788081992777166,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.017400056949795628,
-          "referenceOdds": 1.85,
-          "minimumOdds": 1.9092784463013397,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 12,
-            "brier": 0.2545899806632853,
-            "referenceBrier": 0.240360821758421,
-            "calibrationGap": 0.08261906955728317,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Olasılık ile gerçekleşen sonuç farkı yüksek"
-          }
-        },
-        {
-          "market": "BTTS_NO",
-          "p": 0.41607424887223987,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 2.5235880443118073,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2492048063326358,
-            "referenceBrier": 0.25203966835863956,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "BTTS_YES",
-          "p": 0.5839257511277601,
-          "marketP": null,
-          "edge": null,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": null,
-          "referenceOdds": null,
-          "minimumOdds": 1.7981738225657822,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Karşılaştırılabilir piyasa oranı yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.2492048063326358,
-            "referenceBrier": 0.25203966835863956,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "HOME",
-          "p": 0.3020076480270707,
-          "marketP": 0.3347732181425486,
-          "edge": -0.03276557011547793,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.1694789679255556,
-          "referenceOdds": 2.75,
-          "minimumOdds": 3.4767331452012846,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.22953938230911078,
-            "referenceBrier": 0.22526623374540292,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        },
-        {
-          "market": "DRAW",
-          "p": 0.38974155529587323,
-          "marketP": 0.296976241900648,
-          "edge": 0.09276531339522526,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": 0.20819882141720703,
-          "referenceOdds": 3.1,
-          "minimumOdds": 2.6940930104383916,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.20530851322727905,
-            "referenceBrier": 0.2070663185047178,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok"
-          }
-        },
-        {
-          "market": "AWAY",
-          "p": 0.30825079667705607,
-          "marketP": 0.3682505399568035,
-          "edge": -0.05999974327974744,
-          "tier": "PAS",
-          "score": 0,
-          "expectedValue": -0.22937300830735985,
-          "referenceOdds": 2.5,
-          "minimumOdds": 3.406317230381888,
-          "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı; Takım geçmişi yetersiz; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
-          "evidence": {
-            "eligible": false,
-            "n": 61,
-            "candidateN": 0,
-            "brier": 0.15824716056127575,
-            "referenceBrier": 0.15744239168118868,
-            "calibrationGap": null,
-            "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Piyasa / referans doğruluğu aşılmadı"
-          }
-        }
-      ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
-      "modelVersion": "1.6",
-      "modelId": "fd8989c85bd0aee9",
-      "context": {
-        "home": {
-          "restDays": 4.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 4.38,
-          "shotsOnTargetAgainst": 4.12,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "away": {
-          "restDays": 3.0,
-          "matchesLast14Days": 2,
-          "shotsMatches": 8,
-          "shotsOnTargetFor": 5.5,
-          "shotsOnTargetAgainst": 3.5,
-          "xg": {
-            "matches": 0,
-            "for": null,
-            "against": null,
-            "source": null
-          }
-        },
-        "scope": "Yalnız mevcut lig geçmişi; kupa, milli takım ve diğer organizasyonlar dahil değil.",
-        "availability": {
-          "injuries": false,
-          "suspensions": false,
-          "lineups": false,
-          "xg": false
-        }
-      },
-      "rawModel": {
-        "HOME": 0.5157409088135584,
-        "DRAW": 0.24329559588117983,
-        "AWAY": 0.24096349530526187,
-        "U25": 0.487296757449036,
-        "O25": 0.512703242550964,
-        "BTTS_YES": 0.5298569550522217,
-        "BTTS_NO": 0.47014304494777825,
-        "scores": [
-          {
-            "score": "1-1",
-            "p": 0.11560054474084441
-          },
-          {
-            "score": "1-0",
-            "p": 0.10916002732938998
-          },
-          {
-            "score": "2-1",
-            "p": 0.09634952389703956
-          },
-          {
-            "score": "2-0",
-            "p": 0.09098154931149269
-          },
-          {
-            "score": "0-1",
-            "p": 0.06934899833371454
-          }
-        ]
-      },
-      "sampleHome": 23.493991069017923,
-      "sampleAway": 2.985236429171837,
-      "enrichment": {
-        "home": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "away": {
-          "squad": {
-            "status": "unavailable",
-            "players": []
-          },
-          "availability": {
-            "status": "unsupported",
-            "players": [],
-            "source": null
-          },
-          "lineup": {
-            "status": "not_published",
-            "players": []
-          }
-        },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -3351,7 +1443,7 @@
         "HOME": 0.4910409142169619,
         "DRAW": 0.27091796708893945,
         "AWAY": 0.23804111869409875,
-        "U25": 0.46093256136234007,
+        "U25": 0.46093256136234,
         "O25": 0.5390674386376599,
         "BTTS_YES": 0.49883333285956555,
         "BTTS_NO": 0.5011666671404345
@@ -3376,14 +1468,14 @@
       "candidates": [
         {
           "market": "U25",
-          "p": 0.46093256136234007,
+          "p": 0.46093256136234,
           "marketP": 0.47409326424870474,
-          "edge": -0.013160702886364672,
+          "edge": -0.013160702886364728,
           "tier": "PAS",
           "score": 0,
-          "expectedValue": -0.06430690043444975,
+          "expectedValue": -0.06430690043444987,
           "referenceOdds": 2.03,
-          "minimumOdds": 2.2779905088427737,
+          "minimumOdds": 2.277990508842774,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Olasılık aday eşiğinin altında; Referans oranda yeterli beklenen değer yok",
           "evidence": {
             "eligible": false,
@@ -3522,7 +1614,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -3624,7 +1716,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -3840,7 +1932,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -3942,7 +2034,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -4158,7 +2250,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -4260,7 +2352,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -4476,7 +2568,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -4578,7 +2670,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -4794,7 +2886,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -4896,7 +2988,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -4943,8 +3035,8 @@
         "AWAY": 0.4704552499934742,
         "U25": 0.3975453632047657,
         "O25": 0.6024546367952343,
-        "BTTS_YES": 0.5707075312714144,
-        "BTTS_NO": 0.4292924687285856
+        "BTTS_YES": 0.5707075312714143,
+        "BTTS_NO": 0.42929246872858573
       },
       "market": {
         "HOME": 0.28668544236185295,
@@ -5008,14 +3100,14 @@
         },
         {
           "market": "BTTS_NO",
-          "p": 0.4292924687285856,
+          "p": 0.42929246872858573,
           "marketP": null,
           "edge": null,
           "tier": "PAS",
           "score": 0,
           "expectedValue": null,
           "referenceOdds": null,
-          "minimumOdds": 2.4458849769942,
+          "minimumOdds": 2.4458849769941997,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok; Olasılık aday eşiğinin altında",
           "evidence": {
             "eligible": false,
@@ -5029,14 +3121,14 @@
         },
         {
           "market": "BTTS_YES",
-          "p": 0.5707075312714144,
+          "p": 0.5707075312714143,
           "marketP": null,
           "edge": null,
           "tier": "PAS",
           "score": 0,
           "expectedValue": null,
           "referenceOdds": null,
-          "minimumOdds": 1.8398215241015385,
+          "minimumOdds": 1.8398215241015388,
           "reason": "Bağımsız testte en az 80 maç yok; Benzer aday kararlarda en az 30 sonuç yok; Karşılaştırılabilir piyasa oranı yok",
           "evidence": {
             "eligible": false,
@@ -5112,7 +3204,7 @@
           }
         }
       ],
-      "calculatedAt": "2026-10-28T13:30:53Z",
+      "calculatedAt": "2026-10-28T19:06:09Z",
       "modelVersion": "1.6",
       "modelId": "fd8989c85bd0aee9",
       "context": {
@@ -5214,7 +3306,7 @@
             "players": []
           }
         },
-        "observedAt": "2026-10-28T13:30:45Z",
+        "observedAt": "2026-10-28T19:06:08Z",
         "notes": [
           "Maç iki takım ve başlama saatiyle ESPN kaydına eşleştirilemedi; başka maçın kadrosu kullanılmadı.",
           "Sakatlık ve oyuncu listeleri zaman damgalı ek bilgidir. Geçmiş maç öncesi arşivi oluşmadan olasılıklara rastgele yüzde etkisi eklenmez."
@@ -5243,6 +3335,27 @@
       "date": "27/10/2026",
       "home": "Torino",
       "away": "Como",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I1",
+      "date": "28/10/2026",
+      "home": "Milan",
+      "away": "Bologna",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I1",
+      "date": "28/10/2026",
+      "home": "Parma",
+      "away": "Udinese",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I1",
+      "date": "28/10/2026",
+      "home": "Venezia",
+      "away": "Inter",
       "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
     },
     {
@@ -5292,6 +3405,27 @@
       "date": "27/10/2026",
       "home": "Virtus Entella",
       "away": "Avellino",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I2",
+      "date": "28/10/2026",
+      "home": "Pisa",
+      "away": "Palermo",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I2",
+      "date": "28/10/2026",
+      "home": "Carrarese",
+      "away": "Arezzo",
+      "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
+    },
+    {
+      "league": "I2",
+      "date": "28/10/2026",
+      "home": "Juve Stabia",
+      "away": "Verona",
       "reason": "Başlama saati geçti; sonuç kaynağı bekleniyor"
     },
     {
@@ -6918,336 +5052,336 @@
       "ok": true,
       "source": "2627_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E0.csv",
-      "checkedAt": "2026-10-28T13:29:43Z",
+      "checkedAt": "2026-10-28T19:04:59Z",
       "message": "39368 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E0.csv",
-      "checkedAt": "2026-10-28T13:29:44Z",
+      "checkedAt": "2026-10-28T19:05:00Z",
       "message": "203438 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E0.csv",
-      "checkedAt": "2026-10-28T13:29:46Z",
+      "checkedAt": "2026-10-28T19:05:02Z",
       "message": "197110 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/E1.csv",
-      "checkedAt": "2026-10-28T13:29:47Z",
+      "checkedAt": "2026-10-28T19:05:03Z",
       "message": "70528 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/E1.csv",
-      "checkedAt": "2026-10-28T13:29:49Z",
+      "checkedAt": "2026-10-28T19:05:05Z",
       "message": "294390 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_E1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/E1.csv",
-      "checkedAt": "2026-10-28T13:29:50Z",
+      "checkedAt": "2026-10-28T19:05:07Z",
       "message": "286983 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D1.csv",
-      "checkedAt": "2026-10-28T13:29:51Z",
+      "checkedAt": "2026-10-28T19:05:08Z",
       "message": "30516 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D1.csv",
-      "checkedAt": "2026-10-28T13:29:53Z",
+      "checkedAt": "2026-10-28T19:05:10Z",
       "message": "159944 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D1.csv",
-      "checkedAt": "2026-10-28T13:29:54Z",
+      "checkedAt": "2026-10-28T19:05:11Z",
       "message": "156414 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/D2.csv",
-      "checkedAt": "2026-10-28T13:29:55Z",
+      "checkedAt": "2026-10-28T19:05:13Z",
       "message": "39392 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/D2.csv",
-      "checkedAt": "2026-10-28T13:29:57Z",
+      "checkedAt": "2026-10-28T19:05:14Z",
       "message": "157989 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_D2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/D2.csv",
-      "checkedAt": "2026-10-28T13:29:58Z",
+      "checkedAt": "2026-10-28T19:05:16Z",
       "message": "157178 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I1.csv",
-      "checkedAt": "2026-10-28T13:29:59Z",
+      "checkedAt": "2026-10-28T19:05:17Z",
       "message": "38144 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I1.csv",
-      "checkedAt": "2026-10-28T13:30:00Z",
+      "checkedAt": "2026-10-28T19:05:18Z",
       "message": "196217 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I1.csv",
-      "checkedAt": "2026-10-28T13:30:02Z",
+      "checkedAt": "2026-10-28T19:05:20Z",
       "message": "191722 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/I2.csv",
-      "checkedAt": "2026-10-28T13:30:03Z",
+      "checkedAt": "2026-10-28T19:05:21Z",
       "message": "38462 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/I2.csv",
-      "checkedAt": "2026-10-28T13:30:04Z",
+      "checkedAt": "2026-10-28T19:05:23Z",
       "message": "190966 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_I2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/I2.csv",
-      "checkedAt": "2026-10-28T13:30:06Z",
+      "checkedAt": "2026-10-28T19:05:24Z",
       "message": "192674 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP1.csv",
-      "checkedAt": "2026-10-28T13:30:07Z",
+      "checkedAt": "2026-10-28T19:05:26Z",
       "message": "47448 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP1.csv",
-      "checkedAt": "2026-10-28T13:30:08Z",
+      "checkedAt": "2026-10-28T19:05:27Z",
       "message": "197653 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP1.csv",
-      "checkedAt": "2026-10-28T13:30:10Z",
+      "checkedAt": "2026-10-28T19:05:29Z",
       "message": "192863 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SP2.csv",
-      "checkedAt": "2026-10-28T13:30:11Z",
+      "checkedAt": "2026-10-28T19:05:30Z",
       "message": "57528 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SP2.csv",
-      "checkedAt": "2026-10-28T13:30:12Z",
+      "checkedAt": "2026-10-28T19:05:32Z",
       "message": "237701 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SP2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SP2.csv",
-      "checkedAt": "2026-10-28T13:30:14Z",
+      "checkedAt": "2026-10-28T19:05:33Z",
       "message": "230032 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F1.csv",
-      "checkedAt": "2026-10-28T13:30:15Z",
+      "checkedAt": "2026-10-28T19:05:34Z",
       "message": "34596 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F1.csv",
-      "checkedAt": "2026-10-28T13:30:16Z",
+      "checkedAt": "2026-10-28T19:05:36Z",
       "message": "158471 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F1.csv",
-      "checkedAt": "2026-10-28T13:30:18Z",
+      "checkedAt": "2026-10-28T19:05:37Z",
       "message": "154703 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2627/F2.csv",
-      "checkedAt": "2026-10-28T13:30:19Z",
+      "checkedAt": "2026-10-28T19:05:39Z",
       "message": "43076 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2526/F2.csv",
-      "checkedAt": "2026-10-28T13:30:20Z",
+      "checkedAt": "2026-10-28T19:05:40Z",
       "message": "156238 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_F2",
       "url": "https://www.football-data.co.uk/mmz4281/2425/F2.csv",
-      "checkedAt": "2026-10-28T13:30:21Z",
+      "checkedAt": "2026-10-28T19:05:42Z",
       "message": "155252 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/N1.csv",
-      "checkedAt": "2026-10-28T13:30:22Z",
+      "checkedAt": "2026-10-28T19:05:43Z",
       "message": "42856 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/N1.csv",
-      "checkedAt": "2026-10-28T13:30:24Z",
+      "checkedAt": "2026-10-28T19:05:44Z",
       "message": "158364 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_N1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/N1.csv",
-      "checkedAt": "2026-10-28T13:30:25Z",
+      "checkedAt": "2026-10-28T19:05:46Z",
       "message": "155460 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/B1.csv",
-      "checkedAt": "2026-10-28T13:30:27Z",
+      "checkedAt": "2026-10-28T19:05:47Z",
       "message": "38543 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/B1.csv",
-      "checkedAt": "2026-10-28T13:30:28Z",
+      "checkedAt": "2026-10-28T19:05:48Z",
       "message": "158888 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_B1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/B1.csv",
-      "checkedAt": "2026-10-28T13:30:29Z",
+      "checkedAt": "2026-10-28T19:05:50Z",
       "message": "158659 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/P1.csv",
-      "checkedAt": "2026-10-28T13:30:30Z",
+      "checkedAt": "2026-10-28T19:05:51Z",
       "message": "38665 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/P1.csv",
-      "checkedAt": "2026-10-28T13:30:32Z",
+      "checkedAt": "2026-10-28T19:05:53Z",
       "message": "157715 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_P1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/P1.csv",
-      "checkedAt": "2026-10-28T13:30:33Z",
+      "checkedAt": "2026-10-28T19:05:54Z",
       "message": "153596 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/T1.csv",
-      "checkedAt": "2026-10-28T13:30:34Z",
+      "checkedAt": "2026-10-28T19:05:55Z",
       "message": "38772 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/T1.csv",
-      "checkedAt": "2026-10-28T13:30:36Z",
+      "checkedAt": "2026-10-28T19:05:57Z",
       "message": "158392 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_T1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/T1.csv",
-      "checkedAt": "2026-10-28T13:30:37Z",
+      "checkedAt": "2026-10-28T19:05:58Z",
       "message": "173297 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC0.csv",
-      "checkedAt": "2026-10-28T13:30:38Z",
+      "checkedAt": "2026-10-28T19:06:00Z",
       "message": "29714 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC0.csv",
-      "checkedAt": "2026-10-28T13:30:39Z",
+      "checkedAt": "2026-10-28T19:06:01Z",
       "message": "118594 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC0",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC0.csv",
-      "checkedAt": "2026-10-28T13:30:41Z",
+      "checkedAt": "2026-10-28T19:06:03Z",
       "message": "118635 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2627_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2627/SC1.csv",
-      "checkedAt": "2026-10-28T13:30:42Z",
+      "checkedAt": "2026-10-28T19:06:04Z",
       "message": "28380 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2526_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2526/SC1.csv",
-      "checkedAt": "2026-10-28T13:30:43Z",
+      "checkedAt": "2026-10-28T19:06:05Z",
       "message": "94837 bayt kontrol edildi"
     },
     {
       "ok": true,
       "source": "2425_SC1",
       "url": "https://www.football-data.co.uk/mmz4281/2425/SC1.csv",
-      "checkedAt": "2026-10-28T13:30:44Z",
+      "checkedAt": "2026-10-28T19:06:06Z",
       "message": "93788 bayt kontrol edildi"
     },
     {
@@ -8617,7 +6751,7 @@
     }
   },
   "enrichment": {
-    "updatedAt": "2026-10-28T13:30:54Z",
+    "updatedAt": "2026-10-28T19:06:11Z",
     "xgMatchedHistory": {
       "E0": 840,
       "E1": 0,
@@ -8642,154 +6776,145 @@
         "url": "https://understat.com/getLeagueData/EPL/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_E0_2025",
         "url": "https://understat.com/getLeagueData/EPL/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_E0_2026",
         "url": "https://understat.com/getLeagueData/EPL/2026",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-10-28T13:30:45Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 335
       },
       {
         "source": "xg_D1_2024",
         "url": "https://understat.com/getLeagueData/Bundesliga/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_D1_2025",
         "url": "https://understat.com/getLeagueData/Bundesliga/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_D1_2026",
         "url": "https://understat.com/getLeagueData/Bundesliga/2026",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-10-28T13:30:45Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 335
       },
       {
         "source": "xg_I1_2024",
         "url": "https://understat.com/getLeagueData/Serie_A/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_I1_2025",
         "url": "https://understat.com/getLeagueData/Serie_A/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_I1_2026",
         "url": "https://understat.com/getLeagueData/Serie_A/2026",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-10-28T13:30:45Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 335
       },
       {
         "source": "xg_SP1_2024",
         "url": "https://understat.com/getLeagueData/La_liga/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_SP1_2025",
         "url": "https://understat.com/getLeagueData/La_liga/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_SP1_2026",
         "url": "https://understat.com/getLeagueData/La_liga/2026",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-10-28T13:30:45Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 335
       },
       {
         "source": "xg_F1_2024",
         "url": "https://understat.com/getLeagueData/Ligue_1/2024",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_F1_2025",
         "url": "https://understat.com/getLeagueData/Ligue_1/2025",
         "status": "cached",
         "fetchedAt": "2026-10-04T15:20:20Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 34450
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 34786
       },
       {
         "source": "xg_F1_2026",
         "url": "https://understat.com/getLeagueData/Ligue_1/2026",
-        "status": "fresh",
+        "status": "cached",
         "fetchedAt": "2026-10-28T13:30:45Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "ageMinutes": 0
+        "checkedAt": "2026-10-28T19:06:08Z",
+        "ageMinutes": 335
       },
       {
         "source": "fpl",
         "url": "https://fantasy.premierleague.com/api/bootstrap-static/",
         "status": "fresh",
-        "fetchedAt": "2026-10-28T13:30:45Z",
-        "checkedAt": "2026-10-28T13:30:45Z",
+        "fetchedAt": "2026-10-28T19:06:08Z",
+        "checkedAt": "2026-10-28T19:06:08Z",
         "ageMinutes": 0
       },
       {
         "source": "events_I1",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261028-20261029&limit=100",
         "status": "stale",
-        "checkedAt": "2026-10-28T13:30:45Z",
+        "checkedAt": "2026-10-28T19:06:08Z",
         "fetchedAt": "2026-09-14T18:25:41Z",
-        "ageMinutes": 63065,
-        "message": "HTTPError: HTTP Error 400: Bad Request"
-      },
-      {
-        "source": "events_I2",
-        "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.2/scoreboard?dates=20261028-20261029&limit=100",
-        "status": "stale",
-        "checkedAt": "2026-10-28T13:30:45Z",
-        "fetchedAt": "2026-09-13T14:20:39Z",
-        "ageMinutes": 64750,
+        "ageMinutes": 63400,
         "message": "HTTPError: HTTP Error 400: Bad Request"
       },
       {
         "source": "events_SC0",
         "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/sco.1/scoreboard?dates=20261028-20261029&limit=100",
         "status": "stale",
-        "checkedAt": "2026-10-28T13:30:45Z",
+        "checkedAt": "2026-10-28T19:06:08Z",
         "fetchedAt": "2026-09-15T18:23:40Z",
-        "ageMinutes": 61627,
+        "ageMinutes": 61962,
         "message": "HTTPError: HTTP Error 400: Bad Request"
       }
     ],
@@ -8823,14 +6948,14 @@
         "lineups": 0
       },
       "I1": {
-        "fixtures": 7,
-        "xg": 7,
+        "fixtures": 4,
+        "xg": 4,
         "injuries": 0,
         "squads": 0,
         "lineups": 0
       },
       "I2": {
-        "fixtures": 3,
+        "fixtures": 0,
         "xg": 0,
         "injuries": 0,
         "squads": 0,
