@@ -1,4 +1,5 @@
-import csv, io, json, os, urllib.request, time
+import csv, io, json, os, urllib.request, time, re, unicodedata
+from difflib import SequenceMatcher
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from engine import predict, backtest, normalize_match
@@ -17,6 +18,80 @@ FIXTURE_URLS=[
     'https://www.football-data.co.uk/matches/resources/fixtures.csv',
 ]
 REQUIRED_FIXTURE_FIELDS={'Div','Date','HomeTeam','AwayTeam'}
+# ESPN is an independent, fixture-only backup. No bookmaker odds are invented.
+ESPN_LEAGUES={'E0':'eng.1','E1':'eng.2','D1':'ger.1','D2':'ger.2','I1':'ita.1','I2':'ita.2',
+ 'SP1':'esp.1','SP2':'esp.2','F1':'fra.1','F2':'fra.2','N1':'ned.1','B1':'bel.1',
+ 'P1':'por.1','T1':'tur.1','SC0':'sco.1','SC1':'sco.2'}
+
+def team_key(name):
+    name=unicodedata.normalize('NFKD',str(name or '').casefold())
+    name=''.join(c for c in name if not unicodedata.combining(c))
+    name=name.replace('ı','i').replace('ø','o').replace('æ','ae')
+    return ' '.join(re.findall(r'[a-z0-9]+',name))
+
+def resolve_team(names,labels):
+    # Fail closed: do not silently attach predictions to the wrong team.
+    aliases={team_key(n):n for n in names if n}
+    for label in labels:
+        k=team_key(label)
+        if k in aliases:return aliases[k]
+    ranked=sorted(((max(SequenceMatcher(None,team_key(label),team_key(n)).ratio() for label in labels if label),n)
+                   for n in names if n),reverse=True)
+    if ranked and ranked[0][0]>=0.88 and (len(ranked)==1 or ranked[0][0]-ranked[1][0]>=0.08):
+        return ranked[0][1]
+    return None
+
+def backup_fixtures(histories,log,now=None):
+    now=now or datetime.now(timezone.utc)
+    # One request per league, rather than one request per day, limits latency.
+    end=now+timedelta(days=14)
+    rows=[]; seen=set(); unmatched=0; failures=0
+    for code,league in ESPN_LEAGUES.items():
+        names={r.get(k) for r in histories.get(code,[]) for k in ('HomeTeam','AwayTeam') if r.get(k)}
+        if not names:
+            log.append({'ok':False,'source':'espn_fixture','league':code,'message':'Takım eşleştirme geçmişi bulunamadı'})
+            continue
+        url=('https://site.api.espn.com/apis/site/v2/sports/soccer/'+league+'/scoreboard?dates='
+             +now.strftime('%Y%m%d')+'-'+end.strftime('%Y%m%d')+'&limit=500')
+        try:
+            payload=json.loads(get(url,retries=2).decode('utf-8'))
+            if not isinstance(payload.get('events'),list):raise ValueError('events dizisi bulunamadı')
+            count=0
+            for event in payload['events']:
+                competitions=event.get('competitions') or []
+                if not competitions:continue
+                comp=competitions[0]
+                if (comp.get('status') or {}).get('type',{}).get('completed'):continue
+                participants=comp.get('competitors') or []
+                h=next((x for x in participants if x.get('homeAway')=='home'),None)
+                a=next((x for x in participants if x.get('homeAway')=='away'),None)
+                if not h or not a:continue
+                def labels(x):
+                    team=x.get('team') or {}
+                    return [team.get(k) for k in ('displayName','shortDisplayName','name','abbreviation') if team.get(k)]
+                home=resolve_team(names,labels(h));away=resolve_team(names,labels(a))
+                if not home or not away or home==away:
+                    unmatched+=1;continue
+                stamp=event.get('date') or comp.get('date')
+                try: start=datetime.fromisoformat(stamp.replace('Z','+00:00')).astimezone(timezone.utc)
+                except (ValueError,AttributeError):continue
+                if not now<start<=end:continue
+                key=(code,home,away,start.date().isoformat())
+                if key in seen:continue
+                seen.add(key)
+                rows.append({'Div':code,'Date':start.strftime('%d/%m/%Y'),'Time':start.strftime('%H:%M'),
+                             'HomeTeam':home,'AwayTeam':away,'FTHG':'','FTAG':'','fixtureProvider':'ESPN'})
+                count+=1
+            log.append({'ok':True,'source':'espn_fixture','league':code,'url':url,'message':f'{count} eşleştirilmiş gelecek maç'})
+        except Exception as exc:
+            failures+=1
+            log.append({'ok':False,'source':'espn_fixture','league':code,'url':url,'message':str(exc)})
+    return rows,{'matched':len(rows),'unmatched':unmatched,'failedLeagues':failures}
+
+def has_future_fixtures(rows,now=None):
+    now=now or datetime.now(timezone.utc)
+    return any((r.get('Div') or r.get('League')) in LEAGUES and kickoff(r) and kickoff(r)>now for r in rows)
+
 
 def nowiso(): return datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace('+00:00','Z')
 def get(url,retries=3):
@@ -144,6 +219,19 @@ def main():
         histories[code]=rows
 
     fixtures,stale,fixture_source,fixture_headers=fetch_fixtures(log); stale_sources+=int(stale)
+    # A valid CSV with zero future fixtures is a coverage failure, not proof
+    # that there are no matches. Cross-check an independent fixture source.
+    backup_stats={'matched':0,'unmatched':0,'failedLeagues':0}
+    backup_used=False
+    if not has_future_fixtures(fixtures):
+        extra,backup_stats=backup_fixtures(histories,log)
+        if extra:
+            fixtures=extra
+            fixture_source='ESPN (independent fixture fallback)'
+            backup_used=True
+            stale=False  # The independent source supplied future fixtures.
+        else:
+            log.append({'ok':False,'source':'fixture_coverage','message':'Birincil ve yedek kaynaklardan eşleşmiş gelecek maç alınamadı'})
     fixture_stale=stale
     fixture_rows=len(fixtures)
     recognized_rows=sum(1 for r in fixtures if (r.get('Div') or r.get('League') or '').strip() in LEAGUES)
@@ -256,7 +344,7 @@ def main():
         'fixtureSource':fixture_source,
         'fixtureRows':fixture_rows,
         'recognizedFixtures':recognized_rows,
-        'fixtureHeaders':fixture_headers,
+        'fixtureHeaders':fixture_headers,'backupUsed':backup_used,'backupDiagnostics':backup_stats,
         'evaluatedFixtures':len(predictions)+len(skipped),
         'predictions':len(predictions),
         'skipped':len(skipped),
