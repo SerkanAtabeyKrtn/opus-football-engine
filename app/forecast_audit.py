@@ -46,4 +46,15 @@ def summary(records, version):
         result['markets'][market] = {'n':len(data),'brier':sum((p-y)**2 for p,y in data)/len(data) if data else None,
             'predicted':sum(p for p,y in data)/len(data) if data else None,
             'observed':sum(y for p,y in data)/len(data) if data else None}
+    # Shadow outcomes are measured separately from approved selections.
+    shadow = {}
+    for market in engine.MARKETS:
+        chosen = [(r['model'][market],r['outcomes'][market]) for r in settled
+                  if any(c.get('market')==market and c.get('tier')=='İZLEME'
+                         for c in r.get('candidates',[]))]
+        shadow[market] = {'n':len(chosen),
+            'brier':sum((p-y)**2 for p,y in chosen)/len(chosen) if chosen else None,
+            'predicted':sum(p for p,y in chosen)/len(chosen) if chosen else None,
+            'observed':sum(y for p,y in chosen)/len(chosen) if chosen else None}
+    result['monitoringMarkets']=shadow
     return result

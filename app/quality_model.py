@@ -15,7 +15,7 @@ import numpy as np
 import calibration
 import engine
 
-VERSION = '1.6'
+VERSION = '1.7'
 SPEC = 'quality-xg-2026-09-04-b'
 LEAGUE_CODES = ['E0','E1','D1','D2','I1','I2','SP1','SP2','F1','F2','N1','B1','P1','T1','SC0','SC1']
 FAMILIES = {'result': ['HOME','DRAW','AWAY'], 'goals': ['O25','U25'], 'btts': ['BTTS_YES','BTTS_NO']}
@@ -314,10 +314,14 @@ def predict(artifact, league, history, fixture):
         if p < .55: reasons.append('Olasılık aday eşiğinin altında')
         if ev is not None and ev < .05: reasons.append('Referans oranda yeterli beklenen değer yok')
         active = not reasons
+        # Shadow-monitoring is not an approved recommendation and never bypasses a gate.
+        monitor = (not active and p >= .55 and
+                   min(row['strengths']['nH'],row['strengths']['nA']) >= 8 and
+                   (ev is None or ev >= .05))
         candidates.append({'market':market,'p':p,'marketP':mp,'edge':p-mp if mp is not None else None,
-            'tier':'ADAY' if active else 'PAS','score':ev if active else 0,'expectedValue':ev,'referenceOdds':odds,
+            'tier':'ADAY' if active else ('İZLEME' if monitor else 'PAS'),'score':ev if active else 0,'expectedValue':ev,'referenceOdds':odds,
             'minimumOdds':1.05/p,'reason':'; '.join(reasons) if reasons else 'Bağımsız test ve değer koşulları sağlandı; referans oran güncel olmalı.',
-            'evidence':gate})
+            'evidence':gate,'isApproved':active,'isMonitoring':monitor,'hasComparableOdds':mp is not None and ev is not None})
     active = sorted([c for c in candidates if c['tier']=='ADAY'],key=lambda c:c['score'],reverse=True)
     best = active[0] if active else {'market':None,'tier':'PAS','p':None,'marketP':None,'edge':None,'score':0,
                                     'reason':'Bağımsız test ve veri koşullarını karşılayan aday yok'}

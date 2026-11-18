@@ -1,5 +1,5 @@
 import csv, io, json, os, urllib.request, time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from engine import predict, backtest, normalize_match
 from lifecycle import audit_and_settle, eligibility, kickoff, iso, register_prediction, record_id
@@ -69,11 +69,11 @@ def remember_download(key):
 
 def fetch_cached(url,key,log):
     p=RAW/f'{key}.csv'
-    stamp=recent_download(key,p,7200)
+    stamp=recent_download(key,p,1800)
     if stamp:
         b=p.read_bytes()
         if {'Date','HomeTeam','AwayTeam','FTHG','FTAG'}.issubset(csv_headers(b)):
-            log.append({'ok':True,'source':key,'url':url,'checkedAt':stamp,'message':'İki saatlik indirme aralığı dolmadı; doğrulanmış yerel veri'})
+            log.append({'ok':True,'source':key,'url':url,'checkedAt':stamp,'message':'30 dakikalık indirme aralığı dolmadı; doğrulanmış yerel veri'})
             return parse_csv_bytes(b),False
     try:
         b=get(url)
@@ -90,11 +90,11 @@ def fetch_cached(url,key,log):
 
 def fetch_fixtures(log):
     p=RAW/'fixtures.csv'
-    stamp=recent_download('fixtures',p,1800)
+    stamp=recent_download('fixtures',p,600)
     if stamp:
         b=p.read_bytes();valid,headers=fixture_payload_is_valid(b)
         if valid:
-            log.append({'ok':True,'source':'fixtures','url':FIXTURE_URLS[0],'checkedAt':stamp,'message':'30 dakikalık indirme aralığı dolmadı; doğrulanmış fikstür'})
+            log.append({'ok':True,'source':'fixtures','url':FIXTURE_URLS[0],'checkedAt':stamp,'message':'10 dakikalık indirme aralığı dolmadı; doğrulanmış fikstür'})
             return parse_csv_bytes(b),False,FIXTURE_URLS[0],headers
     errors=[]
     for url in FIXTURE_URLS:
@@ -163,21 +163,27 @@ def main():
     artifact=ensure_model(histories,DATA/'model.json')
     forecast_audit.settle(forecasts,histories,datetime.now(timezone.utc))
     results=audit_and_settle(records,histories,datetime.now(timezone.utc),fixtures)
-    predictions=[]; skipped=[]
+    predictions=[]; skipped=[]; monitoring=[]; funnel={code:{'fixtureRows':0,'eligible':0,'modelOk':0,'approved':0,'monitoring':0,'pas':0,'skippedReasons':{}} for code in LEAGUES}
     for row in fixtures:
         code=(row.get('Div') or row.get('League') or '').strip()
         if code not in LEAGUES:continue
+        funnel[code]['fixtureRows']+=1
         f=normalize_match(row); f['date']=row.get('Date') or f['date']; f['time']=row.get('Time') or ''
         if not f['home'] or not f['away'] or not f['date']:
+            funnel[code]['skippedReasons']['Fikstür alanı eksik']=funnel[code]['skippedReasons'].get('Fikstür alanı eksik',0)+1
             skipped.append({'league':code,'date':f.get('date'),'home':f.get('home'),'away':f.get('away'),'reason':'Fikstür satırında tarih/takım alanı eksik'})
             continue
         reason=eligibility(code,f,results,datetime.now(timezone.utc))
         if reason:
+            funnel[code]['skippedReasons'][reason]=funnel[code]['skippedReasons'].get(reason,0)+1
             skipped.append({'league':code,'date':f['date'],'home':f['home'],'away':f['away'],'reason':reason})
             continue
+        funnel[code]['eligible']+=1
         pr=calibrated_predict(artifact,code,histories.get(code,[]),f)
         if not pr['ok']:
+            funnel[code]['skippedReasons'][pr['reason']]=funnel[code]['skippedReasons'].get(pr['reason'],0)+1
             skipped.append({'league':code,'date':f['date'],'home':f['home'],'away':f['away'],'reason':pr['reason']}); continue
+        funnel[code]['modelOk']+=1
         if fixture_stale or code in stale_leagues:
             for candidate in pr['decision']['candidates']:
                 candidate.update(tier='PAS',score=0,reason='Kaynak kontrolü başarısız; eski veriyle aday oluşturulmaz. '+candidate['reason'])
@@ -189,6 +195,15 @@ def main():
             skipped.append({'league':code,'date':f['date'],'home':f['home'],'away':f['away'],'reason':'Hesaplama sırasında başlama saati geçti'})
             continue
         d=pr['decision']['best']; mid=record_id(code,f)
+        watched=[c for c in pr['decision']['candidates'] if c['tier']=='İZLEME']
+        if watched:
+            funnel[code]['monitoring']+=len(watched)
+            monitoring.append({'id':mid,'league':code,'leagueName':LEAGUES[code],
+                'date':f['date'],'time':f.get('time',''),'home':f['home'],'away':f['away'],
+                'kickoffAt':iso(kickoff(f)),'calculatedAt':iso(created),
+                'candidates':watched,'disclaimer':'Gözlem amaçlı; onaylı tahmin değildir.'})
+        if d.get('market'): funnel[code]['approved']+=1
+        else: funnel[code]['pas']+=1
         rec={'id':mid,'league':code,'leagueName':LEAGUES[code],'date':f['date'],'time':f.get('time',''),'home':f['home'],'away':f['away'],'lambdaH':pr['strengths']['lambdaH'],'lambdaA':pr['strengths']['lambdaA'],'reliability':pr['strengths']['reliability'],'topScores':pr['model']['scores'],'model':{k:pr['model'][k] for k in ['HOME','DRAW','AWAY','U25','O25','BTTS_YES','BTTS_NO']},'market':pr['market'],'decision':d}
         rec.update(kickoffAt=iso(kickoff(f)),candidates=pr['decision']['candidates'],calculatedAt=iso(created))
         rec.update(modelVersion=VERSION,modelId=pr['modelId'],context=pr['context'],rawModel=pr['rawModel'],
@@ -254,10 +269,21 @@ def main():
     finished=datetime.now(timezone.utc)
     predictions=[p for p in predictions if kickoff(p)>finished]
     health['predictions']=len(predictions)
-    health['futureFixtureCount']=sum(bool(kickoff(r) and kickoff(r)>finished) for r in fixtures if (r.get('Div') or '').strip() in LEAGUES)
-    dashboard={'version':VERSION,'updatedAt':iso(finished),'dataMode':'validated cache-first server-side','refreshIntervalMinutes':30,'sourceTimezone':'Europe/London','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'skipped':skipped,'matrix':{},'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log,
+    health['futureFixtureCount']=sum(bool(kickoff(r) and kickoff(r)>finished) for r in fixtures if (r.get('Div') or r.get('League') or '').strip() in LEAGUES)
+    future_fixtures=[r for r in fixtures if (r.get('Div') or r.get('League') or '').strip() in LEAGUES and kickoff(r) and kickoff(r)>finished]
+    fixture_last=health['fixtureLastDate']
+    freshness={'checkedAt':iso(finished),'futureFixtureCount':len(future_fixtures),
+        'fixtureLastDate':fixture_last,'fixtureSource':fixture_source,
+        'fixtureStale':fixture_stale,
+        'warning':('Fikstür kaynağında gelecek maç bulunmuyor; kaynak güncellenmemiş veya kapsam yetersiz olabilir.' if not future_fixtures else
+                   'Fikstür canlı indirilemedi; önbellek kullanılıyor.' if fixture_stale else None)}
+    monitoring=[m for m in monitoring if kickoff(m)>finished]
+    freshness['analysisReadyCount']=len(predictions)
+    freshness['analysisCoverageWarning']=('Gelecek fikstür var ancak analiz üretilemedi; skipped ve funnel alanlarını inceleyin.' if future_fixtures and not predictions else None)
+    dashboard={'version':VERSION,'updatedAt':iso(finished),'dataMode':'validated cache-first server-side','refreshIntervalMinutes':30,'sourceTimezone':'Europe/London','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'monitoring':monitoring,'funnel':funnel,'freshness':freshness,'skipped':skipped,'matrix':{},'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log,
                'quality':artifact['report'],'forecastAudit':forecast_audit.summary(forecasts,VERSION),'enrichment':enrichment}
     atomic_json(DATA/'dashboard.json',dashboard)
+    atomic_json(DATA/'coverage-audit.json',{'updatedAt':iso(finished),'funnel':funnel,'freshness':freshness})
     ok=sum(1 for x in log if x.get('ok')); fail=sum(1 for x in log if not x.get('ok'))
     print(f'OPUS V{VERSION} update complete. sources_ok={ok} failed={fail} fixture_rows={fixture_rows} recognized={recognized_rows} predictions={len(predictions)} skipped={len(skipped)} ledger={len(ledger["predictions"])} fixture_source={fixture_source}')
 
