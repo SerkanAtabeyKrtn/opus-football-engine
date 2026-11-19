@@ -1,4 +1,5 @@
 name: OPUS automatic data update
+
 on:
   schedule:
     - cron: '7,37 * * * *'
@@ -13,20 +14,28 @@ on:
       - 'performance-ui.js'
       - 'quality-ui.js'
       - 'external-ui.js'
+      - 'monitoring-ui.js'
       - 'tests/**'
       - '.github/workflows/update.yml'
       - 'requirements.txt'
+
 concurrency:
   group: opus-data-update
   cancel-in-progress: false
+
 permissions:
   contents: write
+
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v6
+        with:
+          ref: main
+          fetch-depth: 0
+          persist-credentials: true
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
@@ -41,20 +50,37 @@ jobs:
           python -m unittest discover -s tests -p 'test_lifecycle.py' -v
           python -m unittest discover -s tests -p 'test_quality.py' -v
           python -m unittest discover -s tests -p 'test_external_data.py' -v
-      - name: Fetch, predict, settle and backtest
-        run: python app/update.py
-      - name: Commit generated data
+      - name: Update from latest data and publish safely
         if: github.ref == 'refs/heads/main'
+        shell: bash
         run: |
-          
-      - name: Commit generated data
-        if: github.ref == 'refs/heads/main'
-        run: |
+          set -euo pipefail
           git config user.name "opus-probability-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data raw
-          git diff --cached --quiet && exit 0
-          git commit -m "OPUS automated update"
-          git pull --rebase origin main
-          git push origin HEAD:main
 
+          for attempt in 1 2 3; do
+            echo "OPUS update attempt ${attempt}/3"
+            # This runner's checkout is disposable. Refresh it BEFORE computing,
+            # never rebase generated ledgers against independently changed ledgers.
+            git fetch origin main
+            git reset --hard origin/main
+            git clean -fd -- data raw
+
+            python app/update.py
+            git add -- data raw
+            if git diff --cached --quiet; then
+              echo "No generated data changes to publish."
+              exit 0
+            fi
+            git commit -m "OPUS automated update"
+            if git push origin HEAD:main; then
+              echo "OPUS data published successfully."
+              exit 0
+            fi
+
+            echo "Remote main changed during computation; recomputing from latest data."
+            sleep "$((attempt * 3))"
+          done
+
+          echo "ERROR: Could not publish after 3 fresh recomputations; no force push used." >&2
+          exit 1
