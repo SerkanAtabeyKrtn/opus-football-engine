@@ -371,7 +371,13 @@ def main():
     dashboard={'version':VERSION,'updatedAt':iso(finished),'dataMode':'validated cache-first server-side','refreshIntervalMinutes':30,'sourceTimezone':'Europe/London','staleSources':stale_sources,'health':health,'leagues':LEAGUES,'predictions':predictions,'monitoring':monitoring,'funnel':funnel,'freshness':freshness,'skipped':skipped,'matrix':{},'ledger':ledger['predictions'],'liveSummary':live_summary,'log':log,
                'quality':artifact['report'],'forecastAudit':forecast_audit.summary(forecasts,VERSION),'enrichment':enrichment}
     atomic_json(DATA/'dashboard.json',dashboard)
-    atomic_json(DATA/'coverage-audit.json',{'updatedAt':iso(finished),'funnel':funnel,'freshness':freshness})
+    atomic_json(DATA/'coverage-audit.json',{
+        'updatedAt':iso(finished),
+        'funnel':funnel,
+        'freshness':freshness,
+        'backupUsed':backup_used,
+        'backupDiagnostics':backup_stats
+    })
     ok=sum(1 for x in log if x.get('ok')); fail=sum(1 for x in log if not x.get('ok'))
     print(f'OPUS V{VERSION} update complete. sources_ok={ok} failed={fail} fixture_rows={fixture_rows} recognized={recognized_rows} predictions={len(predictions)} skipped={len(skipped)} ledger={len(ledger["predictions"])} fixture_source={fixture_source}')
 
