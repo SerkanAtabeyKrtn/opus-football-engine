@@ -31,6 +31,9 @@ def team_key(name):
 
 def resolve_team(names,labels):
     # Fail closed: do not silently attach predictions to the wrong team.
+    labels=[label for label in labels if label]
+    if not labels:
+        return None
     aliases={team_key(n):n for n in names if n}
     for label in labels:
         k=team_key(label)
@@ -41,52 +44,114 @@ def resolve_team(names,labels):
         return ranked[0][1]
     return None
 
-def backup_fixtures(histories,log,now=None):
-    now=now or datetime.now(timezone.utc)
-    # One request per league, rather than one request per day, limits latency.
-    end=now+timedelta(days=14)
-    rows=[]; seen=set(); unmatched=0; failures=0
-    for code,league in ESPN_LEAGUES.items():
-        names={r.get(k) for r in histories.get(code,[]) for k in ('HomeTeam','AwayTeam') if r.get(k)}
+def backup_fixtures(histories, log, now=None):
+    """Independent upcoming-fixture fallback with per-league diagnostics.
+
+    Never fabricate fixture dates or attach an uncertain team match.
+    """
+    now = now or datetime.now(timezone.utc)
+    end = now + timedelta(days=14)
+    rows, seen = [], set()
+    stats = {'matched': 0, 'unmatched': 0, 'failedLeagues': 0,
+             'emptyLeagues': 0, 'noHistoryLeagues': 0,
+             'eventsSeen': 0, 'attemptedLeagues': 0, 'leagueDiagnostics': {}}
+
+    for code, league in ESPN_LEAGUES.items():
+        names = {r.get(k) for r in histories.get(code, [])
+                 for k in ('HomeTeam', 'AwayTeam') if r.get(k)}
+        diag = {'status': None, 'events': 0, 'matched': 0,
+                'unmatched': 0, 'attempts': [], 'error': None}
+        stats['leagueDiagnostics'][code] = diag
         if not names:
-            log.append({'ok':False,'source':'espn_fixture','league':code,'message':'Takım eşleştirme geçmişi bulunamadı'})
+            stats['noHistoryLeagues'] += 1
+            diag['status'] = 'no_history'
+            diag['error'] = 'Geçmiş takım isimleri bulunamadı'
+            log.append({'ok': False, 'source': 'espn_fixture', 'league': code,
+                        'message': diag['error']})
             continue
-        url=('https://site.api.espn.com/apis/site/v2/sports/soccer/'+league+'/scoreboard?dates='
-             +now.strftime('%Y%m%d')+'-'+end.strftime('%Y%m%d')+'&limit=500')
-        try:
-            payload=json.loads(get(url,retries=2).decode('utf-8'))
-            if not isinstance(payload.get('events'),list):raise ValueError('events dizisi bulunamadı')
-            count=0
-            for event in payload['events']:
-                competitions=event.get('competitions') or []
-                if not competitions:continue
-                comp=competitions[0]
-                if (comp.get('status') or {}).get('type',{}).get('completed'):continue
-                participants=comp.get('competitors') or []
-                h=next((x for x in participants if x.get('homeAway')=='home'),None)
-                a=next((x for x in participants if x.get('homeAway')=='away'),None)
-                if not h or not a:continue
-                def labels(x):
-                    team=x.get('team') or {}
-                    return [team.get(k) for k in ('displayName','shortDisplayName','name','abbreviation') if team.get(k)]
-                home=resolve_team(names,labels(h));away=resolve_team(names,labels(a))
-                if not home or not away or home==away:
-                    unmatched+=1;continue
-                stamp=event.get('date') or comp.get('date')
-                try: start=datetime.fromisoformat(stamp.replace('Z','+00:00')).astimezone(timezone.utc)
-                except (ValueError,AttributeError):continue
-                if not now<start<=end:continue
-                key=(code,home,away,start.date().isoformat())
-                if key in seen:continue
+
+        # ESPN endpoints vary in their support for a date range. A default
+        # scoreboard query is a second attempt if the range query fails.
+        base = 'https://site.api.espn.com/apis/site/v2/sports/soccer/' + league + '/scoreboard'
+        urls = [base + '?dates=' + now.strftime('%Y%m%d') + '-' + end.strftime('%Y%m%d') + '&limit=500',
+                base + '?limit=500']
+        stats['attemptedLeagues'] += 1
+        payload = None
+        for url in urls:
+            try:
+                candidate = json.loads(get(url, retries=2).decode('utf-8'))
+                if not isinstance(candidate, dict) or not isinstance(candidate.get('events'), list):
+                    raise ValueError('ESPN yanıtında events dizisi yok')
+                payload = candidate
+                diag['attempts'].append({'url': url, 'ok': True})
+                break
+            except Exception as exc:
+                diag['attempts'].append({'url': url, 'ok': False, 'error': str(exc)[:250]})
+
+        if payload is None:
+            stats['failedLeagues'] += 1
+            diag['status'] = 'request_failed'
+            diag['error'] = '; '.join(x['error'] for x in diag['attempts'] if not x['ok'])[:500]
+            log.append({'ok': False, 'source': 'espn_fixture', 'league': code,
+                        'message': diag['error']})
+            continue
+
+        events = payload['events']
+        diag['events'] = len(events)
+        stats['eventsSeen'] += len(events)
+        for event in events:
+            try:
+                competitions = event.get('competitions') or []
+                if not competitions:
+                    continue
+                comp = competitions[0]
+                status = (comp.get('status') or {}).get('type') or {}
+                if status.get('completed'):
+                    continue
+                stamp = event.get('date') or comp.get('date')
+                if not isinstance(stamp, str):
+                    continue
+                start = datetime.fromisoformat(stamp.replace('Z', '+00:00'))
+                if start.tzinfo is None:
+                    continue
+                start = start.astimezone(timezone.utc)
+                if not now < start <= end:
+                    continue
+                participants = comp.get('competitors') or []
+                home_part = next((x for x in participants if x.get('homeAway') == 'home'), None)
+                away_part = next((x for x in participants if x.get('homeAway') == 'away'), None)
+                if not home_part or not away_part:
+                    continue
+                def labels(part):
+                    team = part.get('team') or {}
+                    return [team.get(k) for k in ('displayName', 'shortDisplayName', 'name', 'abbreviation')
+                            if team.get(k)]
+                home = resolve_team(names, labels(home_part))
+                away = resolve_team(names, labels(away_part))
+                if not home or not away or home == away:
+                    stats['unmatched'] += 1
+                    diag['unmatched'] += 1
+                    continue
+                key = (code, team_key(home), team_key(away), start.isoformat())
+                if key in seen:
+                    continue
                 seen.add(key)
-                rows.append({'Div':code,'Date':start.strftime('%d/%m/%Y'),'Time':start.strftime('%H:%M'),
-                             'HomeTeam':home,'AwayTeam':away,'FTHG':'','FTAG':'','fixtureProvider':'ESPN'})
-                count+=1
-            log.append({'ok':True,'source':'espn_fixture','league':code,'url':url,'message':f'{count} eşleştirilmiş gelecek maç'})
-        except Exception as exc:
-            failures+=1
-            log.append({'ok':False,'source':'espn_fixture','league':code,'url':url,'message':str(exc)})
-    return rows,{'matched':len(rows),'unmatched':unmatched,'failedLeagues':failures}
+                rows.append({'Div': code, 'Date': start.strftime('%d/%m/%Y'),
+                             'Time': start.strftime('%H:%M'), 'HomeTeam': home,
+                             'AwayTeam': away, 'FTHG': '', 'FTAG': '',
+                             'fixtureProvider': 'ESPN'})
+                diag['matched'] += 1
+            except (TypeError, ValueError, AttributeError, KeyError) as exc:
+                diag['error'] = ('Bazı etkinlikler ayrıştırılamadı: ' + str(exc))[:250]
+                continue
+        diag['status'] = 'matched' if diag['matched'] else 'no_matching_future_events'
+        if not diag['matched']:
+            stats['emptyLeagues'] += 1
+        log.append({'ok': True, 'source': 'espn_fixture', 'league': code,
+                    'message': f"events={diag['events']} matched={diag['matched']} unmatched={diag['unmatched']}"})
+
+    stats['matched'] = len(rows)
+    return rows, stats
 
 def has_future_fixtures(rows,now=None):
     now=now or datetime.now(timezone.utc)
@@ -221,18 +286,21 @@ def main():
     fixtures,stale,fixture_source,fixture_headers=fetch_fixtures(log); stale_sources+=int(stale)
     # A valid CSV with zero future fixtures is a coverage failure, not proof
     # that there are no matches. Cross-check an independent fixture source.
-    backup_stats={'matched':0,'unmatched':0,'failedLeagues':0}
+    backup_stats={'matched':0,'unmatched':0,'failedLeagues':0,'attemptedLeagues':0,'leagueDiagnostics':{}}
     backup_used=False
     if not has_future_fixtures(fixtures):
         extra,backup_stats=backup_fixtures(histories,log)
         if extra:
-            fixtures=extra
-            fixture_source='ESPN (independent fixture fallback)'
+            # Retain primary fixtures for audit/history; append verified upcoming
+            # ESPN matches instead of discarding the primary provider's rows.
+            fixtures = [r for r in fixtures if not (kickoff(r) and kickoff(r) > datetime.now(timezone.utc))] + extra
+            fixture_source='football-data.co.uk + ESPN (future fixture fallback)'
             backup_used=True
-            stale=False  # The independent source supplied future fixtures.
+            stale=False  # Independent source supplied upcoming fixtures.
         else:
             log.append({'ok':False,'source':'fixture_coverage','message':'Birincil ve yedek kaynaklardan eşleşmiş gelecek maç alınamadı'})
     fixture_stale=stale
+    print('Fixture backup diagnostics:', json.dumps(backup_stats, ensure_ascii=False), flush=True)
     fixture_rows=len(fixtures)
     recognized_rows=sum(1 for r in fixtures if (r.get('Div') or r.get('League') or '').strip() in LEAGUES)
 
@@ -376,7 +444,9 @@ def main():
         'funnel':funnel,
         'freshness':freshness,
         'backupUsed':backup_used,
-        'backupDiagnostics':backup_stats
+        'backupDiagnostics':backup_stats,
+        'fixtureRows':fixture_rows,
+        'recognizedFixtures':recognized_rows
     })
     ok=sum(1 for x in log if x.get('ok')); fail=sum(1 for x in log if not x.get('ok'))
     print(f'OPUS V{VERSION} update complete. sources_ok={ok} failed={fail} fixture_rows={fixture_rows} recognized={recognized_rows} predictions={len(predictions)} skipped={len(skipped)} ledger={len(ledger["predictions"])} fixture_source={fixture_source}')
