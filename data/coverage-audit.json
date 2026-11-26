@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-25T23:19:30Z",
+  "updatedAt": "2026-11-26T05:28:23Z",
   "funnel": {
     "E0": {
       "fixtureRows": 1,
@@ -11,12 +11,12 @@
       "skippedReasons": {}
     },
     "E1": {
-      "fixtureRows": 12,
-      "eligible": 0,
-      "modelOk": 0,
+      "fixtureRows": 13,
+      "eligible": 1,
+      "modelOk": 1,
       "approved": 0,
-      "monitoring": 0,
-      "pas": 0,
+      "monitoring": 1,
+      "pas": 1,
       "skippedReasons": {
         "Başlama saati geçti; sonuç kaynağı bekleniyor": 12
       }
@@ -143,33 +143,33 @@
       }
     },
     "SC1": {
-      "fixtureRows": 0,
-      "eligible": 0,
-      "modelOk": 0,
+      "fixtureRows": 2,
+      "eligible": 2,
+      "modelOk": 2,
       "approved": 0,
-      "monitoring": 0,
-      "pas": 0,
+      "monitoring": 2,
+      "pas": 2,
       "skippedReasons": {}
     }
   },
   "freshness": {
-    "checkedAt": "2026-11-25T23:19:30Z",
-    "futureFixtureCount": 12,
-    "fixtureLastDate": "2026-11-28T17:45:00Z",
+    "checkedAt": "2026-11-26T05:28:23Z",
+    "futureFixtureCount": 15,
+    "fixtureLastDate": "2026-12-01T19:45:00Z",
     "fixtureSource": "football-data.co.uk + ESPN (future fixture fallback)",
     "fixtureStale": false,
     "warning": null,
-    "analysisReadyCount": 12,
+    "analysisReadyCount": 15,
     "analysisCoverageWarning": null
   },
   "backupUsed": true,
   "backupDiagnostics": {
-    "matched": 12,
+    "matched": 15,
     "unmatched": 6,
     "failedLeagues": 0,
-    "emptyLeagues": 8,
+    "emptyLeagues": 6,
     "noHistoryLeagues": 0,
-    "eventsSeen": 31,
+    "eventsSeen": 27,
     "attemptedLeagues": 16,
     "leagueDiagnostics": {
       "E0": {
@@ -179,7 +179,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -191,13 +191,13 @@
         "error": null
       },
       "E1": {
-        "status": "no_matching_future_events",
-        "events": 4,
-        "matched": 0,
+        "status": "matched",
+        "events": 1,
+        "matched": 1,
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.2/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.2/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -215,7 +215,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -233,7 +233,7 @@
         "unmatched": 1,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.2/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ger.2/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -251,7 +251,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -269,7 +269,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.2/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ita.2/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -287,7 +287,7 @@
         "unmatched": 1,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -305,7 +305,7 @@
         "unmatched": 1,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.2/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -323,7 +323,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -341,7 +341,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/fra.2/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -359,7 +359,7 @@
         "unmatched": 1,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/ned.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -377,7 +377,7 @@
         "unmatched": 1,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bel.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/bel.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -395,7 +395,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/por.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -413,7 +413,7 @@
         "unmatched": 1,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/tur.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -431,7 +431,7 @@
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/sco.1/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/sco.1/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -443,13 +443,13 @@
         "error": null
       },
       "SC1": {
-        "status": "no_matching_future_events",
-        "events": 3,
-        "matched": 0,
+        "status": "matched",
+        "events": 2,
+        "matched": 2,
         "unmatched": 0,
         "attempts": [
           {
-            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/sco.2/scoreboard?dates=20261125-20261209&limit=500",
+            "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/sco.2/scoreboard?dates=20261126-20261210&limit=500",
             "ok": false,
             "error": "HTTP Error 400: Bad Request"
           },
@@ -462,6 +462,6 @@
       }
     }
   },
-  "fixtureRows": 54,
-  "recognizedFixtures": 36
+  "fixtureRows": 57,
+  "recognizedFixtures": 39
 }
